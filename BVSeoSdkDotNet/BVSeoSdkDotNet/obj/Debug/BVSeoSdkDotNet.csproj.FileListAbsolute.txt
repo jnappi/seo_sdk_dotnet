@@ -1,0 +1,37 @@
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDK2\bin\Debug\Commons.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDK2\bin\Debug\log4net.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDK2\bin\Debug\NVelocity.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDK2\bin\Debug\Commons.pdb
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDK2\bin\Debug\Commons.xml
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDK2\bin\Debug\NVelocity.pdb
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDK2\bin\Debug\NVelocity.xml
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDK2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDK2\bin\Debug\BVSeoSdkDotNet.dll.config
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDK2\bin\Debug\BVSeoSdkDotNet.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDK2\bin\Debug\BVSeoSdkDotNet.pdb
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDK2\obj\Debug\BVSeoSdkDotNet.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDK2\obj\Debug\BVSeoSdkDotNet.pdb
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDK2\bin\Debug\footer.txt
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNet\bin\Debug\footer.txt
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNet\bin\Debug\BVSeoSdkDotNet.dll.config
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNet\bin\Debug\BVSeoSdkDotNet.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNet\bin\Debug\BVSeoSdkDotNet.pdb
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNet\bin\Debug\Commons.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNet\bin\Debug\log4net.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNet\bin\Debug\NVelocity.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNet\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNet\obj\Debug\BVSeoSdkDotNet.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNet\obj\Debug\BVSeoSdkDotNet.pdb
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNet\obj\Debug\BVSeoSdkDotNet.Resources.Messages.resources
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNet\obj\Debug\BVSeoSdkDotNet.csproj.GenerateResource.Cache
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNet\bin\Debug\BVSeoSdkDotNet.dll.config
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNet\bin\Debug\BVSeoSdkDotNet.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNet\bin\Debug\BVSeoSdkDotNet.pdb
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNet\bin\Debug\Commons.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNet\bin\Debug\log4net.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNet\bin\Debug\NVelocity.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNet\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNet\obj\Debug\BVSeoSdkDotNet.csproj.GenerateResource.Cache
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNet\obj\Debug\BVSeoSdkDotNet.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNet\obj\Debug\BVSeoSdkDotNet.pdb
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNet\obj\Debug\BVSeoSdkDotNet.Properties.Resources.resources

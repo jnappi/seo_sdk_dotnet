@@ -1,0 +1,10 @@
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Release\BVSEOSDKTest.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Release\BVSEOSDKTest.pdb
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Release\BVSeoSdkDotNet.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Release\NVelocity.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Release\Commons.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Release\log4net.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Release\BVSeoSdkDotNet.pdb
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\obj\Release\ResolveAssemblyReference.cache
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\obj\Release\BVSEOSDKTest.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\obj\Release\BVSEOSDKTest.pdb

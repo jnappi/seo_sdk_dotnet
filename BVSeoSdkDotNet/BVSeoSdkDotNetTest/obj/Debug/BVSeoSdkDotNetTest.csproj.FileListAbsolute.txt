@@ -1,0 +1,37 @@
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\bin\Debug\footer.txt
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\bin\Debug\BVSEOSDKTest.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\bin\Debug\BVSEOSDKTest.pdb
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\bin\Debug\BVSeoSdkDotNet.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\bin\Debug\NVelocity.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\bin\Debug\Commons.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\bin\Debug\log4net.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\bin\Debug\BVSeoSdkDotNet.pdb
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\bin\Debug\NVelocity.pdb
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\bin\Debug\NVelocity.xml
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\bin\Debug\Commons.pdb
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\bin\Debug\Commons.xml
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\obj\Debug\BVSEOSDKTest.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSEOSDKTest\obj\Debug\BVSEOSDKTest.pdb
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNetTest\bin\Debug\footer.txt
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.pdb
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNetTest\bin\Debug\BVSeoSdkDotNet.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNetTest\bin\Debug\NVelocity.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNetTest\bin\Debug\Commons.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNetTest\bin\Debug\log4net.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNetTest\bin\Debug\BVSeoSdkDotNet.pdb
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNetTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNetTest\obj\Debug\BVSEOSDKTest.dll
+C:\Users\Mohan Krupanandan\Documents\Visual Studio 2008\Projects\BVSEOSDK2\BVSeoSdkDotNetTest\obj\Debug\BVSEOSDKTest.pdb
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.pdb
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSeoSdkDotNet.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\NVelocity.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\Commons.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\log4net.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSeoSdkDotNet.pdb
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\obj\Debug\BVSEOSDKTest.dll
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\obj\Debug\BVSEOSDKTest.pdb
+C:\Projects\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll.config

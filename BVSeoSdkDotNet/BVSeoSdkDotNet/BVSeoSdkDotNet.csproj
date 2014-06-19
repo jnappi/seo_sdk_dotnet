@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A7A064B-9E9D-41CB-9DC3-029D4F6835D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BVSeoSdkDotNet</RootNamespace>
+    <AssemblyName>BVSeoSdkDotNet</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Commons, Version=1.0.5220.26034, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.0.33710, Culture=neutral" />
+    <Reference Include="NVelocity, Version=1.0.5220.26034, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\BVClientConfig.cs" />
+    <Compile Include="Config\BVConfiguration.cs" />
+    <Compile Include="Config\BVCoreConfig.cs" />
+    <Compile Include="Config\BVSdkConfiguration.cs" />
+    <Compile Include="Content\BVManagedUIContent.cs" />
+    <Compile Include="Content\BVUIContentService.cs" />
+    <Compile Include="Content\BVUIContent.cs" />
+    <Compile Include="Content\BVUIContentServiceProvider.cs" />
+    <Compile Include="BVException\BVSdkException.cs" />
+    <Compile Include="Footer\BVFooter.cs" />
+    <Compile Include="Footer\BVHTMLFooter.cs" />
+    <Compile Include="Model\BVContentType.cs" />
+    <Compile Include="Model\BVParameters.cs" />
+    <Compile Include="Model\BVContentSubType.cs" />
+    <Compile Include="Model\BVSubjectType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Url\BVSeoSdkURLBuilder.cs" />
+    <Compile Include="Url\BVSeoSdkUrl.cs" />
+    <Compile Include="Util\BVConstant.cs" />
+    <Compile Include="Util\BVMessageUtil.cs" />
+    <Compile Include="Util\BVUtilty.cs" />
+    <Compile Include="Validation\BVDefaultValidator.cs" />
+    <Compile Include="Validation\BVValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Binaries\Commons.dll" />
+    <Content Include="Binaries\log4net.dll" />
+    <Content Include="Binaries\NVelocity.dll" />
+    <EmbeddedResource Include="footer.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
