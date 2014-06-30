@@ -32,22 +32,22 @@ namespace BVSeoSdkDotNet.Model
         /// <summary>
         /// PRODUCT
         /// </summary>
-        public static string PRODUCT = "p";
+        public const string PRODUCT = "p";
 
         /// <summary>
         /// CATEGORY
         /// </summary>
-        public static string CATEGORY = "c";
+        public const string CATEGORY = "c";
 
         /// <summary>
         /// ENTRY
         /// </summary>
-        public static string ENTRY = "e";
+        public const string ENTRY = "e";
 
         /// <summary>
         /// DETAIL
         /// </summary>
-        public static string DETAIL = "d";
+        public const string DETAIL = "d";
 
         private String cs2013Text;
     

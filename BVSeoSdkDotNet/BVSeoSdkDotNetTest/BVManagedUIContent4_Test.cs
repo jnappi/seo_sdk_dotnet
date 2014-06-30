@@ -259,5 +259,78 @@ namespace BVSEOSDKTest
             String theUIContent = uiContent.getContent(bvParameters);
             Assert.AreEqual<Boolean>(theUIContent.Contains("<!--begin-bvseo-reviews-->"), true, "there should be BvRRSourceID in the content");
         }
+
+        [TestMethod]
+        public void Test_ExternalPage_Review()
+        {
+            BVParameters bvParameters = new BVParameters();
+            bvParameters.UserAgent = "google";
+            bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
+            bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
+            bvParameters.SubjectId = "50524";
+            bvParameters.PageNumber = "2";
+            String erroMessage = null;
+            String content = null;
+            try
+            {
+                content = _bvUIContent.getContent(bvParameters);
+            }
+            catch (BVSdkException e)
+            {
+                erroMessage = e.getMessage();
+            }
+            Assert.IsNull(erroMessage, "There should not be any errorMessage");
+            Assert.IsNotNull(content, "There should be content to proceed further assertion!!");
+            Assert.IsFalse(content.Contains("HTTP 403 Forbidden"), "There should be valid content");
+        }
+
+        [TestMethod]
+        public void Test_ExternalPage_Question()
+        {
+            BVParameters bvParameters = new BVParameters();
+            bvParameters.UserAgent = "google";
+            bvParameters.ContentType = new BVContentType(BVContentType.QUESTIONS);
+            bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
+            bvParameters.SubjectId = "50524";
+            bvParameters.PageNumber = "2";
+            String erroMessage = null;
+            String content = null;
+            try
+            {
+                content = _bvUIContent.getContent(bvParameters);
+            }
+            catch (BVSdkException e)
+            {
+                erroMessage = e.getMessage();
+            }
+            Assert.IsNull(erroMessage, "There should not be any errorMessage");
+            Assert.IsNotNull(content, "There should be content to proceed further assertion!!");
+            Assert.IsFalse(content.Contains("HTTP 403 Forbidden"), "There should be valid content");
+        }
+
+
+        [TestMethod]
+        public void Test_ExternalPage_Stories()
+        {
+            BVParameters bvParameters = new BVParameters();
+            bvParameters.UserAgent = "google";
+            bvParameters.ContentType = new BVContentType(BVContentType.STORIES);
+            bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
+            bvParameters.SubjectId = "50524";
+            bvParameters.PageNumber = "2";
+            String erroMessage = null;
+            String content = null;
+            try
+            {
+                content = _bvUIContent.getContent(bvParameters);
+            }
+            catch (BVSdkException e)
+            {
+                erroMessage = e.getMessage();
+            }
+            Assert.IsNull(erroMessage, "There should not be any errorMessage");
+            Assert.IsNotNull(content, "There should be content to proceed further assertion!!");
+            Assert.IsFalse(content.Contains("HTTP 403 Forbidden"), "There should be valid content");
+        }
     }
 }

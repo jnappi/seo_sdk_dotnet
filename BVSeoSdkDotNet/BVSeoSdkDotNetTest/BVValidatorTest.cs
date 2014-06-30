@@ -84,7 +84,7 @@ namespace BVSEOSDKTest
             bvParams = new BVParameters();
             bvValidator = new BVDefaultValidator();
             errorMessage = bvValidator.validate(bvConfig, bvParams);
-            Assert.AreEqual<Boolean>(errorMessage.Contains("userAgent in BVParameters is null.;SubjectId cannot be null or empty.;subjectType is null in BVParameters.;"),
+            Assert.AreEqual<Boolean>(errorMessage.Contains("userAgent in BVParameters is null.;SubjectId cannot be null or empty.;"),
                 true, "Error Messages are different.");
         }
     }

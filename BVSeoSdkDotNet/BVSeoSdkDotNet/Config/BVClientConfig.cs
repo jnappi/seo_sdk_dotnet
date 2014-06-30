@@ -29,22 +29,22 @@ namespace BVSeoSdkDotNet.Config
     /// </summary>
     public class BVClientConfig
     {
-        public static string BV_ROOT_FOLDER = "bv.root.folder";
-        public static string CLOUD_KEY = "cloudKey";
-        public static string LOAD_SEO_FILES_LOCALLY = "loadSEOFilesLocally";
-        public static string LOCAL_SEO_FILE_ROOT = "localSEOFileRoot";
-        public static string CONNECT_TIMEOUT = "connectTimeout";
-        public static string SOCKET_TIMEOUT = "socketTimeout";
-        public static string INCLUDE_DISPLAY_INTEGRATION_CODE = "includeDisplayIntegrationCode";
-        public static string BOT_DETECTION = "botDetection";
-        public static string CRAWLER_AGENT_PATTERN = "crawlerAgentPattern";
-        public static string SEO_SDK_ENABLED = "seo.sdk.enabled";
-        public static string STAGING = "staging";
-        public static string EXECUTION_TIMEOUT = "seo.sdk.execution.timeout";
-        public static string PROXY_HOST = "seo.sdk.execution.proxy.host";
-        public static string PROXY_PORT = "seo.sdk.execution.proxy.port";
-        public static string SSL_ENABLED = "seo.sdk.ssl.enabled";
-        public static string CHARSET = "seo.sdk.charset";
+        public const string BV_ROOT_FOLDER = "bv.root.folder";
+        public const string CLOUD_KEY = "cloudKey";
+        public const string LOAD_SEO_FILES_LOCALLY = "loadSEOFilesLocally";
+        public const string LOCAL_SEO_FILE_ROOT = "localSEOFileRoot";
+        public const string CONNECT_TIMEOUT = "connectTimeout";
+        public const string SOCKET_TIMEOUT = "socketTimeout";
+        public const string INCLUDE_DISPLAY_INTEGRATION_CODE = "includeDisplayIntegrationCode";
+        public const string BOT_DETECTION = "botDetection";
+        public const string CRAWLER_AGENT_PATTERN = "crawlerAgentPattern";
+        public const string SEO_SDK_ENABLED = "seo.sdk.enabled";
+        public const string STAGING = "staging";
+        public const string EXECUTION_TIMEOUT = "seo.sdk.execution.timeout";
+        public const string PROXY_HOST = "seo.sdk.execution.proxy.host";
+        public const string PROXY_PORT = "seo.sdk.execution.proxy.port";
+        public const string SSL_ENABLED = "seo.sdk.ssl.enabled";
+        public const string CHARSET = "seo.sdk.charset";
 
         public static List<string> values()
         {

@@ -32,37 +32,37 @@ namespace BVSeoSdkDotNet.Model
         /// <summary>
         /// REVIEWS
         /// </summary>
-        public static string REVIEWS = "re";
+        public const string REVIEWS = "re";
 
         /// <summary>
         /// REVIEWSPAGE
         /// </summary>
-        public static string REVIEWSPAGE = "rp";
+        public const string REVIEWSPAGE = "rp";
 
         /// <summary>
         /// QUESTIONS
         /// </summary>
-        public static string QUESTIONS = "qa";
+        public const string QUESTIONS = "qa";
 
         /// <summary>
         /// QUESTIONSPAGE
         /// </summary>
-        public static string QUESTIONSPAGE = "qp";
+        public const string QUESTIONSPAGE = "qp";
 
         /// <summary>
         /// STORIES
         /// </summary>
-        public static string STORIES = "sy";
+        public const string STORIES = "sy";
 
         /// <summary>
         /// STORIESPAGE
         /// </summary>
-        public static string STORIESPAGE = "sp";
+        public const string STORIESPAGE = "sp";
 
         /// <summary>
         /// UNIVERSAL
         /// </summary>
-        public static string UNIVERSAL = "un";
+        public const string UNIVERSAL = "un";
 
 
         private String _bvContentType;

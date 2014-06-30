@@ -36,6 +36,8 @@ namespace BVSeoSdkDotNet.Model
         private BVContentType _contentType;
         private BVSubjectType _subjectType;
         private BVContentSubType _contentSubType;
+        private String _pageNumber;
+        private const String NUM_ONE_STR = "1";
 
         /// <summary>
         /// Value of the UserAgent that needs to be included
@@ -98,6 +100,19 @@ namespace BVSeoSdkDotNet.Model
         {
             get { return _contentSubType; }
             set { _contentSubType = value; }
+        }
+
+        public String PageNumber
+        {
+            get { return _pageNumber; }
+            set { _pageNumber = value;  }
+        }
+
+        public BVParameters()
+        {
+            ContentType = new BVContentType(BVContentType.REVIEWS);
+            SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
+            PageNumber = NUM_ONE_STR;
         }
     }
 }

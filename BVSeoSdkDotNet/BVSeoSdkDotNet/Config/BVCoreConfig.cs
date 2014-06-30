@@ -29,8 +29,8 @@ namespace BVSeoSdkDotNet.Config
     /// </summary>
     public class BVCoreConfig
     {
-        public static string STAGING_S3_HOSTNAME = "stagingS3Hostname";
-        public static string PRODUCTION_S3_HOSTNAME = "productionS3Hostname";
+        public const string STAGING_S3_HOSTNAME = "stagingS3Hostname";
+        public const string PRODUCTION_S3_HOSTNAME = "productionS3Hostname";
 
         public static List<string> values()
         {
