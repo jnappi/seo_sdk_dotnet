@@ -231,7 +231,7 @@ namespace BVSeoSdkDotNet.Content
             startIndex = uiContent.ToString().IndexOf(schemaOrg);
             if (startIndex != -1)
             {
-                uiContent.Remove(startIndex, startIndex + schemaOrg.Length);
+                uiContent.Remove(startIndex, schemaOrg.Length);
             }
 
             bvFooter.setExecutionTime(TimeinMilliSeconds() - startTime);

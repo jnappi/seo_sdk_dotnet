@@ -5,8 +5,8 @@
 	<li id="sl">bvseo-n</li>
 	<li id="mt">bvseo-${methodType}</li>
 	<li id="et">bvseo-${executionTime}ms</li>
-	<li id="ct">bvseo-${_bvParameters.ContentType.uriValue()}</li>
-	<li id="st">bvseo-${_bvParameters.SubjectType.uriValue()}</li>
+	<li id="ct">bvseo-${_bvParameters.ContentType.uriValue().ToUpper()}</li>
+	<li id="st">bvseo-${_bvParameters.SubjectType.uriValue().ToUpper()}</li>
 	<li id="am">bvseo-${accessMethod}</li>
 	<li id="bd">bvseo-bd${isBd}</li>
 #if (${message}) 
