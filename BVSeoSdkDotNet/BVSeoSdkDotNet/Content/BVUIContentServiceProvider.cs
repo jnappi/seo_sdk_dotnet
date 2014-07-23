@@ -100,6 +100,7 @@ namespace BVSeoSdkDotNet.Content
             {
                 HttpWebRequest httpRequest = (HttpWebRequest)WebRequest.Create(path);
                 httpRequest.Timeout = connectionTimeout;
+                httpRequest.ReadWriteTimeout = socketTimeout;
 
                 if (!String.IsNullOrEmpty(proxyHost) && !proxyHost.Equals("none", StringComparison.InvariantCultureIgnoreCase))
                 {

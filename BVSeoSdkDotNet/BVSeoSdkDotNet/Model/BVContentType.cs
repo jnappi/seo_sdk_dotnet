@@ -75,32 +75,32 @@ namespace BVSeoSdkDotNet.Model
         public String uriValue() {
             if (this._bvContentType.Equals(REVIEWS, StringComparison.OrdinalIgnoreCase))
             {
-                return "REVIEWS".ToLower();
+                return "reviews";
             }
 
             if (this._bvContentType.Equals(REVIEWSPAGE, StringComparison.OrdinalIgnoreCase))
             {
-                return "REVIEWSPAGE".ToLower();
+                return "reviewsPage";
             }
 
             if (this._bvContentType.Equals(QUESTIONS, StringComparison.OrdinalIgnoreCase))
             {
-                return "QUESTIONS".ToLower();
+                return "questions";
             }
 
             if (this._bvContentType.Equals(QUESTIONSPAGE, StringComparison.OrdinalIgnoreCase))
             {
-                return "QUESTIONSPAGE".ToLower();
+                return "questionsPage";
             }
 
             if (this._bvContentType.Equals(STORIES, StringComparison.OrdinalIgnoreCase))
             {
-                return "STORIES".ToLower();
+                return "stories";
             }
 
             if (this._bvContentType.Equals(STORIESPAGE, StringComparison.OrdinalIgnoreCase))
             {
-                return "STORIESPAGE".ToLower();
+                return "storiesPage";
             }
 
             if (this._bvContentType.Equals(UNIVERSAL, StringComparison.OrdinalIgnoreCase))

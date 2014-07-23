@@ -58,22 +58,22 @@ namespace BVSeoSdkDotNet.Model
         public String uriValue() {
             if (this.cs2013Text.Equals("p", StringComparison.OrdinalIgnoreCase))
             {
-                return "PRODUCT".ToLower();
+                return "product";
             }
 
             if (this.cs2013Text.Equals("c", StringComparison.OrdinalIgnoreCase))
             {
-                return "CATEGORY".ToLower();
+                return "category";
             }
 
             if (this.cs2013Text.Equals("e", StringComparison.OrdinalIgnoreCase))
             {
-                return "ENTRY".ToLower();
+                return "entry";
             }
 
             if (this.cs2013Text.Equals("d", StringComparison.OrdinalIgnoreCase))
             {
-                return "DETAIL".ToLower();
+                return "detail";
             }
 
             return null;

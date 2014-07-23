@@ -294,7 +294,7 @@ namespace BVSEOSDKTest
 
             String expectedBaseUri = "http://localhost:8080/Sample/Example-1.jsp";
             String expectedQueryString = "?bvpage=pg2/ctrp/stp";
-            String expectedSeoContentUri = "http://seo.bazaarvoice.com/godaddy-a4501eb5be8bf8efda68f3f4ff7b3cf4/6574-en_us/reviewspage/product/2/ssl-certificates.htm";
+            String expectedSeoContentUri = "http://seo.bazaarvoice.com/godaddy-a4501eb5be8bf8efda68f3f4ff7b3cf4/6574-en_us/reviewsPage/product/2/ssl-certificates.htm";
 
             String actualBaseUri = bvSeoSdkUrl.correctedBaseUri();
             String actualQueryString = bvSeoSdkUrl.queryString();
@@ -338,7 +338,7 @@ namespace BVSEOSDKTest
 
             expectedBaseUri = "http://localhost:8080/sample_seo_sdk_web/scenario-2.jsp?null&bvpage=pg3/ctre/stp/idcatfood";
             expectedQueryString = "?null&bvpage=pg4/ctrp/stp";
-            expectedSeoContentUri = "http://seo.bazaarvoice.com/godaddy-a4501eb5be8bf8efda68f3f4ff7b3cf4/6574-en_us/reviewspage/product/4/p5543.htm";
+            expectedSeoContentUri = "http://seo.bazaarvoice.com/godaddy-a4501eb5be8bf8efda68f3f4ff7b3cf4/6574-en_us/reviewsPage/product/4/p5543.htm";
 
             actualBaseUri = bvSeoSdkUrl.correctedBaseUri();
             actualQueryString = bvSeoSdkUrl.queryString();
@@ -422,7 +422,7 @@ namespace BVSEOSDKTest
 
             String expectedBaseUri = "http://localhost:8080/Sample/Example-1.jsp";
             String expectedQueryString = "?bvpage=pg2/ctrp/stp";
-            String expectedSeoContentUri = new Uri(Path.GetFullPath("/filePath/6574-en_us/reviewspage/product/2/ssl-certificates.htm")).AbsoluteUri.ToString();
+            String expectedSeoContentUri = new Uri(Path.GetFullPath("/filePath/6574-en_us/reviewsPage/product/2/ssl-certificates.htm")).AbsoluteUri.ToString();
 
             String actualBaseUri = bvSeoSdkUrl.correctedBaseUri();
             String actualQueryString = bvSeoSdkUrl.queryString();

@@ -1,0 +1,905 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="87f90f00-f9da-495b-99c0-8efe94813303" name="Mohan Krupanandan@OWNER-PC 2014-07-21 10:02:22" runUser="Owner-PC\Mohan Krupanandan" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="7484b31a-7605-4c36-89c2-1c7908653846">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\TestResults\Mohan Krupanandan_OWNER-PC 2014-07-21 10_02_22">
+      <DeploymentItem filename="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNet\bin\Debug\BVSeoSdkDotNet.dll" />
+    </Deployment>
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Completed">
+    <Counters total="66" executed="66" passed="66" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2014-07-21T10:02:22.9845834-05:00" queuing="2014-07-21T10:02:32.1311065-05:00" start="2014-07-21T10:02:32.5211288-05:00" finish="2014-07-21T10:02:40.8896075-05:00" />
+  <TestDefinitions>
+    <UnitTest name="TestSEOContentFromHTTP_SinglePageC2013" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="fc6b45b6-617d-35be-f3b7-a6ec6b460ed6">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="15555b0a-109c-461e-a99c-c7208b533a4d" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSeoSdkDotNet.BVManagedUIContent_SinglePageTest, BVSEOSDKTest" name="TestSEOContentFromHTTP_SinglePageC2013" />
+    </UnitTest>
+    <UnitTest name="TestSEOContentFromHTTP__InvalidCloudKey" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="aeaa7568-80d7-74bb-5b00-573772c963a7">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="a0310e1b-4ad7-4cd5-b483-7832a6af0a29" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSeoSdkDotNet.BVManagedUIContent_SinglePageTest, BVSEOSDKTest" name="TestSEOContentFromHTTP__InvalidCloudKey" />
+    </UnitTest>
+    <UnitTest name="TestUri_For_C2013_File" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="47f9a937-2bcb-0684-d30d-91119567ec8d">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="a01bfed2-225a-4b2d-9178-14f41d6531ee" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVSeoSdkURLBuilderTest, BVSEOSDKTest" name="TestUri_For_C2013_File" />
+    </UnitTest>
+    <UnitTest name="TestAdd_GetProperty" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="ad53fe42-0f62-0dd7-7cc0-48e9888ed79f">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="56eafd92-d3e5-4083-9191-a5d651745d57" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVSdkConfigurationTest, BVSEOSDKTest" name="TestAdd_GetProperty" />
+    </UnitTest>
+    <UnitTest name="TestSEOContent_SinglePageHTTP_AggregateRating_BotDetectionEnabled" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="4e53e90c-79f3-2fe5-42dc-76c59df7f553">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="8353db87-0a63-4f64-8332-3ff50be7f208" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContentAggregateReviewTest, BVSEOSDKTest" name="TestSEOContent_SinglePageHTTP_AggregateRating_BotDetectionEnabled" />
+    </UnitTest>
+    <UnitTest name="TestSEOContent_SinglePageHTTP_GetReviews_Blank_Page_Test" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="a16719c5-f614-973b-19a7-7416eb2f394c">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="96a26623-d273-4ff7-a74c-37469da0defb" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContentAggregateReviewTest, BVSEOSDKTest" name="TestSEOContent_SinglePageHTTP_GetReviews_Blank_Page_Test" />
+    </UnitTest>
+    <UnitTest name="BVManagedUIContentTestExecutionTimeOut" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="f257fd26-c7b6-848a-b0cf-55010618c280">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="f2683aca-76a3-4473-8e59-19c8c7cf969b" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSeoSdkDotNet.BVManagedUIContentTest, BVSEOSDKTest" name="BVManagedUIContentTestExecutionTimeOut" />
+    </UnitTest>
+    <UnitTest name="TestStory_Default_None" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="b48b3fc7-9265-32fb-3e33-df8465400226">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="9bdd70a9-6e88-45e9-91aa-fe5cd4ba3a58" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVSeoSdkURLBuilderTest, BVSEOSDKTest" name="TestStory_Default_None" />
+    </UnitTest>
+    <UnitTest name="TestBase_PageUri_For_PRR_HTTP" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="cff9f61b-6dcb-0390-8d2f-6388c5c19037">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="3df288c4-10d7-41d9-8503-55a6f664fcbe" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVSeoSdkURLBuilderTest, BVSEOSDKTest" name="TestBase_PageUri_For_PRR_HTTP" />
+    </UnitTest>
+    <UnitTest name="TestSEOContent_SinglePageHTTP_GetContent_SDK_Disabled" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="2d0de862-bf6f-df20-4a30-d5604ca0eadc">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="2c95df50-6fba-4f54-9fe8-2099926d8e7b" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContentAggregateReviewTest, BVSEOSDKTest" name="TestSEOContent_SinglePageHTTP_GetContent_SDK_Disabled" />
+    </UnitTest>
+    <UnitTest name="Test_SinglePage_Question" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="6ae7685d-361b-24f8-8983-14c25fd9df76">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="140640b8-ec50-46e4-a017-83b54329cbd5" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent4_Test, BVSEOSDKTest" name="Test_SinglePage_Question" />
+    </UnitTest>
+    <UnitTest name="TestBVCoreConfig" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="6b64ef0b-98a8-9656-ca76-083b22cdebf3">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="553d55e4-7c8e-47e1-87c0-87ed08c4ba71" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVSdkConfigurationTest, BVSEOSDKTest" name="TestBVCoreConfig" />
+    </UnitTest>
+    <UnitTest name="BVManagedUIContentTestPagination" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="8d264e89-646c-4a3d-bb37-95d58ddc393f">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="89e4ed5a-6a39-48f7-818d-b902ce491447" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSeoSdkDotNet.BVManagedUIContentTest, BVSEOSDKTest" name="BVManagedUIContentTestPagination" />
+    </UnitTest>
+    <UnitTest name="TestSEOContentFromFile_SinglePage_FileUnavailableError" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="5d4eaba0-94e6-3d0c-6697-dff9648ceeb5">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="8a459038-27ae-4723-ae8f-df2300722a3a" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSeoSdkDotNet.BVManagedUIContent_SinglePageTest, BVSEOSDKTest" name="TestSEOContentFromFile_SinglePage_FileUnavailableError" />
+    </UnitTest>
+    <UnitTest name="Test_SinglePage_Review" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="6fd35cd4-d5d7-540a-5c99-9f9e1332807e">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="70a20b1b-77a4-4237-983b-1871b04581f2" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent3_Test, BVSEOSDKTest" name="Test_SinglePage_Review" />
+    </UnitTest>
+    <UnitTest name="Test_SinglePage_Question" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="668619da-6a06-d548-720e-a61936cf267f">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="eac8105b-e60f-41e3-9f90-3486ee7a1e0d" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent2_Test, BVSEOSDKTest" name="Test_SinglePage_Question" />
+    </UnitTest>
+    <UnitTest name="TestSEOContentFromHTTP_SinglePagePRR_AggregateRating" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="83670232-d932-24b5-97b0-54c95872e53a">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="09f90574-bdfe-4636-aa16-3003066a30ce" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContentAggregateReviewTest, BVSEOSDKTest" name="TestSEOContentFromHTTP_SinglePagePRR_AggregateRating" />
+    </UnitTest>
+    <UnitTest name="TestSEOContent_SinglePageHTTP_GetReview_SDK_Disabled" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="79217038-898f-bfff-42c1-8f4916c3308c">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="6947b7f2-7f09-40cc-bec2-2d7321810f80" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContentAggregateReviewTest, BVSEOSDKTest" name="TestSEOContent_SinglePageHTTP_GetReview_SDK_Disabled" />
+    </UnitTest>
+    <UnitTest name="TestUri_For_C2013_HTTP" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="4519dc37-d6af-1168-2fe0-550fdf975e5c">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="79f45741-af26-4629-a4ab-2218827d7c87" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVSeoSdkURLBuilderTest, BVSEOSDKTest" name="TestUri_For_C2013_HTTP" />
+    </UnitTest>
+    <UnitTest name="Test_ExternalPage_Stories" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="29a9cd2f-8fca-39d0-5540-7bce20b2bb56">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="d6dbd8db-acc4-4e9a-9c5c-300e218bc471" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent4_Test, BVSEOSDKTest" name="Test_ExternalPage_Stories" />
+    </UnitTest>
+    <UnitTest name="TestBase_PageUri_For_PRR_File" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="75867207-bc67-e8f1-ac3b-474d1963e810">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="5291edc6-aa07-40ba-9730-ea6e576af626" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVSeoSdkURLBuilderTest, BVSEOSDKTest" name="TestBase_PageUri_For_PRR_File" />
+    </UnitTest>
+    <UnitTest name="Test_InteractivePage_Review" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="5cb9f28b-a05f-b9c4-950a-9a1b1d53a576">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="70d2274a-c93b-4443-96ab-0764a8a0a44e" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent2_Test, BVSEOSDKTest" name="Test_InteractivePage_Review" />
+    </UnitTest>
+    <UnitTest name="TestSEOContentFromHTTP_SinglePage_FileUnavailableError" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="49ae87b0-a9db-70e4-4183-fa3f62452b2a">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="1b31d65b-a7c0-4a34-a761-405a6b07394b" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSeoSdkDotNet.BVManagedUIContent_SinglePageTest, BVSEOSDKTest" name="TestSEOContentFromHTTP_SinglePage_FileUnavailableError" />
+    </UnitTest>
+    <UnitTest name="TestAggregate_NullSubjectID" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="48c1bde0-440e-e42e-8163-c0c839234cdf">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="6738eaf4-a112-46f5-b04f-ad0470dcacf9" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContentAggregateReviewTest, BVSEOSDKTest" name="TestAggregate_NullSubjectID" />
+    </UnitTest>
+    <UnitTest name="TestSEOContentFromFile_SinglePage_FileUnavailableError_bvReveal" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="d8ca1f24-9443-c0e5-1264-61d20ec22e40">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="a651ee03-2a14-408b-9e0e-86eaca8e868d" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSeoSdkDotNet.BVManagedUIContent_SinglePageTest, BVSEOSDKTest" name="TestSEOContentFromFile_SinglePage_FileUnavailableError_bvReveal" />
+    </UnitTest>
+    <UnitTest name="Test_SinglePage_Stories" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="ba579d81-f213-d67c-11cb-81ed57511985">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="1367c904-a459-480d-b4d3-097910c67ec9" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent3_Test, BVSEOSDKTest" name="Test_SinglePage_Stories" />
+    </UnitTest>
+    <UnitTest name="TestSearchContentNullBVQueryParams" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="64633bc6-a6c4-3385-bf98-af703e82448e">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="00cc8f4d-0425-4ea9-bdae-2175b4d342a8" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSeoSdkDotNet.BVManagedUIContentTest, BVSEOSDKTest" name="TestSearchContentNullBVQueryParams" />
+    </UnitTest>
+    <UnitTest name="TestDisplayFooter_URL_Debug" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="305df720-2163-4902-ce02-9f70094cc502">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="7ed34ada-ebbb-4275-b877-ae039e7b6ba4" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVHTMLFooterTest, BVSEOSDKTest" name="TestDisplayFooter_URL_Debug" />
+    </UnitTest>
+    <UnitTest name="TestSEOContentFromFile_SinglePageC2013" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="dcc3c09a-4129-5a88-ed35-c7f7905cd23e">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="3fc24f11-1581-4ae2-808d-92c05159ffff" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSeoSdkDotNet.BVManagedUIContent_SinglePageTest, BVSEOSDKTest" name="TestSEOContentFromFile_SinglePageC2013" />
+    </UnitTest>
+    <UnitTest name="TestMultipleConfigurations" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="0be53a4b-f193-b841-ba01-235a8d56dd4b">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="f640c90e-9ce0-48f5-b3bc-b111ca2a41f8" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVSdkConfigurationTest, BVSEOSDKTest" name="TestMultipleConfigurations" />
+    </UnitTest>
+    <UnitTest name="TestSEOContentFromFile_SinglePagePRR_PageUri" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="64102383-1eec-2357-e495-a1398ceb1c60">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="e30a238e-444b-4768-9098-4daa95e699d8" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSeoSdkDotNet.BVManagedUIContent_SinglePageTest, BVSEOSDKTest" name="TestSEOContentFromFile_SinglePagePRR_PageUri" />
+    </UnitTest>
+    <UnitTest name="TestStory_Stories_PageNumber" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="da2e4a92-4ba6-bd6e-bb80-20abea394ccb">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="06113436-6d2d-4e69-a31d-9f1913e23622" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVSeoSdkURLBuilderTest, BVSEOSDKTest" name="TestStory_Stories_PageNumber" />
+    </UnitTest>
+    <UnitTest name="TestSEOContent_SinglePageHTTP_Aggregate_WithoutPagination" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="9fbc3db2-a72e-842c-8a9f-b86ecd2a1ffa">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="5ba6abb3-a557-4ec1-83a2-75ba52454824" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContentAggregateReviewTest, BVSEOSDKTest" name="TestSEOContent_SinglePageHTTP_Aggregate_WithoutPagination" />
+    </UnitTest>
+    <UnitTest name="TestSEOContentFrom_Using_HTTPS" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="f85c0aa3-3674-b42a-2128-69bd3afe7ca6">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="60afd55b-6bac-44f2-b4d1-c323c1c3f866" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent4_Test, BVSEOSDKTest" name="TestSEOContentFrom_Using_HTTPS" />
+    </UnitTest>
+    <UnitTest name="TestMessages" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="cb9ab58d-8baa-855e-5d07-948d7c894c3b">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="8bc4982a-a04e-4927-9144-5eb95fc22b00" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVSdkMessageUtilTest, BVSEOSDKTest" name="TestMessages" />
+    </UnitTest>
+    <UnitTest name="TestSEOContentFromHTTP_SinglePagePRR_Reviews" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="99cebdfa-8a8d-7958-449d-c3ab05306baa">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="f07b7716-ba5c-4455-b298-ba8d9f346a4d" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContentAggregateReviewTest, BVSEOSDKTest" name="TestSEOContentFromHTTP_SinglePagePRR_Reviews" />
+    </UnitTest>
+    <UnitTest name="TestStory_Default" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="9bc706cc-8a93-1cbe-a917-e57f61a9b33c">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="f1360139-b7bb-4b2f-b6a3-92fa97f1637a" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVSeoSdkURLBuilderTest, BVSEOSDKTest" name="TestStory_Default" />
+    </UnitTest>
+    <UnitTest name="Test_ExternalPage_Review" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="359a21f6-c2b4-0efd-fecd-19b8ebc6f9f4">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="a0e6cef4-4021-41b2-b8ab-db1b3680ec59" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent4_Test, BVSEOSDKTest" name="Test_ExternalPage_Review" />
+    </UnitTest>
+    <UnitTest name="TestSEOContent_SinglePageHTTP_GetReviews_ERR0013" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="b643c69c-4cdc-3e70-5e26-8310153d1cef">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="383e84d3-0f9d-4eb9-8e2d-0d60bbf27de1" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContentAggregateReviewTest, BVSEOSDKTest" name="TestSEOContent_SinglePageHTTP_GetReviews_ERR0013" />
+    </UnitTest>
+    <UnitTest name="TestShowUserAgentSeoContent" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="c06fa58c-fdd8-dd0e-a4bc-27769392ea48">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="eb48d45d-159c-4227-83ae-701b0862903f" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVUIContentServiceProviderTest, BVSEOSDKTest" name="TestShowUserAgentSeoContent" />
+    </UnitTest>
+    <UnitTest name="Test_SinglePage_Review" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="d59f7a52-4d79-9972-54da-b2b7c1ae1c5f">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="03937266-4438-4d62-8ce2-de72940f40dc" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent2_Test, BVSEOSDKTest" name="Test_SinglePage_Review" />
+    </UnitTest>
+    <UnitTest name="Test_InlinePage_Review" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="b2d12f36-ff95-5ec9-cb04-8158ae12524d">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="cd489198-87e5-4d62-b061-f95828ad0a5e" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent4_Test, BVSEOSDKTest" name="Test_InlinePage_Review" />
+    </UnitTest>
+    <UnitTest name="TestSEOContentFromHTTP_SinglePagePRR_CrawlerOverride" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="320b82da-25e4-acee-cfe6-f5f499398763">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="713cc17d-2f91-4c0b-8cd7-521b8e254a23" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContentAggregateReviewTest, BVSEOSDKTest" name="TestSEOContentFromHTTP_SinglePagePRR_CrawlerOverride" />
+    </UnitTest>
+    <UnitTest name="Test_InlinePage_Stories" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="3bb26db2-7d35-fe6b-cd94-62d30d126293">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="10a09d23-74cc-4f68-bac5-becc5713834f" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent4_Test, BVSEOSDKTest" name="Test_InlinePage_Stories" />
+    </UnitTest>
+    <UnitTest name="TestValidation" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="c3718dbe-75b9-2641-fc26-2579581d699d">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="e9aa1ad0-b6b5-4a46-82a8-4a13bc8c543f" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVValidatorTest, BVSEOSDKTest" name="TestValidation" />
+    </UnitTest>
+    <UnitTest name="TestEquality" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="a6d9cbae-7a2a-2a07-9ac8-67310f1bbfe9">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="572a307a-2231-4dfc-8885-59f9c5f88862" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVParametersTest, BVSEOSDKTest" name="TestEquality" />
+    </UnitTest>
+    <UnitTest name="TestSEOContentFromFile_SinglePagePRR" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="c31714d1-4618-8354-d76b-91d08f8c9441">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="419f22f5-40c7-451c-a632-5e8484dcbf8e" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSeoSdkDotNet.BVManagedUIContent_SinglePageTest, BVSEOSDKTest" name="TestSEOContentFromFile_SinglePagePRR" />
+    </UnitTest>
+    <UnitTest name="Test_SinglePage_Review" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="3b08769d-c5de-db20-839a-21cea7e6a04f">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="fab2baef-1643-4040-9dcf-b5b634e166ba" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent4_Test, BVSEOSDKTest" name="Test_SinglePage_Review" />
+    </UnitTest>
+    <UnitTest name="Test_ExternalPage_Question" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="2c9a2cb9-6bd9-f9d8-b5e5-ab52ea7b8c24">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="6a097402-777d-438d-9273-6d9bf28f3f9f" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent4_Test, BVSEOSDKTest" name="Test_ExternalPage_Question" />
+    </UnitTest>
+    <UnitTest name="TestStory_Stories" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="08808d6f-5f2b-19e6-4287-d69e6f5695c8">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="39632761-1db0-40b8-9cdb-7510bead02b7" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVSeoSdkURLBuilderTest, BVSEOSDKTest" name="TestStory_Stories" />
+    </UnitTest>
+    <UnitTest name="TestSDKEnabled" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="b7f4a730-d7d6-6886-d361-333ee2505238">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="8007bf69-db04-4837-a5de-6e5ccf18c0a5" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVUIContentServiceProviderTest, BVSEOSDKTest" name="TestSDKEnabled" />
+    </UnitTest>
+    <UnitTest name="Test_InteractivePage_Stories" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="d5b9f4f0-6010-0c54-3743-eb4ff4f22503">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="803149ee-7fb6-45e0-97ee-c567f4fb1928" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent2_Test, BVSEOSDKTest" name="Test_InteractivePage_Stories" />
+    </UnitTest>
+    <UnitTest name="Test_SinglePage_Stories" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="ad819142-0fc8-08d8-db73-e33e4581e13f">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="aaae2163-b2d1-449c-8686-cf36170f39ba" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent4_Test, BVSEOSDKTest" name="Test_SinglePage_Stories" />
+    </UnitTest>
+    <UnitTest name="Test_InlinePage_Question" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="da0c38e7-f05e-1866-f108-b4c889ec0aac">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="69096864-1485-4e07-b348-237ea99659da" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent4_Test, BVSEOSDKTest" name="Test_InlinePage_Question" />
+    </UnitTest>
+    <UnitTest name="TestDisplayFooter" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="915c5ee6-ea7f-ebc8-ffeb-939ac16ef3d4">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="0677c2e8-f04e-409d-9cfe-726a692d842e" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVHTMLFooterTest, BVSEOSDKTest" name="TestDisplayFooter" />
+    </UnitTest>
+    <UnitTest name="TestSEOContent_SinglePageHTTP_AggregateRatingAndReviews" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="d1e3fb7c-9317-1703-6861-0e422458bfcb">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="50d1111c-2b8e-4952-93fb-574147b6cd54" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContentAggregateReviewTest, BVSEOSDKTest" name="TestSEOContent_SinglePageHTTP_AggregateRatingAndReviews" />
+    </UnitTest>
+    <UnitTest name="Test_SinglePage_Stories" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="b6359c4b-4264-9433-7578-43f7a388767a">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="05e4536d-aeb8-47d6-8e0d-4b6d34b27a9a" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent2_Test, BVSEOSDKTest" name="Test_SinglePage_Stories" />
+    </UnitTest>
+    <UnitTest name="TestSEOContentFromHTTP_SinglePagePRR" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="b356f059-aac1-f420-83c0-9add27c3b4a9">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="bcaf1e60-5a79-4df1-ac73-cce521c6c157" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSeoSdkDotNet.BVManagedUIContent_SinglePageTest, BVSEOSDKTest" name="TestSEOContentFromHTTP_SinglePagePRR" />
+    </UnitTest>
+    <UnitTest name="TestDisplayFooter_Debug" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="ef6ccb04-b599-464a-c095-b5e5580d4593">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="120f7603-d040-4093-8020-a58088252534" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVHTMLFooterTest, BVSEOSDKTest" name="TestDisplayFooter_Debug" />
+    </UnitTest>
+    <UnitTest name="Test_SinglePage_Question" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="1d3b670a-63ee-9c37-1355-fcb1f3847ad3">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="096a02b9-83e1-4ee8-8b29-23291b2dd17d" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent3_Test, BVSEOSDKTest" name="Test_SinglePage_Question" />
+    </UnitTest>
+    <UnitTest name="Test_InteractivePage_Question" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="e5392506-b2a1-3752-d638-f48e2c0698ee">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="ca6bb7a1-e05d-447b-ad82-9953486bd608" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContent2_Test, BVSEOSDKTest" name="Test_InteractivePage_Question" />
+    </UnitTest>
+    <UnitTest name="TestSEOContent_SinglePageHTTP_AggregateRating_IfNotPresent" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="dcc51909-54b6-883c-dfae-331a4fe24ce0">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="033c3336-993c-4aed-b853-3d8f13e13c0a" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContentAggregateReviewTest, BVSEOSDKTest" name="TestSEOContent_SinglePageHTTP_AggregateRating_IfNotPresent" />
+    </UnitTest>
+    <UnitTest name="TestSEOContent_SinglePageHTTP_GetAggregateRating_SDK_Disabled" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="078da8da-1cbe-cbec-0a75-ee687b3a32bc">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="a7fd8f13-e1ea-4778-ac13-f7be5ca83427" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContentAggregateReviewTest, BVSEOSDKTest" name="TestSEOContent_SinglePageHTTP_GetAggregateRating_SDK_Disabled" />
+    </UnitTest>
+    <UnitTest name="TestAggregate_InvalidURL" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="0ba65008-77d4-41f5-b98c-eb8e2ccca5cb">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="0b68f724-95c4-4283-a548-f6c429fd9b06" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVManagedUIContentAggregateReviewTest, BVSEOSDKTest" name="TestAggregate_InvalidURL" />
+    </UnitTest>
+    <UnitTest name="TestBVConfigLoading" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="6173729d-b1c9-b7db-f252-6b7bf296b99d">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="f19c13a5-6d02-4973-81c7-9ad55d175357" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVSdkConfigurationTest, BVSEOSDKTest" name="TestBVConfigLoading" />
+    </UnitTest>
+    <UnitTest name="TestStory_StoriesGrid" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="06b8de29-b2ea-925d-1fb8-9df6e1172a46">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="f5528739-305d-4f9e-a652-55f245b3414b" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSEOSDKTest.BVSeoSdkURLBuilderTest, BVSEOSDKTest" name="TestStory_StoriesGrid" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="06b8de29-b2ea-925d-1fb8-9df6e1172a46" executionId="f5528739-305d-4f9e-a652-55f245b3414b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="078da8da-1cbe-cbec-0a75-ee687b3a32bc" executionId="a7fd8f13-e1ea-4778-ac13-f7be5ca83427" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="08808d6f-5f2b-19e6-4287-d69e6f5695c8" executionId="39632761-1db0-40b8-9cdb-7510bead02b7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0ba65008-77d4-41f5-b98c-eb8e2ccca5cb" executionId="0b68f724-95c4-4283-a548-f6c429fd9b06" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0be53a4b-f193-b841-ba01-235a8d56dd4b" executionId="f640c90e-9ce0-48f5-b3bc-b111ca2a41f8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1d3b670a-63ee-9c37-1355-fcb1f3847ad3" executionId="096a02b9-83e1-4ee8-8b29-23291b2dd17d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="29a9cd2f-8fca-39d0-5540-7bce20b2bb56" executionId="d6dbd8db-acc4-4e9a-9c5c-300e218bc471" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2c9a2cb9-6bd9-f9d8-b5e5-ab52ea7b8c24" executionId="6a097402-777d-438d-9273-6d9bf28f3f9f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d0de862-bf6f-df20-4a30-d5604ca0eadc" executionId="2c95df50-6fba-4f54-9fe8-2099926d8e7b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="305df720-2163-4902-ce02-9f70094cc502" executionId="7ed34ada-ebbb-4275-b877-ae039e7b6ba4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="320b82da-25e4-acee-cfe6-f5f499398763" executionId="713cc17d-2f91-4c0b-8cd7-521b8e254a23" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="359a21f6-c2b4-0efd-fecd-19b8ebc6f9f4" executionId="a0e6cef4-4021-41b2-b8ab-db1b3680ec59" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3b08769d-c5de-db20-839a-21cea7e6a04f" executionId="fab2baef-1643-4040-9dcf-b5b634e166ba" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3bb26db2-7d35-fe6b-cd94-62d30d126293" executionId="10a09d23-74cc-4f68-bac5-becc5713834f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4519dc37-d6af-1168-2fe0-550fdf975e5c" executionId="79f45741-af26-4629-a4ab-2218827d7c87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="47f9a937-2bcb-0684-d30d-91119567ec8d" executionId="a01bfed2-225a-4b2d-9178-14f41d6531ee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="48c1bde0-440e-e42e-8163-c0c839234cdf" executionId="6738eaf4-a112-46f5-b04f-ad0470dcacf9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="49ae87b0-a9db-70e4-4183-fa3f62452b2a" executionId="1b31d65b-a7c0-4a34-a761-405a6b07394b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4e53e90c-79f3-2fe5-42dc-76c59df7f553" executionId="8353db87-0a63-4f64-8332-3ff50be7f208" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5cb9f28b-a05f-b9c4-950a-9a1b1d53a576" executionId="70d2274a-c93b-4443-96ab-0764a8a0a44e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5d4eaba0-94e6-3d0c-6697-dff9648ceeb5" executionId="8a459038-27ae-4723-ae8f-df2300722a3a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6173729d-b1c9-b7db-f252-6b7bf296b99d" executionId="f19c13a5-6d02-4973-81c7-9ad55d175357" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="64102383-1eec-2357-e495-a1398ceb1c60" executionId="e30a238e-444b-4768-9098-4daa95e699d8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="64633bc6-a6c4-3385-bf98-af703e82448e" executionId="00cc8f4d-0425-4ea9-bdae-2175b4d342a8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="668619da-6a06-d548-720e-a61936cf267f" executionId="eac8105b-e60f-41e3-9f90-3486ee7a1e0d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6ae7685d-361b-24f8-8983-14c25fd9df76" executionId="140640b8-ec50-46e4-a017-83b54329cbd5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6b64ef0b-98a8-9656-ca76-083b22cdebf3" executionId="553d55e4-7c8e-47e1-87c0-87ed08c4ba71" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6fd35cd4-d5d7-540a-5c99-9f9e1332807e" executionId="70a20b1b-77a4-4237-983b-1871b04581f2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="75867207-bc67-e8f1-ac3b-474d1963e810" executionId="5291edc6-aa07-40ba-9730-ea6e576af626" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="79217038-898f-bfff-42c1-8f4916c3308c" executionId="6947b7f2-7f09-40cc-bec2-2d7321810f80" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="83670232-d932-24b5-97b0-54c95872e53a" executionId="09f90574-bdfe-4636-aa16-3003066a30ce" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8d264e89-646c-4a3d-bb37-95d58ddc393f" executionId="89e4ed5a-6a39-48f7-818d-b902ce491447" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="915c5ee6-ea7f-ebc8-ffeb-939ac16ef3d4" executionId="0677c2e8-f04e-409d-9cfe-726a692d842e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="99cebdfa-8a8d-7958-449d-c3ab05306baa" executionId="f07b7716-ba5c-4455-b298-ba8d9f346a4d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9bc706cc-8a93-1cbe-a917-e57f61a9b33c" executionId="f1360139-b7bb-4b2f-b6a3-92fa97f1637a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9fbc3db2-a72e-842c-8a9f-b86ecd2a1ffa" executionId="5ba6abb3-a557-4ec1-83a2-75ba52454824" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a16719c5-f614-973b-19a7-7416eb2f394c" executionId="96a26623-d273-4ff7-a74c-37469da0defb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a6d9cbae-7a2a-2a07-9ac8-67310f1bbfe9" executionId="572a307a-2231-4dfc-8885-59f9c5f88862" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ad53fe42-0f62-0dd7-7cc0-48e9888ed79f" executionId="56eafd92-d3e5-4083-9191-a5d651745d57" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ad819142-0fc8-08d8-db73-e33e4581e13f" executionId="aaae2163-b2d1-449c-8686-cf36170f39ba" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aeaa7568-80d7-74bb-5b00-573772c963a7" executionId="a0310e1b-4ad7-4cd5-b483-7832a6af0a29" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b2d12f36-ff95-5ec9-cb04-8158ae12524d" executionId="cd489198-87e5-4d62-b061-f95828ad0a5e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b356f059-aac1-f420-83c0-9add27c3b4a9" executionId="bcaf1e60-5a79-4df1-ac73-cce521c6c157" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b48b3fc7-9265-32fb-3e33-df8465400226" executionId="9bdd70a9-6e88-45e9-91aa-fe5cd4ba3a58" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b6359c4b-4264-9433-7578-43f7a388767a" executionId="05e4536d-aeb8-47d6-8e0d-4b6d34b27a9a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b643c69c-4cdc-3e70-5e26-8310153d1cef" executionId="383e84d3-0f9d-4eb9-8e2d-0d60bbf27de1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b7f4a730-d7d6-6886-d361-333ee2505238" executionId="8007bf69-db04-4837-a5de-6e5ccf18c0a5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ba579d81-f213-d67c-11cb-81ed57511985" executionId="1367c904-a459-480d-b4d3-097910c67ec9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c06fa58c-fdd8-dd0e-a4bc-27769392ea48" executionId="eb48d45d-159c-4227-83ae-701b0862903f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c31714d1-4618-8354-d76b-91d08f8c9441" executionId="419f22f5-40c7-451c-a632-5e8484dcbf8e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c3718dbe-75b9-2641-fc26-2579581d699d" executionId="e9aa1ad0-b6b5-4a46-82a8-4a13bc8c543f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cb9ab58d-8baa-855e-5d07-948d7c894c3b" executionId="8bc4982a-a04e-4927-9144-5eb95fc22b00" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cff9f61b-6dcb-0390-8d2f-6388c5c19037" executionId="3df288c4-10d7-41d9-8503-55a6f664fcbe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d1e3fb7c-9317-1703-6861-0e422458bfcb" executionId="50d1111c-2b8e-4952-93fb-574147b6cd54" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d59f7a52-4d79-9972-54da-b2b7c1ae1c5f" executionId="03937266-4438-4d62-8ce2-de72940f40dc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d5b9f4f0-6010-0c54-3743-eb4ff4f22503" executionId="803149ee-7fb6-45e0-97ee-c567f4fb1928" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d8ca1f24-9443-c0e5-1264-61d20ec22e40" executionId="a651ee03-2a14-408b-9e0e-86eaca8e868d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="da0c38e7-f05e-1866-f108-b4c889ec0aac" executionId="69096864-1485-4e07-b348-237ea99659da" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="da2e4a92-4ba6-bd6e-bb80-20abea394ccb" executionId="06113436-6d2d-4e69-a31d-9f1913e23622" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dcc3c09a-4129-5a88-ed35-c7f7905cd23e" executionId="3fc24f11-1581-4ae2-808d-92c05159ffff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dcc51909-54b6-883c-dfae-331a4fe24ce0" executionId="033c3336-993c-4aed-b853-3d8f13e13c0a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e5392506-b2a1-3752-d638-f48e2c0698ee" executionId="ca6bb7a1-e05d-447b-ad82-9953486bd608" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ef6ccb04-b599-464a-c095-b5e5580d4593" executionId="120f7603-d040-4093-8020-a58088252534" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f257fd26-c7b6-848a-b0cf-55010618c280" executionId="f2683aca-76a3-4473-8e59-19c8c7cf969b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f85c0aa3-3674-b42a-2128-69bd3afe7ca6" executionId="60afd55b-6bac-44f2-b4d1-c323c1c3f866" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fc6b45b6-617d-35be-f3b7-a6ec6b460ed6" executionId="15555b0a-109c-461e-a99c-c7208b533a4d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="f5528739-305d-4f9e-a652-55f245b3414b" testId="06b8de29-b2ea-925d-1fb8-9df6e1172a46" testName="TestStory_StoriesGrid" computerName="OWNER-PC" duration="00:00:00.3445995" startTime="2014-07-21T10:02:32.6771377-05:00" endTime="2014-07-21T10:02:33.2161686-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a7fd8f13-e1ea-4778-ac13-f7be5ca83427" testId="078da8da-1cbe-cbec-0a75-ee687b3a32bc" testName="TestSEOContent_SinglePageHTTP_GetAggregateRating_SDK_Disabled" computerName="OWNER-PC" duration="00:00:03.0097070" startTime="2014-07-21T10:02:33.2181687-05:00" endTime="2014-07-21T10:02:36.2303410-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <StdErr>log4net:ERROR RollingFileAppenderOpenFile(,True) call failed.
+System.UnauthorizedAccessException: Access to the path 'C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\nvelocity.log' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at log4net.Appender.FileAppender.OpenFile(String fileName, Boolean append)
+   at log4net.Appender.RollingFileAppender.OpenFile(String fileName, Boolean append)
+   at log4net.Appender.FileAppender.ActivateOptions()</StdErr>
+        <DebugTrace>log4net:ERROR RollingFileAppenderOpenFile(,True) call failed.
+System.UnauthorizedAccessException: Access to the path 'C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\nvelocity.log' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at log4net.Appender.FileAppender.OpenFile(String fileName, Boolean append)
+   at log4net.Appender.RollingFileAppender.OpenFile(String fileName, Boolean append)
+   at log4net.Appender.FileAppender.ActivateOptions()
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="39632761-1db0-40b8-9cdb-7510bead02b7" testId="08808d6f-5f2b-19e6-4287-d69e6f5695c8" testName="TestStory_Stories" computerName="OWNER-PC" duration="00:00:00.0007167" startTime="2014-07-21T10:02:36.2323411-05:00" endTime="2014-07-21T10:02:36.2363413-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0b68f724-95c4-4283-a548-f6c429fd9b06" testId="0ba65008-77d4-41f5-b98c-eb8e2ccca5cb" testName="TestAggregate_InvalidURL" computerName="OWNER-PC" duration="00:00:00.5300417" startTime="2014-07-21T10:02:36.2373414-05:00" endTime="2014-07-21T10:02:36.7703719-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f640c90e-9ce0-48f5-b3bc-b111ca2a41f8" testId="0be53a4b-f193-b841-ba01-235a8d56dd4b" testName="TestMultipleConfigurations" computerName="OWNER-PC" duration="00:00:00.0008800" startTime="2014-07-21T10:02:36.7713719-05:00" endTime="2014-07-21T10:02:36.7753721-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="096a02b9-83e1-4ee8-8b29-23291b2dd17d" testId="1d3b670a-63ee-9c37-1355-fcb1f3847ad3" testName="Test_SinglePage_Question" computerName="OWNER-PC" duration="00:00:00.2200796" startTime="2014-07-21T10:02:36.7783723-05:00" endTime="2014-07-21T10:02:37.0013851-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d6dbd8db-acc4-4e9a-9c5c-300e218bc471" testId="29a9cd2f-8fca-39d0-5540-7bce20b2bb56" testName="Test_ExternalPage_Stories" computerName="OWNER-PC" duration="00:00:00.1559642" startTime="2014-07-21T10:02:37.0033852-05:00" endTime="2014-07-21T10:02:37.1643944-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6a097402-777d-438d-9273-6d9bf28f3f9f" testId="2c9a2cb9-6bd9-f9d8-b5e5-ab52ea7b8c24" testName="Test_ExternalPage_Question" computerName="OWNER-PC" duration="00:00:00.1123445" startTime="2014-07-21T10:02:37.1723949-05:00" endTime="2014-07-21T10:02:37.2884015-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2c95df50-6fba-4f54-9fe8-2099926d8e7b" testId="2d0de862-bf6f-df20-4a30-d5604ca0eadc" testName="TestSEOContent_SinglePageHTTP_GetContent_SDK_Disabled" computerName="OWNER-PC" duration="00:00:00.0357480" startTime="2014-07-21T10:02:37.2914017-05:00" endTime="2014-07-21T10:02:37.3304039-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7ed34ada-ebbb-4275-b877-ae039e7b6ba4" testId="305df720-2163-4902-ce02-9f70094cc502" testName="TestDisplayFooter_URL_Debug" computerName="OWNER-PC" duration="00:00:00.0477382" startTime="2014-07-21T10:02:37.3324040-05:00" endTime="2014-07-21T10:02:37.3824069-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="713cc17d-2f91-4c0b-8cd7-521b8e254a23" testId="320b82da-25e4-acee-cfe6-f5f499398763" testName="TestSEOContentFromHTTP_SinglePagePRR_CrawlerOverride" computerName="OWNER-PC" duration="00:00:00.1422748" startTime="2014-07-21T10:02:37.3834069-05:00" endTime="2014-07-21T10:02:37.5284152-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a0e6cef4-4021-41b2-b8ab-db1b3680ec59" testId="359a21f6-c2b4-0efd-fecd-19b8ebc6f9f4" testName="Test_ExternalPage_Review" computerName="OWNER-PC" duration="00:00:00.0578529" startTime="2014-07-21T10:02:37.5294153-05:00" endTime="2014-07-21T10:02:37.5914188-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="fab2baef-1643-4040-9dcf-b5b634e166ba" testId="3b08769d-c5de-db20-839a-21cea7e6a04f" testName="Test_SinglePage_Review" computerName="OWNER-PC" duration="00:00:00.0513380" startTime="2014-07-21T10:02:37.5914188-05:00" endTime="2014-07-21T10:02:37.6454219-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="10a09d23-74cc-4f68-bac5-becc5713834f" testId="3bb26db2-7d35-fe6b-cd94-62d30d126293" testName="Test_InlinePage_Stories" computerName="OWNER-PC" duration="00:00:00.1081947" startTime="2014-07-21T10:02:37.6474220-05:00" endTime="2014-07-21T10:02:37.7584284-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="79f45741-af26-4629-a4ab-2218827d7c87" testId="4519dc37-d6af-1168-2fe0-550fdf975e5c" testName="TestUri_For_C2013_HTTP" computerName="OWNER-PC" duration="00:00:00.0404457" startTime="2014-07-21T10:02:37.7624286-05:00" endTime="2014-07-21T10:02:37.8064311-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a01bfed2-225a-4b2d-9178-14f41d6531ee" testId="47f9a937-2bcb-0684-d30d-91119567ec8d" testName="TestUri_For_C2013_File" computerName="OWNER-PC" duration="00:00:00.0006255" startTime="2014-07-21T10:02:37.8074312-05:00" endTime="2014-07-21T10:02:37.8114314-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6738eaf4-a112-46f5-b04f-ad0470dcacf9" testId="48c1bde0-440e-e42e-8163-c0c839234cdf" testName="TestAggregate_NullSubjectID" computerName="OWNER-PC" duration="00:00:00.0782636" startTime="2014-07-21T10:02:37.8114314-05:00" endTime="2014-07-21T10:02:37.8924360-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1b31d65b-a7c0-4a34-a761-405a6b07394b" testId="49ae87b0-a9db-70e4-4183-fa3f62452b2a" testName="TestSEOContentFromHTTP_SinglePage_FileUnavailableError" computerName="OWNER-PC" duration="00:00:00.0949734" startTime="2014-07-21T10:02:37.8964363-05:00" endTime="2014-07-21T10:02:37.9954419-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8353db87-0a63-4f64-8332-3ff50be7f208" testId="4e53e90c-79f3-2fe5-42dc-76c59df7f553" testName="TestSEOContent_SinglePageHTTP_AggregateRating_BotDetectionEnabled" computerName="OWNER-PC" duration="00:00:00.0718403" startTime="2014-07-21T10:02:37.9994422-05:00" endTime="2014-07-21T10:02:38.0794467-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="70d2274a-c93b-4443-96ab-0764a8a0a44e" testId="5cb9f28b-a05f-b9c4-950a-9a1b1d53a576" testName="Test_InteractivePage_Review" computerName="OWNER-PC" duration="00:00:00.0494359" startTime="2014-07-21T10:02:38.0814469-05:00" endTime="2014-07-21T10:02:38.1334498-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8a459038-27ae-4723-ae8f-df2300722a3a" testId="5d4eaba0-94e6-3d0c-6697-dff9648ceeb5" testName="TestSEOContentFromFile_SinglePage_FileUnavailableError" computerName="OWNER-PC" duration="00:00:00.0344942" startTime="2014-07-21T10:02:38.1354499-05:00" endTime="2014-07-21T10:02:38.1734521-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f19c13a5-6d02-4973-81c7-9ad55d175357" testId="6173729d-b1c9-b7db-f252-6b7bf296b99d" testName="TestBVConfigLoading" computerName="OWNER-PC" duration="00:00:00.0003218" startTime="2014-07-21T10:02:38.1744522-05:00" endTime="2014-07-21T10:02:38.1794525-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e30a238e-444b-4768-9098-4daa95e699d8" testId="64102383-1eec-2357-e495-a1398ceb1c60" testName="TestSEOContentFromFile_SinglePagePRR_PageUri" computerName="OWNER-PC" duration="00:00:00.0786305" startTime="2014-07-21T10:02:38.1794525-05:00" endTime="2014-07-21T10:02:38.2614571-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="00cc8f4d-0425-4ea9-bdae-2175b4d342a8" testId="64633bc6-a6c4-3385-bf98-af703e82448e" testName="TestSearchContentNullBVQueryParams" computerName="OWNER-PC" duration="00:00:00.0306751" startTime="2014-07-21T10:02:38.2634573-05:00" endTime="2014-07-21T10:02:38.2964591-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="eac8105b-e60f-41e3-9f90-3486ee7a1e0d" testId="668619da-6a06-d548-720e-a61936cf267f" testName="Test_SinglePage_Question" computerName="OWNER-PC" duration="00:00:00.0500064" startTime="2014-07-21T10:02:38.2974592-05:00" endTime="2014-07-21T10:02:38.3504622-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="140640b8-ec50-46e4-a017-83b54329cbd5" testId="6ae7685d-361b-24f8-8983-14c25fd9df76" testName="Test_SinglePage_Question" computerName="OWNER-PC" duration="00:00:00.0504649" startTime="2014-07-21T10:02:38.3534624-05:00" endTime="2014-07-21T10:02:38.4064654-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="553d55e4-7c8e-47e1-87c0-87ed08c4ba71" testId="6b64ef0b-98a8-9656-ca76-083b22cdebf3" testName="TestBVCoreConfig" computerName="OWNER-PC" duration="00:00:00.0003125" startTime="2014-07-21T10:02:38.4074655-05:00" endTime="2014-07-21T10:02:38.4104657-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="70a20b1b-77a4-4237-983b-1871b04581f2" testId="6fd35cd4-d5d7-540a-5c99-9f9e1332807e" testName="Test_SinglePage_Review" computerName="OWNER-PC" duration="00:00:00.0581528" startTime="2014-07-21T10:02:38.4124658-05:00" endTime="2014-07-21T10:02:38.4724692-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5291edc6-aa07-40ba-9730-ea6e576af626" testId="75867207-bc67-e8f1-ac3b-474d1963e810" testName="TestBase_PageUri_For_PRR_File" computerName="OWNER-PC" duration="00:00:00.0117111" startTime="2014-07-21T10:02:38.4754694-05:00" endTime="2014-07-21T10:02:38.4894702-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6947b7f2-7f09-40cc-bec2-2d7321810f80" testId="79217038-898f-bfff-42c1-8f4916c3308c" testName="TestSEOContent_SinglePageHTTP_GetReview_SDK_Disabled" computerName="OWNER-PC" duration="00:00:00.0196723" startTime="2014-07-21T10:02:38.4894702-05:00" endTime="2014-07-21T10:02:38.5114714-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="09f90574-bdfe-4636-aa16-3003066a30ce" testId="83670232-d932-24b5-97b0-54c95872e53a" testName="TestSEOContentFromHTTP_SinglePagePRR_AggregateRating" computerName="OWNER-PC" duration="00:00:00.0582083" startTime="2014-07-21T10:02:38.5124715-05:00" endTime="2014-07-21T10:02:38.5734750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="89e4ed5a-6a39-48f7-818d-b902ce491447" testId="8d264e89-646c-4a3d-bb37-95d58ddc393f" testName="BVManagedUIContentTestPagination" computerName="OWNER-PC" duration="00:00:00.0545631" startTime="2014-07-21T10:02:38.5744751-05:00" endTime="2014-07-21T10:02:38.6324784-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0677c2e8-f04e-409d-9cfe-726a692d842e" testId="915c5ee6-ea7f-ebc8-ffeb-939ac16ef3d4" testName="TestDisplayFooter" computerName="OWNER-PC" duration="00:00:00.0311089" startTime="2014-07-21T10:02:38.6344785-05:00" endTime="2014-07-21T10:02:38.6684804-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f07b7716-ba5c-4455-b298-ba8d9f346a4d" testId="99cebdfa-8a8d-7958-449d-c3ab05306baa" testName="TestSEOContentFromHTTP_SinglePagePRR_Reviews" computerName="OWNER-PC" duration="00:00:00.0974159" startTime="2014-07-21T10:02:38.6694805-05:00" endTime="2014-07-21T10:02:38.7694862-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f1360139-b7bb-4b2f-b6a3-92fa97f1637a" testId="9bc706cc-8a93-1cbe-a917-e57f61a9b33c" testName="TestStory_Default" computerName="OWNER-PC" duration="00:00:00.0005835" startTime="2014-07-21T10:02:38.7724864-05:00" endTime="2014-07-21T10:02:38.7954877-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5ba6abb3-a557-4ec1-83a2-75ba52454824" testId="9fbc3db2-a72e-842c-8a9f-b86ecd2a1ffa" testName="TestSEOContent_SinglePageHTTP_Aggregate_WithoutPagination" computerName="OWNER-PC" duration="00:00:00.0566492" startTime="2014-07-21T10:02:38.7974878-05:00" endTime="2014-07-21T10:02:38.8564912-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="96a26623-d273-4ff7-a74c-37469da0defb" testId="a16719c5-f614-973b-19a7-7416eb2f394c" testName="TestSEOContent_SinglePageHTTP_GetReviews_Blank_Page_Test" computerName="OWNER-PC" duration="00:00:00.0992476" startTime="2014-07-21T10:02:38.8594914-05:00" endTime="2014-07-21T10:02:38.9624972-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="572a307a-2231-4dfc-8885-59f9c5f88862" testId="a6d9cbae-7a2a-2a07-9ac8-67310f1bbfe9" testName="TestEquality" computerName="OWNER-PC" duration="00:00:00.0014012" startTime="2014-07-21T10:02:38.9674975-05:00" endTime="2014-07-21T10:02:38.9744979-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="56eafd92-d3e5-4083-9191-a5d651745d57" testId="ad53fe42-0f62-0dd7-7cc0-48e9888ed79f" testName="TestAdd_GetProperty" computerName="OWNER-PC" duration="00:00:00.0012106" startTime="2014-07-21T10:02:38.9744979-05:00" endTime="2014-07-21T10:02:38.9784982-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="aaae2163-b2d1-449c-8686-cf36170f39ba" testId="ad819142-0fc8-08d8-db73-e33e4581e13f" testName="Test_SinglePage_Stories" computerName="OWNER-PC" duration="00:00:00.0598867" startTime="2014-07-21T10:02:38.9784982-05:00" endTime="2014-07-21T10:02:39.0435019-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a0310e1b-4ad7-4cd5-b483-7832a6af0a29" testId="aeaa7568-80d7-74bb-5b00-573772c963a7" testName="TestSEOContentFromHTTP__InvalidCloudKey" computerName="OWNER-PC" duration="00:00:00.0896472" startTime="2014-07-21T10:02:39.0475021-05:00" endTime="2014-07-21T10:02:39.1405074-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="cd489198-87e5-4d62-b061-f95828ad0a5e" testId="b2d12f36-ff95-5ec9-cb04-8158ae12524d" testName="Test_InlinePage_Review" computerName="OWNER-PC" duration="00:00:00.0882017" startTime="2014-07-21T10:02:39.1435076-05:00" endTime="2014-07-21T10:02:39.2385130-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="bcaf1e60-5a79-4df1-ac73-cce521c6c157" testId="b356f059-aac1-f420-83c0-9add27c3b4a9" testName="TestSEOContentFromHTTP_SinglePagePRR" computerName="OWNER-PC" duration="00:00:00.0897492" startTime="2014-07-21T10:02:39.2385130-05:00" endTime="2014-07-21T10:02:39.3305183-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="9bdd70a9-6e88-45e9-91aa-fe5cd4ba3a58" testId="b48b3fc7-9265-32fb-3e33-df8465400226" testName="TestStory_Default_None" computerName="OWNER-PC" duration="00:00:00.0009954" startTime="2014-07-21T10:02:39.3335185-05:00" endTime="2014-07-21T10:02:39.3375187-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="05e4536d-aeb8-47d6-8e0d-4b6d34b27a9a" testId="b6359c4b-4264-9433-7578-43f7a388767a" testName="Test_SinglePage_Stories" computerName="OWNER-PC" duration="00:00:00.0661599" startTime="2014-07-21T10:02:39.3385188-05:00" endTime="2014-07-21T10:02:39.4075227-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="383e84d3-0f9d-4eb9-8e2d-0d60bbf27de1" testId="b643c69c-4cdc-3e70-5e26-8310153d1cef" testName="TestSEOContent_SinglePageHTTP_GetReviews_ERR0013" computerName="OWNER-PC" duration="00:00:00.0719781" startTime="2014-07-21T10:02:39.4165232-05:00" endTime="2014-07-21T10:02:39.4915275-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8007bf69-db04-4837-a5de-6e5ccf18c0a5" testId="b7f4a730-d7d6-6886-d361-333ee2505238" testName="TestSDKEnabled" computerName="OWNER-PC" duration="00:00:00.0007995" startTime="2014-07-21T10:02:39.4925276-05:00" endTime="2014-07-21T10:02:39.4955277-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1367c904-a459-480d-b4d3-097910c67ec9" testId="ba579d81-f213-d67c-11cb-81ed57511985" testName="Test_SinglePage_Stories" computerName="OWNER-PC" duration="00:00:00.0583996" startTime="2014-07-21T10:02:39.4955277-05:00" endTime="2014-07-21T10:02:39.5565312-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="eb48d45d-159c-4227-83ae-701b0862903f" testId="c06fa58c-fdd8-dd0e-a4bc-27769392ea48" testName="TestShowUserAgentSeoContent" computerName="OWNER-PC" duration="00:00:00.0010859" startTime="2014-07-21T10:02:39.5565312-05:00" endTime="2014-07-21T10:02:39.5595314-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="419f22f5-40c7-451c-a632-5e8484dcbf8e" testId="c31714d1-4618-8354-d76b-91d08f8c9441" testName="TestSEOContentFromFile_SinglePagePRR" computerName="OWNER-PC" duration="00:00:00.0274361" startTime="2014-07-21T10:02:39.5605314-05:00" endTime="2014-07-21T10:02:39.5895331-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e9aa1ad0-b6b5-4a46-82a8-4a13bc8c543f" testId="c3718dbe-75b9-2641-fc26-2579581d699d" testName="TestValidation" computerName="OWNER-PC" duration="00:00:00.0007121" startTime="2014-07-21T10:02:39.5925333-05:00" endTime="2014-07-21T10:02:39.5975336-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8bc4982a-a04e-4927-9144-5eb95fc22b00" testId="cb9ab58d-8baa-855e-5d07-948d7c894c3b" testName="TestMessages" computerName="OWNER-PC" duration="00:00:00.0007040" startTime="2014-07-21T10:02:39.5985336-05:00" endTime="2014-07-21T10:02:39.6015338-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="3df288c4-10d7-41d9-8503-55a6f664fcbe" testId="cff9f61b-6dcb-0390-8d2f-6388c5c19037" testName="TestBase_PageUri_For_PRR_HTTP" computerName="OWNER-PC" duration="00:00:00.0110913" startTime="2014-07-21T10:02:39.6015338-05:00" endTime="2014-07-21T10:02:39.6155346-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="50d1111c-2b8e-4952-93fb-574147b6cd54" testId="d1e3fb7c-9317-1703-6861-0e422458bfcb" testName="TestSEOContent_SinglePageHTTP_AggregateRatingAndReviews" computerName="OWNER-PC" duration="00:00:00.0882802" startTime="2014-07-21T10:02:39.6155346-05:00" endTime="2014-07-21T10:02:39.7065398-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="03937266-4438-4d62-8ce2-de72940f40dc" testId="d59f7a52-4d79-9972-54da-b2b7c1ae1c5f" testName="Test_SinglePage_Review" computerName="OWNER-PC" duration="00:00:00.0988611" startTime="2014-07-21T10:02:39.7065398-05:00" endTime="2014-07-21T10:02:39.8085456-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="803149ee-7fb6-45e0-97ee-c567f4fb1928" testId="d5b9f4f0-6010-0c54-3743-eb4ff4f22503" testName="Test_InteractivePage_Stories" computerName="OWNER-PC" duration="00:00:00.0588053" startTime="2014-07-21T10:02:39.8085456-05:00" endTime="2014-07-21T10:02:39.8715492-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a651ee03-2a14-408b-9e0e-86eaca8e868d" testId="d8ca1f24-9443-c0e5-1264-61d20ec22e40" testName="TestSEOContentFromFile_SinglePage_FileUnavailableError_bvReveal" computerName="OWNER-PC" duration="00:00:00.0283919" startTime="2014-07-21T10:02:39.8715492-05:00" endTime="2014-07-21T10:02:39.9025510-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="69096864-1485-4e07-b348-237ea99659da" testId="da0c38e7-f05e-1866-f108-b4c889ec0aac" testName="Test_InlinePage_Question" computerName="OWNER-PC" duration="00:00:00.1118741" startTime="2014-07-21T10:02:39.9035511-05:00" endTime="2014-07-21T10:02:40.0175576-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="06113436-6d2d-4e69-a31d-9f1913e23622" testId="da2e4a92-4ba6-bd6e-bb80-20abea394ccb" testName="TestStory_Stories_PageNumber" computerName="OWNER-PC" duration="00:00:00.0440789" startTime="2014-07-21T10:02:40.0185576-05:00" endTime="2014-07-21T10:02:40.0645603-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="3fc24f11-1581-4ae2-808d-92c05159ffff" testId="dcc3c09a-4129-5a88-ed35-c7f7905cd23e" testName="TestSEOContentFromFile_SinglePageC2013" computerName="OWNER-PC" duration="00:00:00.0280012" startTime="2014-07-21T10:02:40.0655603-05:00" endTime="2014-07-21T10:02:40.0975622-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="033c3336-993c-4aed-b853-3d8f13e13c0a" testId="dcc51909-54b6-883c-dfae-331a4fe24ce0" testName="TestSEOContent_SinglePageHTTP_AggregateRating_IfNotPresent" computerName="OWNER-PC" duration="00:00:00.1580418" startTime="2014-07-21T10:02:40.0985622-05:00" endTime="2014-07-21T10:02:40.2665718-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ca6bb7a1-e05d-447b-ad82-9953486bd608" testId="e5392506-b2a1-3752-d638-f48e2c0698ee" testName="Test_InteractivePage_Question" computerName="OWNER-PC" duration="00:00:00.1488698" startTime="2014-07-21T10:02:40.2685719-05:00" endTime="2014-07-21T10:02:40.4225808-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="120f7603-d040-4093-8020-a58088252534" testId="ef6ccb04-b599-464a-c095-b5e5580d4593" testName="TestDisplayFooter_Debug" computerName="OWNER-PC" duration="00:00:00.0282938" startTime="2014-07-21T10:02:40.4255809-05:00" endTime="2014-07-21T10:02:40.4565827-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f2683aca-76a3-4473-8e59-19c8c7cf969b" testId="f257fd26-c7b6-848a-b0cf-55010618c280" testName="BVManagedUIContentTestExecutionTimeOut" computerName="OWNER-PC" duration="00:00:00.0860444" startTime="2014-07-21T10:02:40.4595829-05:00" endTime="2014-07-21T10:02:40.5475879-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="60afd55b-6bac-44f2-b4d1-c323c1c3f866" testId="f85c0aa3-3674-b42a-2128-69bd3afe7ca6" testName="TestSEOContentFrom_Using_HTTPS" computerName="OWNER-PC" duration="00:00:00.1714759" startTime="2014-07-21T10:02:40.5485880-05:00" endTime="2014-07-21T10:02:40.7225979-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="15555b0a-109c-461e-a99c-c7208b533a4d" testId="fc6b45b6-617d-35be-f3b7-a6ec6b460ed6" testName="TestSEOContentFromHTTP_SinglePageC2013" computerName="OWNER-PC" duration="00:00:00.1047547" startTime="2014-07-21T10:02:40.7255981-05:00" endTime="2014-07-21T10:02:40.8336043-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
