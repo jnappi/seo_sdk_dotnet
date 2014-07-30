@@ -156,8 +156,7 @@ namespace BVSeoSdkDotNet.Url
             }
             catch (UriFormatException e)
             {
-                // TODO Auto-generated catch block
-                
+                throw new BVSdkException("ERR0026");
             }
 
             return null;

@@ -295,6 +295,15 @@ namespace BVSeoSdkDotNet.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid URI - PageURI or BaseURI contains invalid characters, correct or encode URI..
+        /// </summary>
+        internal static string ERR0026 {
+            get {
+                return ResourceManager.GetString("ERR0026", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 
         ///&lt;ul id=&quot;BVSEOSDK&quot; style=&quot;display:none;&quot;&gt;
         ///	&lt;li id=&quot;vn&quot;&gt;bvseo-${version}&lt;/li&gt;
@@ -302,16 +311,12 @@ namespace BVSeoSdkDotNet.Properties {
         ///	&lt;li id=&quot;sl&quot;&gt;bvseo-n&lt;/li&gt;
         ///	&lt;li id=&quot;mt&quot;&gt;bvseo-${methodType}&lt;/li&gt;
         ///	&lt;li id=&quot;et&quot;&gt;bvseo-${executionTime}ms&lt;/li&gt;
-        ///	&lt;li id=&quot;ct&quot;&gt;bvseo-${_bvParameters.ContentType.uriValue()}&lt;/li&gt;
-        ///	&lt;li id=&quot;st&quot;&gt;bvseo-${_bvParameters.SubjectType.uriValue()}&lt;/li&gt;
+        ///	&lt;li id=&quot;ct&quot;&gt;bvseo-${_bvParameters.ContentType.uriValue().ToUpper()}&lt;/li&gt;
+        ///	&lt;li id=&quot;st&quot;&gt;bvseo-${_bvParameters.SubjectType.uriValue().ToUpper()}&lt;/li&gt;
         ///	&lt;li id=&quot;am&quot;&gt;bvseo-${accessMethod}&lt;/li&gt;
         ///	&lt;li id=&quot;bd&quot;&gt;bvseo-bd${isBd}&lt;/li&gt;
         ///#if (${message}) 
-        ///	&lt;li id=&quot;ms&quot;&gt;bvseo-msg: ${message}&lt;/li&gt;
-        ///#end
-        ///&lt;/ul&gt;
-        ///
-        ///# [rest of string was truncated]&quot;;.
+        ///	&lt;li id=&quot;ms&quot;&gt;bvseo-msg: ${message}&lt;/l [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string footer {
             get {

@@ -24,6 +24,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.IO;
+using BVSeoSdkDotNet.BVException;
 
 namespace BVSeoSdkDotNet.Util
 {
@@ -100,7 +101,7 @@ namespace BVSeoSdkDotNet.Util
             }
             catch (Exception ex)
             {
-                //ex.Message;
+                throw new BVSdkException("ERR0026");
             }
 
             return _uri.Query;

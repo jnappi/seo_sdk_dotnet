@@ -211,4 +211,7 @@
   <data name="ERR0025" xml:space="preserve">
     <value>BV content validation failed. Verify firewall and cache response.;</value>
   </data>
+  <data name="ERR0026" xml:space="preserve">
+    <value>Invalid URI - PageURI or BaseURI contains invalid characters, correct or encode URI.</value>
+  </data>
 </root>

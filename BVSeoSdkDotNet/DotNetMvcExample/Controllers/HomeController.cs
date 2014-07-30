@@ -11,16 +11,19 @@ namespace DotNetMvcExample.Controllers
     {
         public String Index()
         {
-            return new Bv(
-                deploymentZoneID: "9344",
-                product_id: "5000001", 
-                //The page_url is optional
-                //page_url: "http://www.example.com/store/products/data-gen-696yl2lg1kurmqxn88fqif5y2/",
-                cloudKey: "myshco-3e3001e88d9c32d19a17cafacb81bec7", //agileville
-                bv_product: BvProduct.REVIEWS, 
-                //bot_detection: false, //by default bot_detection is set to true
-                user_agent: "msnbot") //Setting user_agent for testing. Leave this blank in production.
-                .getSeoWithSdk(System.Web.HttpContext.Current.Request);
+            //return new Bv(
+            //    deploymentZoneID: "9344",
+            //    product_id: "5000001", 
+            //    //The page_url is optional
+            //    //page_url: "http://www.example.com/store/products/data-gen-696yl2lg1kurmqxn88fqif5y2/",
+            //    cloudKey: "myshco-3e3001e88d9c32d19a17cafacb81bec7", //agileville
+            //    bv_product: BvProduct.REVIEWS, 
+            //    //bot_detection: false, //by default bot_detection is set to true
+            //    user_agent: "msnbot") //Setting user_agent for testing. Leave this blank in production.
+            //    .getSeoWithSdk(System.Web.HttpContext.Current.Request);
+
+            Bv bv = new Bv("9344", "5000001", "myshco-3e3001e88d9c32d19a17cafacb81bec7", BvProduct.REVIEWS);
+            return bv.getSeoWithSdk(System.Web.HttpContext.Current.Request);
         }
 
     }
