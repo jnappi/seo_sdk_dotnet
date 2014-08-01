@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="6cd17012-34eb-40c4-b038-87cb75eeb8e3" name="Mohan Krupanandan@OWNER-PC 2014-08-01 11:54:10" runUser="Owner-PC\Mohan Krupanandan" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="7484b31a-7605-4c36-89c2-1c7908653846">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment userDeploymentRoot="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\TestResults" useDefaultDeploymentRoot="false" runDeploymentRoot="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\TestResults\Mohan Krupanandan_OWNER-PC 2014-08-01 11_54_10">
+      <DeploymentItem filename="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNet\bin\Debug\BVSeoSdkDotNet.dll" />
+    </Deployment>
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Failed">
+    <Counters total="2" executed="2" error="0" failed="2" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2014-08-01T11:54:10.7614210-05:00" queuing="2014-08-01T11:54:12.3945144-05:00" start="2014-08-01T11:54:12.5745247-05:00" finish="2014-08-01T11:55:04.3354853-05:00" />
+  <TestDefinitions>
+    <UnitTest name="TestSEOContentFromFile_SinglePage_FileUnavailableError" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="5d4eaba0-94e6-3d0c-6697-dff9648ceeb5">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="b0e106d0-1e0d-4f5c-a8f3-d719dedae1c3" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSeoSdkDotNet.BVManagedUIContent_SinglePageTest, BVSEOSDKTest" name="TestSEOContentFromFile_SinglePage_FileUnavailableError" />
+    </UnitTest>
+    <UnitTest name="TestSEOContentFromFile_SinglePage_FileUnavailableError_bvReveal" storage="c:\users\mohan krupanandan\documents\github\seo_sdk_dotnet\bvseosdkdotnet\bvseosdkdotnettest\bin\debug\bvseosdktest.dll" id="d8ca1f24-9443-c0e5-1264-61d20ec22e40">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="0ced2e2f-21ba-4f62-be0c-3e4335b96c72" />
+      <TestMethod codeBase="C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\bin\Debug\BVSEOSDKTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BVSeoSdkDotNet.BVManagedUIContent_SinglePageTest, BVSEOSDKTest" name="TestSEOContentFromFile_SinglePage_FileUnavailableError_bvReveal" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="5d4eaba0-94e6-3d0c-6697-dff9648ceeb5" executionId="b0e106d0-1e0d-4f5c-a8f3-d719dedae1c3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d8ca1f24-9443-c0e5-1264-61d20ec22e40" executionId="0ced2e2f-21ba-4f62-be0c-3e4335b96c72" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="b0e106d0-1e0d-4f5c-a8f3-d719dedae1c3" testId="5d4eaba0-94e6-3d0c-6697-dff9648ceeb5" testName="TestSEOContentFromFile_SinglePage_FileUnavailableError" computerName="OWNER-PC" duration="00:00:51.1654362" startTime="2014-08-01T11:54:12.7205330-05:00" endTime="2014-08-01T11:55:04.1154727-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;False&gt;. Actual:&lt;True&gt;. there should be resource unavailable message</Message>
+          <StackTrace>   at BVSeoSdkDotNet.BVManagedUIContent_SinglePageTest.TestSEOContentFromFile_SinglePage_FileUnavailableError() in C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\BVManagedUIContent_SinglePageTest .cs:line 151
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0ced2e2f-21ba-4f62-be0c-3e4335b96c72" testId="d8ca1f24-9443-c0e5-1264-61d20ec22e40" testName="TestSEOContentFromFile_SinglePage_FileUnavailableError_bvReveal" computerName="OWNER-PC" duration="00:00:00.1184831" startTime="2014-08-01T11:55:04.1204730-05:00" endTime="2014-08-01T11:55:04.2434800-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;False&gt;. Actual:&lt;True&gt;. there should be resource unavailable message</Message>
+          <StackTrace>   at BVSeoSdkDotNet.BVManagedUIContent_SinglePageTest.TestSEOContentFromFile_SinglePage_FileUnavailableError_bvReveal() in C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\BVSeoSdkDotNetTest\BVManagedUIContent_SinglePageTest .cs:line 176
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

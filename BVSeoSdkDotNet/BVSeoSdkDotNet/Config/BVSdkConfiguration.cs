@@ -19,8 +19,10 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Reflection;
 using BVSeoSdkDotNet.Util;
 using BVSeoSdkDotNet.BVException;
+using log4net;
 
 namespace BVSeoSdkDotNet.Config
 {
@@ -32,6 +34,7 @@ namespace BVSeoSdkDotNet.Config
     /// </summary>
     public class BVSdkConfiguration : BVConfiguration
     {
+        private static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private Dictionary<String, String> _instanceConfiguration;
 
         /// <summary>
@@ -61,6 +64,7 @@ namespace BVSeoSdkDotNet.Config
             addProperty(BVClientConfig.BV_ROOT_FOLDER, BVConstant.BV_ROOT_FOLDER);
             addProperty(BVClientConfig.SSL_ENABLED, BVConstant.SSL_ENABLED);
             addProperty(BVClientConfig.CHARSET, BVConstant.CHARSET);
+            _logger.Debug("Completed default properties in BVSdkConfiguration.");
         }
 
         /// <summary>

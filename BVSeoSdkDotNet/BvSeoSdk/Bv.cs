@@ -47,7 +47,7 @@ namespace BvSeoSdk
             bool bot_detection = true,
             bool includeDisplayIntegrationCode = false,
             String internalFilePath = "",
-            String user_agent = "",
+            String user_agent = "msnbot",
             String page_url = "",
             String product_or_category = "product"
             )
@@ -84,11 +84,11 @@ namespace BvSeoSdk
 
             if (_botDetection)
             {
-                bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "false");
+                bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
             }
             else
             {
-                bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
+                bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "false");
             }
 
             if (!string.IsNullOrEmpty(_botRegexString))

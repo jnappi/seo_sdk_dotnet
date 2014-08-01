@@ -19,9 +19,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Reflection;
 using System.Resources;
 using BVSeoSdkDotNet.BVException;
 using BVSeoSdkDotNet.Properties;
+using log4net;
 
 namespace BVSeoSdkDotNet.Util
 {
@@ -32,6 +34,8 @@ namespace BVSeoSdkDotNet.Util
     /// </summary>
     public sealed class BVMessageUtil
     {
+        private static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         public BVMessageUtil()
         {
         }
@@ -47,6 +51,7 @@ namespace BVSeoSdkDotNet.Util
         {
             if (String.IsNullOrEmpty(code))
             {
+                _logger.Error(BVMessageUtil.getMessage("ERR0001"));
                 throw new BVSdkException("ERR0001");
             }
 
@@ -73,6 +78,7 @@ namespace BVSeoSdkDotNet.Util
             }
             catch (Exception ex)
             {
+                _logger.Error(ex.Message,ex);
                 message = code;
             }
 

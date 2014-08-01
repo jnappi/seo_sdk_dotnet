@@ -19,12 +19,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Reflection;
 using BVSeoSdkDotNet.Model;
 using BVSeoSdkDotNet.Config;
 using BVSeoSdkDotNet.Footer;
 using BVSeoSdkDotNet.Url;
 using BVSeoSdkDotNet.Validation;
 using BVSeoSdkDotNet.Util;
+using log4net;
 
 namespace BVSeoSdkDotNet.Content
 {
@@ -37,6 +39,7 @@ namespace BVSeoSdkDotNet.Content
     /// </summary>
     public class BVManagedUIContent : BVUIContent
     {
+        private static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private BVConfiguration _bvConfiguration;
         private BVValidator bvParamValidator;
 
@@ -91,6 +94,7 @@ namespace BVSeoSdkDotNet.Content
                 }
                 else
                 {
+                    _logger.Info(BVMessageUtil.getMessage("MSG0003"));
                     uiContent = new StringBuilder();
                 }
                 bvFooter.addMessage(bvUiContentService.getMessage().ToString());
@@ -126,6 +130,7 @@ namespace BVSeoSdkDotNet.Content
                 }
                 else
                 {
+                    _logger.Info(BVMessageUtil.getMessage("MSG0003"));
                     uiContent = new StringBuilder();
                 }
 
@@ -136,6 +141,7 @@ namespace BVSeoSdkDotNet.Content
                             bvUiContentService.getMessage().Length == 0 && bvUiContentService.isSdkEnabled())
                     {
                         String messageString = BVMessageUtil.getMessage("ERR0003");
+                        _logger.Error(BVMessageUtil.getMessage("ERR0003"));
                         message.Append(messageString);
                     }
                 }
@@ -192,6 +198,7 @@ namespace BVSeoSdkDotNet.Content
                 }
                 else
                 {
+                    _logger.Info(BVMessageUtil.getMessage("MSG0003"));
                     uiContent = new StringBuilder();
                 }
 
@@ -203,6 +210,7 @@ namespace BVSeoSdkDotNet.Content
                             bvUiContentService.getMessage().Length == 0 && bvUiContentService.isSdkEnabled())
                     {
                         String messageString = BVMessageUtil.getMessage("ERR0013");
+                        _logger.Error(BVMessageUtil.getMessage("ERR0013"));
                         message.Append(messageString);
                     }
                 }

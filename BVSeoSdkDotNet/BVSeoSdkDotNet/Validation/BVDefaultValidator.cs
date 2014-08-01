@@ -19,9 +19,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Reflection;
 using BVSeoSdkDotNet.Config;
 using BVSeoSdkDotNet.Model;
 using BVSeoSdkDotNet.Util;
+using log4net;
 
 namespace BVSeoSdkDotNet.Validation
 {
@@ -32,6 +34,7 @@ namespace BVSeoSdkDotNet.Validation
     /// </summary>
     public class BVDefaultValidator : BVValidator
     {
+        private static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private StringBuilder errorMessages;
 
         public BVDefaultValidator()
@@ -50,12 +53,14 @@ namespace BVSeoSdkDotNet.Validation
             if (bvConfiguration == null)
             {
                 errorMessages.Append(BVMessageUtil.getMessage("ERR0007"));
+                _logger.Error(BVMessageUtil.getMessage("ERR0007"));
                 return errorMessages.ToString();
             }
 
             if (bvParams == null)
             {
                 errorMessages.Append(BVMessageUtil.getMessage("ERR0011"));
+                _logger.Error(BVMessageUtil.getMessage("ERR0011"));
                 return errorMessages.ToString();
             }
 
@@ -66,6 +71,7 @@ namespace BVSeoSdkDotNet.Validation
                 if (String.IsNullOrEmpty(localSeoFileRoot))
                 {
                     errorMessages.Append(BVMessageUtil.getMessage("ERR0010"));
+                    _logger.Error(BVMessageUtil.getMessage("ERR0010"));
                 }
             }
             else
@@ -74,6 +80,7 @@ namespace BVSeoSdkDotNet.Validation
                 if (String.IsNullOrEmpty(cloudKey))
                 {
                     errorMessages.Append(BVMessageUtil.getMessage("ERR0020"));
+                    _logger.Error(BVMessageUtil.getMessage("ERR0020"));
                 }
             }
 
@@ -81,11 +88,13 @@ namespace BVSeoSdkDotNet.Validation
             if (String.IsNullOrEmpty(rootFolder))
             {
                 errorMessages.Append(BVMessageUtil.getMessage("ERR0021"));
+                _logger.Error(BVMessageUtil.getMessage("ERR0021"));
             }
 
             if (String.IsNullOrEmpty(bvParams.UserAgent))
             {
                 errorMessages.Append(BVMessageUtil.getMessage("ERR0017"));
+                _logger.Error(BVMessageUtil.getMessage("ERR0017"));
             }
 
             Uri uri = null;
@@ -98,6 +107,7 @@ namespace BVSeoSdkDotNet.Validation
                 catch (UriFormatException e)
                 {
                     errorMessages.Append(BVMessageUtil.getMessage("ERR0023"));
+                    _logger.Error(BVMessageUtil.getMessage("ERR0023"),e);
                 }
             }
 
@@ -110,6 +120,7 @@ namespace BVSeoSdkDotNet.Validation
                 catch (UriFormatException e)
                 {
                     errorMessages.Append(BVMessageUtil.getMessage("ERR0022"));
+                    _logger.Error(BVMessageUtil.getMessage("ERR0022"), e);
                 }
             }
 
@@ -118,22 +129,26 @@ namespace BVSeoSdkDotNet.Validation
                 if (String.IsNullOrEmpty(bvParams.SubjectId))
                 {
                     errorMessages.Append(BVMessageUtil.getMessage("ERR0014"));
+                    _logger.Error(BVMessageUtil.getMessage("ERR0014"));
                 }
 
                 if (bvParams.SubjectType == null)
                 {
                     errorMessages.Append(BVMessageUtil.getMessage("ERR0016"));
+                    _logger.Error(BVMessageUtil.getMessage("ERR0016"));
                 }
 
                 if (bvParams.ContentType == null)
                 {
                     errorMessages.Append(BVMessageUtil.getMessage("ERR0015"));
+                    _logger.Error(BVMessageUtil.getMessage("ERR0015"));
                 }
             }
 
 
             if (errorMessages.Length > 0)
             {
+                _logger.Error("There is an error : " + errorMessages.ToString());
                 return errorMessages.ToString();
             }
 

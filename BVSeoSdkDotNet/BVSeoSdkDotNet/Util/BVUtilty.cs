@@ -24,7 +24,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.IO;
+using System.Reflection;
 using BVSeoSdkDotNet.BVException;
+using log4net;
 
 namespace BVSeoSdkDotNet.Util
 {
@@ -35,6 +37,7 @@ namespace BVSeoSdkDotNet.Util
     /// </summary>
     public sealed class BVUtilty
     {
+        private static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private static Regex BV_PATTERN = null;
 
         /// <summary>
@@ -101,6 +104,7 @@ namespace BVSeoSdkDotNet.Util
             }
             catch (Exception ex)
             {
+                _logger.Error(BVMessageUtil.getMessage("ERR0026"),ex);
                 throw new BVSdkException("ERR0026");
             }
 
@@ -117,7 +121,8 @@ namespace BVSeoSdkDotNet.Util
             String decodedString = "";
             if(!File.Exists(path))
             {
-                return "File Doesn't Exist";
+                _logger.Error(BVMessageUtil.getMessage("ERR0012") + " : File Doesn't Exist");
+                throw new BVSdkException("ERR0012");
             }
             try
             {
@@ -134,6 +139,10 @@ namespace BVSeoSdkDotNet.Util
                         }
                         decodedString = Encoding.UTF8.GetString(ms.ToArray());
                     }
+                    catch(Exception e)
+                    {
+                        _logger.Error(e.Message, e);
+                    }
                     finally
                     {
                         ms.Close();
@@ -144,6 +153,7 @@ namespace BVSeoSdkDotNet.Util
             }
             catch (Exception ex)
             {
+                _logger.Error(ex.Message, ex);
                 return ex.Message;
             }
         }

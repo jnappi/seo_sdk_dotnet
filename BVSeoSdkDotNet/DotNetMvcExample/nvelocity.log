@@ -142,3 +142,111 @@
 2014-07-29 14:44:43,990 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
 2014-07-29 14:44:43,990 - Velocimacro : initialization complete.
 2014-07-29 14:44:43,990 - NVelocity successfully started.
+2014-08-01 12:36:21,217 - SimpleLog4NetLogSystem initialized using logfile 'nvelocity.log'
+2014-08-01 12:36:21,237 - ************************************************************** 
+2014-08-01 12:36:21,238 - Starting NVelocity v0.4.1
+2014-08-01 12:36:21,238 - RuntimeInstance initializing.
+2014-08-01 12:36:21,238 - Default Properties File: NVelocity.Runtime.Defaults.nvelocity.properties
+2014-08-01 12:36:21,238 - Trying to use logger class NVelocity.Runtime.Log.SimpleLog4NetLogSystem
+2014-08-01 12:36:21,238 - Using logger class NVelocity.Runtime.Log.SimpleLog4NetLogSystem
+2014-08-01 12:36:21,239 - Default ResourceManager initializing. (NVelocity.Runtime.Resource.ResourceManagerImpl)
+2014-08-01 12:36:21,241 - Resource Loader Instantiated: NVelocity.Runtime.Resource.Loader.FileResourceLoader
+2014-08-01 12:36:21,242 - FileResourceLoader : initialization starting.
+2014-08-01 12:36:21,242 - FileResourceLoader : adding path '.'
+2014-08-01 12:36:21,242 - FileResourceLoader : initialization complete.
+2014-08-01 12:36:21,242 - ResourceCache : initialized. (NVelocity.Runtime.Resource.ResourceCacheImpl)
+2014-08-01 12:36:21,242 - Default ResourceManager initialization complete.
+2014-08-01 12:36:21,251 - Loaded System Directive: NVelocity.Runtime.Directive.Include
+2014-08-01 12:36:21,253 - Loaded System Directive: NVelocity.Runtime.Directive.Parse
+2014-08-01 12:36:21,253 - Loaded System Directive: NVelocity.Runtime.Directive.Macro
+2014-08-01 12:36:21,254 - Loaded System Directive: NVelocity.Runtime.Directive.Literal
+2014-08-01 12:36:21,254 - Loaded System Directive: NVelocity.Runtime.Directive.Foreach
+2014-08-01 12:36:21,259 - Created: 20 parsers.
+2014-08-01 12:36:21,260 - Velocimacro : initialization starting.
+2014-08-01 12:36:21,260 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2014-08-01 12:36:21,274 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2014-08-01 12:36:21,278 - Velocimacro : error using  VM library template VM_global_library.vm : NVelocity.Exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+   at NVelocity.Runtime.Resource.ResourceManagerImpl.getResource(String resourceName, Int32 resourceType, String encoding)
+   at NVelocity.Runtime.RuntimeInstance.getTemplate(String name, String encoding)
+   at NVelocity.Runtime.RuntimeInstance.getTemplate(String name)
+   at NVelocity.Runtime.VelocimacroFactory.initVelocimacro()
+2014-08-01 12:36:21,278 - Velocimacro :  VM library template macro registration complete.
+2014-08-01 12:36:21,278 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2014-08-01 12:36:21,278 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2014-08-01 12:36:21,278 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2014-08-01 12:36:21,279 - Velocimacro : messages on  : VM system will output logging messages
+2014-08-01 12:36:21,279 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2014-08-01 12:36:21,279 - Velocimacro : initialization complete.
+2014-08-01 12:36:21,279 - NVelocity successfully started.
+2014-08-01 12:37:37,217 - SimpleLog4NetLogSystem initialized using logfile 'nvelocity.log'
+2014-08-01 12:37:37,222 - ************************************************************** 
+2014-08-01 12:37:37,222 - Starting NVelocity v0.4.1
+2014-08-01 12:37:37,222 - RuntimeInstance initializing.
+2014-08-01 12:37:37,222 - Default Properties File: NVelocity.Runtime.Defaults.nvelocity.properties
+2014-08-01 12:37:37,222 - Trying to use logger class NVelocity.Runtime.Log.SimpleLog4NetLogSystem
+2014-08-01 12:37:37,222 - Using logger class NVelocity.Runtime.Log.SimpleLog4NetLogSystem
+2014-08-01 12:37:37,224 - Default ResourceManager initializing. (NVelocity.Runtime.Resource.ResourceManagerImpl)
+2014-08-01 12:37:37,226 - Resource Loader Instantiated: NVelocity.Runtime.Resource.Loader.FileResourceLoader
+2014-08-01 12:37:37,227 - FileResourceLoader : initialization starting.
+2014-08-01 12:37:37,227 - FileResourceLoader : adding path '.'
+2014-08-01 12:37:37,227 - FileResourceLoader : initialization complete.
+2014-08-01 12:37:37,227 - ResourceCache : initialized. (NVelocity.Runtime.Resource.ResourceCacheImpl)
+2014-08-01 12:37:37,227 - Default ResourceManager initialization complete.
+2014-08-01 12:37:37,245 - Loaded System Directive: NVelocity.Runtime.Directive.Include
+2014-08-01 12:37:37,246 - Loaded System Directive: NVelocity.Runtime.Directive.Parse
+2014-08-01 12:37:37,246 - Loaded System Directive: NVelocity.Runtime.Directive.Macro
+2014-08-01 12:37:37,246 - Loaded System Directive: NVelocity.Runtime.Directive.Literal
+2014-08-01 12:37:37,246 - Loaded System Directive: NVelocity.Runtime.Directive.Foreach
+2014-08-01 12:37:37,254 - Created: 20 parsers.
+2014-08-01 12:37:37,257 - Velocimacro : initialization starting.
+2014-08-01 12:37:37,257 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2014-08-01 12:37:37,288 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2014-08-01 12:37:37,294 - Velocimacro : error using  VM library template VM_global_library.vm : NVelocity.Exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+   at NVelocity.Runtime.Resource.ResourceManagerImpl.getResource(String resourceName, Int32 resourceType, String encoding)
+   at NVelocity.Runtime.RuntimeInstance.getTemplate(String name, String encoding)
+   at NVelocity.Runtime.RuntimeInstance.getTemplate(String name)
+   at NVelocity.Runtime.VelocimacroFactory.initVelocimacro()
+2014-08-01 12:37:37,294 - Velocimacro :  VM library template macro registration complete.
+2014-08-01 12:37:37,294 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2014-08-01 12:37:37,294 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2014-08-01 12:37:37,294 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2014-08-01 12:37:37,294 - Velocimacro : messages on  : VM system will output logging messages
+2014-08-01 12:37:37,294 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2014-08-01 12:37:37,294 - Velocimacro : initialization complete.
+2014-08-01 12:37:37,294 - NVelocity successfully started.
+2014-08-01 12:38:14,220 - SimpleLog4NetLogSystem initialized using logfile 'nvelocity.log'
+2014-08-01 12:38:14,220 - ************************************************************** 
+2014-08-01 12:38:14,220 - Starting NVelocity v0.4.1
+2014-08-01 12:38:14,220 - RuntimeInstance initializing.
+2014-08-01 12:38:14,220 - Default Properties File: NVelocity.Runtime.Defaults.nvelocity.properties
+2014-08-01 12:38:14,220 - Trying to use logger class NVelocity.Runtime.Log.SimpleLog4NetLogSystem
+2014-08-01 12:38:14,220 - Using logger class NVelocity.Runtime.Log.SimpleLog4NetLogSystem
+2014-08-01 12:38:14,220 - Default ResourceManager initializing. (NVelocity.Runtime.Resource.ResourceManagerImpl)
+2014-08-01 12:38:14,221 - Resource Loader Instantiated: NVelocity.Runtime.Resource.Loader.FileResourceLoader
+2014-08-01 12:38:14,221 - FileResourceLoader : initialization starting.
+2014-08-01 12:38:14,221 - FileResourceLoader : adding path '.'
+2014-08-01 12:38:14,221 - FileResourceLoader : initialization complete.
+2014-08-01 12:38:14,221 - ResourceCache : initialized. (NVelocity.Runtime.Resource.ResourceCacheImpl)
+2014-08-01 12:38:14,221 - Default ResourceManager initialization complete.
+2014-08-01 12:38:14,231 - Loaded System Directive: NVelocity.Runtime.Directive.Include
+2014-08-01 12:38:14,231 - Loaded System Directive: NVelocity.Runtime.Directive.Parse
+2014-08-01 12:38:14,231 - Loaded System Directive: NVelocity.Runtime.Directive.Macro
+2014-08-01 12:38:14,231 - Loaded System Directive: NVelocity.Runtime.Directive.Literal
+2014-08-01 12:38:14,231 - Loaded System Directive: NVelocity.Runtime.Directive.Foreach
+2014-08-01 12:38:14,232 - Created: 20 parsers.
+2014-08-01 12:38:14,232 - Velocimacro : initialization starting.
+2014-08-01 12:38:14,232 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2014-08-01 12:38:14,239 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2014-08-01 12:38:14,239 - Velocimacro : error using  VM library template VM_global_library.vm : NVelocity.Exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+   at NVelocity.Runtime.Resource.ResourceManagerImpl.getResource(String resourceName, Int32 resourceType, String encoding)
+   at NVelocity.Runtime.RuntimeInstance.getTemplate(String name, String encoding)
+   at NVelocity.Runtime.RuntimeInstance.getTemplate(String name)
+   at NVelocity.Runtime.VelocimacroFactory.initVelocimacro()
+2014-08-01 12:38:14,239 - Velocimacro :  VM library template macro registration complete.
+2014-08-01 12:38:14,239 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2014-08-01 12:38:14,239 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2014-08-01 12:38:14,239 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2014-08-01 12:38:14,240 - Velocimacro : messages on  : VM system will output logging messages
+2014-08-01 12:38:14,240 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2014-08-01 12:38:14,240 - Velocimacro : initialization complete.
+2014-08-01 12:38:14,240 - NVelocity successfully started.

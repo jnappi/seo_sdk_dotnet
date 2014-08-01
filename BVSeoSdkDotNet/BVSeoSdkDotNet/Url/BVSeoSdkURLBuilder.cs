@@ -23,10 +23,12 @@ using System.Collections.Specialized;
 using System.Text;
 using System.Web;
 using System.IO;
+using System.Reflection;
 using BVSeoSdkDotNet.Model;
 using BVSeoSdkDotNet.Config;
 using BVSeoSdkDotNet.Util;
 using BVSeoSdkDotNet.BVException;
+using log4net;
 
 namespace BVSeoSdkDotNet.Url
 {
@@ -37,6 +39,7 @@ namespace BVSeoSdkDotNet.Url
     /// </summary>
     public class BVSeoSdkURLBuilder : BVSeoSdkUrl
     {
+        private static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private const String BV_PAGE = "bvpage"; 
 	    private const String NUM_ONE_STR = "1";
 	    private const String HTML_EXT = ".htm";
@@ -112,6 +115,7 @@ namespace BVSeoSdkDotNet.Url
             String fileRoot = bvConfiguration.getProperty(BVClientConfig.LOCAL_SEO_FILE_ROOT);
             if (String.IsNullOrEmpty(fileRoot))
             {
+                _logger.Error(BVMessageUtil.getMessage("ERR0010"));
                 throw new BVSdkException("ERR0010");
             }
 
@@ -156,6 +160,7 @@ namespace BVSeoSdkDotNet.Url
             }
             catch (UriFormatException e)
             {
+                _logger.Error(BVMessageUtil.getMessage("ERR0026"), e);
                 throw new BVSdkException("ERR0026");
             }
 

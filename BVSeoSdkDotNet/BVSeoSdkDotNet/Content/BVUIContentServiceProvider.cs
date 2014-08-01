@@ -23,11 +23,13 @@ using System.Text.RegularExpressions;
 using System.IO;
 using System.Net;
 using System.Threading;
+using System.Reflection;
 using BVSeoSdkDotNet.Model;
 using BVSeoSdkDotNet.Config;
 using BVSeoSdkDotNet.Util;
 using BVSeoSdkDotNet.Url;
 using BVSeoSdkDotNet.BVException;
+using log4net;
 
 namespace BVSeoSdkDotNet.Content
 {
@@ -38,6 +40,7 @@ namespace BVSeoSdkDotNet.Content
     /// </summary>
     public class BVUIContentServiceProvider : BVUIContentService
     {
+        private static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private BVConfiguration _bvConfiguration;
         private BVParameters _bvParameters;
         private StringBuilder _message;
@@ -93,6 +96,7 @@ namespace BVSeoSdkDotNet.Content
             }
             catch(Exception e)
             {
+                _logger.Error(BVMessageUtil.getMessage("ERR0024"), e);
                 encoding = Encoding.UTF8;
             }
 
@@ -122,24 +126,29 @@ namespace BVSeoSdkDotNet.Content
             }
             catch (ProtocolViolationException e)
             {
+                _logger.Error(BVMessageUtil.getMessage("ERR0012"), e);
                 throw new BVSdkException("ERR0012");
             }
             catch (IOException e)
             {
+                _logger.Error(BVMessageUtil.getMessage("ERR0019"), e);
                 throw new BVSdkException("ERR0019");
             }
             catch (WebException e)
             {
+                _logger.Error(BVMessageUtil.getMessage("ERR0012"), e);
                 throw new BVSdkException("ERR0012");
             }
             catch (Exception e)
             {
+                _logger.Error(e.Message, e);
                 throw new BVSdkException(e.Message);
             }
 
             bool isValidContent = BVUtilty.validateBVContent(content);
             if (!isValidContent)
             {
+                _logger.Error(BVMessageUtil.getMessage("ERR0025"));
                 throw new BVSdkException("ERR0025");
             }
 
@@ -159,6 +168,7 @@ namespace BVSeoSdkDotNet.Content
             }
             catch (Exception e)
             {
+                _logger.Error(BVMessageUtil.getMessage("ERR0024"), e);
                 encoding = Encoding.UTF8;
             }
 
@@ -170,12 +180,24 @@ namespace BVSeoSdkDotNet.Content
                 }
                 else
                 {
+                    _logger.Error(BVMessageUtil.getMessage("ERR0012"));
                     throw new BVSdkException("ERR0012");
                 }
             }
             catch (IOException e)
             {
+                _logger.Error(BVMessageUtil.getMessage("ERR0012"), e);
                 throw new BVSdkException("ERR0012");
+            }
+            catch (BVSdkException e)
+            {
+                _logger.Error(e.getMessage(), e);
+                throw e;
+            }
+            catch (Exception e)
+            {
+                _logger.Error(e.Message, e);
+                throw new BVSdkException(e.Message);
             }
 
             return content;
@@ -215,6 +237,8 @@ namespace BVSeoSdkDotNet.Content
                 crawlerAgentPattern = ".*(" + crawlerAgentPattern + ").*";
             }
             Regex pattern = new Regex(crawlerAgentPattern, RegexOptions.IgnoreCase);
+
+            _logger.Debug("userAgent is : " + _bvParameters.UserAgent);
             
             return (pattern.IsMatch(_bvParameters.UserAgent) || _bvParameters.UserAgent.ToLower().Contains("google"));
         }
@@ -277,6 +301,7 @@ namespace BVSeoSdkDotNet.Content
             } 
             catch (BVSdkException e) 
             {
+                _logger.Error(e.getMessage(), e);
                 _message.Append(e.getMessage());
             }
 
@@ -324,18 +349,22 @@ namespace BVSeoSdkDotNet.Content
             }
             catch (ThreadInterruptedException e)
             {
+                _logger.Error(e.Message, e);
                 _message.Append(e.Message);
             }
             catch (ExecutionEngineException e)
             {
+                _logger.Error(e.Message, e);
                 _message.Append(e.Message);
             }
             catch (TimeoutException e)
             {
+                _logger.Error(String.Format(BVMessageUtil.getMessage("ERR0018"), new Object[] { executionTimeout }), e);
                 _message.Append(String.Format(BVMessageUtil.getMessage("ERR0018"), new Object[] { executionTimeout }));
             }
             catch (Exception e)
             {
+                _logger.Error(e.Message, e);
                 throw new BVSdkException(e.Message);
             }
 

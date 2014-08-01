@@ -32,6 +32,7 @@ using NVelocity.Context;
 using NVelocity;
 using BVSeoSdkDotNet.Properties;
 using BVSeoSdkDotNet.BVException;
+using log4net;
 
 namespace BVSeoSdkDotNet.Footer
 {
@@ -43,6 +44,7 @@ namespace BVSeoSdkDotNet.Footer
     /// </summary>
     public class BVHTMLFooter : BVFooter
     {
+        private static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private static String FOOTER_FILE = "footer.txt"; 
 		private BVConfiguration _bvConfiguration;
 	    private BVParameters _bvParameters;
@@ -57,6 +59,7 @@ namespace BVSeoSdkDotNet.Footer
         {
             if (bvConfiguration == null)
             {
+                _logger.Error(BVMessageUtil.getMessage("ERR0007"));
                 throw new BVSdkException("ERR0007");
             }
 

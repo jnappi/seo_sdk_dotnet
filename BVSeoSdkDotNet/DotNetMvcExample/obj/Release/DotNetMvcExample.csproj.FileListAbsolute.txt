@@ -1,0 +1,12 @@
+C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\DotNetMvcExample\bin\DotNetMvcExample.dll
+C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\DotNetMvcExample\bin\DotNetMvcExample.pdb
+C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\DotNetMvcExample\bin\BvSeoSdk.dll
+C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\DotNetMvcExample\bin\BVSeoSdkDotNet.dll
+C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\DotNetMvcExample\bin\NVelocity.dll
+C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\DotNetMvcExample\bin\Commons.dll
+C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\DotNetMvcExample\bin\log4net.dll
+C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\DotNetMvcExample\bin\BvSeoSdk.pdb
+C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\DotNetMvcExample\bin\BVSeoSdkDotNet.pdb
+C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\DotNetMvcExample\obj\Release\DotNetMvcExample.csprojResolveAssemblyReference.cache
+C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\DotNetMvcExample\obj\Release\DotNetMvcExample.dll
+C:\Users\Mohan Krupanandan\Documents\GitHub\seo_sdk_dotnet\BVSeoSdkDotNet\DotNetMvcExample\obj\Release\DotNetMvcExample.pdb
