@@ -47,7 +47,7 @@ namespace BvSeoSdk
             bool bot_detection = true,
             bool includeDisplayIntegrationCode = false,
             String internalFilePath = "",
-            String user_agent = "msnbot",
+            String user_agent = "",
             String page_url = "",
             String product_or_category = "product"
             )
