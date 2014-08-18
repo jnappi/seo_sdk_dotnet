@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BVSeoSdkDotNet.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="STAGING_S3_HOSTNAME" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">seo-stg.bazaarvoice.com</Value>
+    </Setting>
+    <Setting Name="PRODUCTION_S3_HOSTNAME" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">seo.bazaarvoice.com</Value>
+    </Setting>
+    <Setting Name="EXECUTION_TIMEOUT" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3000</Value>
+    </Setting>
+    <Setting Name="CRAWLER_AGENT_PATTERN" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">msnbot|google|teoma|bingbot|yandexbot|yahoo</Value>
+    </Setting>
+    <Setting Name="CONNECT_TIMEOUT" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="SOCKET_TIMEOUT" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="STAGING" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">false</Value>
+    </Setting>
+    <Setting Name="SEO_SDK_ENABLED" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">true</Value>
+    </Setting>
+    <Setting Name="PROXY_HOST" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">none</Value>
+    </Setting>
+    <Setting Name="PROXY_PORT" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
