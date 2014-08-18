@@ -1,24 +1,23 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BVSeoSdkDotNet", "BVSeoSdkDotNet\BVSeoSdkDotNet.csproj", "{9A7A064B-9E9D-41CB-9DC3-029D4F6835D8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BVSeoSdkDotNetTest", "BVSeoSdkDotNetTest\BVSeoSdkDotNetTest.csproj", "{7FB56E6D-44F6-4B5B-B820-C10C10A613E1}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.21730.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C6BC8B70-D93B-4682-A0C1-5E3608DD7B0B}"
 	ProjectSection(SolutionItems) = preProject
 		BVSeoSdkDotNet.vsmdi = BVSeoSdkDotNet.vsmdi
 		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BVSeoSdkDotNet", "BVSeoSdkDotNet\BVSeoSdkDotNet.csproj", "{9A7A064B-9E9D-41CB-9DC3-029D4F6835D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BVSeoSdkDotNetTest", "BVSeoSdkDotNetTest\BVSeoSdkDotNetTest.csproj", "{7FB56E6D-44F6-4B5B-B820-C10C10A613E1}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetAspxExample", "DotNetAspxExample\DotNetAspxExample.csproj", "{CD6A8CFC-D5D5-49B1-93C9-D1EB81506A02}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BVSeoSdkDotNetMSI", "BVSeoSdkDotNetMSI\BVSeoSdkDotNetMSI.vdproj", "{7E239C6F-A0EE-481F-BEAE-B508A11B2153}"
 EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = BVSeoSdkDotNet.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -43,5 +42,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = BVSeoSdkDotNet.vsmdi
 	EndGlobalSection
 EndGlobal
