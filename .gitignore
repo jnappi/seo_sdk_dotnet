@@ -185,3 +185,7 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+*.vsmdi
+*.vdproj
+*.testrunconfig
+*.log.*
