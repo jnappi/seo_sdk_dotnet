@@ -91,7 +91,8 @@ namespace BVSeoSdkDotNet.Validation
                 _logger.Error(BVMessageUtil.getMessage("ERR0021"));
             }
 
-            if (String.IsNullOrEmpty(bvParams.UserAgent))
+            String botDetection = bvConfiguration.getProperty(BVClientConfig.BOT_DETECTION);
+            if (botDetection.Equals("true") && String.IsNullOrEmpty(bvParams.UserAgent))
             {
                 errorMessages.Append(BVMessageUtil.getMessage("ERR0017"));
                 _logger.Error(BVMessageUtil.getMessage("ERR0017"));
