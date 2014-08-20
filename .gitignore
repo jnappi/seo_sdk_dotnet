@@ -189,3 +189,4 @@ FakesAssemblies/
 *.vdproj
 *.testrunconfig
 *.log.*
+*.DS_Store
