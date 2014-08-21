@@ -68,9 +68,10 @@ namespace BVSEOSDKTest
         {
             BVConfiguration bvConfig = new BVSdkConfiguration();
             bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "bodyglove-8e186f6e16e2d688784728b360df41c5");
-            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
-            bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
+            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca");
+            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344seob");
+            bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "3000");
+            bvConfig.addProperty(BVClientConfig.STAGING, "true");
 
             BVUIContent uiContent = new BVManagedUIContent(bvConfig);
 
@@ -78,7 +79,7 @@ namespace BVSEOSDKTest
             bvParameters.UserAgent = "google";
             bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
             bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
-            bvParameters.SubjectId = "50524";
+            bvParameters.SubjectId = "2000002";
 
             String theUIContent = uiContent.getAggregateRating(bvParameters);
             Assert.AreEqual<Boolean>(theUIContent.Contains("itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\""),
@@ -92,9 +93,10 @@ namespace BVSEOSDKTest
         {
             BVConfiguration bvConfig = new BVSdkConfiguration();
             bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "bodyglove-8e186f6e16e2d688784728b360df41c5");
-            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
-            bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
+            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca");
+            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344seob");
+            bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "3000");
+            bvConfig.addProperty(BVClientConfig.STAGING, "true");
 
             BVUIContent uiContent = new BVManagedUIContent(bvConfig);
 
@@ -102,7 +104,7 @@ namespace BVSEOSDKTest
             bvParameters.UserAgent = "google";
             bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
             bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
-            bvParameters.SubjectId = "50524";
+            bvParameters.SubjectId = "2000002";
 
             String theUIContent = uiContent.getReviews(bvParameters);
             Assert.AreEqual<Boolean>(theUIContent.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\""), true,
@@ -116,13 +118,13 @@ namespace BVSEOSDKTest
         public void TestSEOContent_SinglePageHTTP_AggregateRating_BotDetectionEnabled()
         {
             BVConfiguration _bvConfig = new BVSdkConfiguration();
-            _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");  
+            _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
             _bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY,"adobe-55d020998d7b4776fb0f9df49278083c");
-            _bvConfig.addProperty(BVClientConfig.STAGING, "false");
-            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "8814");
-            _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
+            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca");
+            _bvConfig.addProperty(BVClientConfig.STAGING, "true");
+            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344seob");
+            _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "3000");
 
             BVParameters _bvParam = new BVParameters();
             _bvParam.UserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.29.13 (KHTML, like Gecko) Version/6.0.4 Safari/536.29.13";
@@ -130,7 +132,7 @@ namespace BVSEOSDKTest
             _bvParam.PageURI = "http://localhost:8080/abcd" + "?" + "notSure=1&letSee=2";
             _bvParam.ContentType = new BVContentType(BVContentType.REVIEWS);
             _bvParam.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
-            _bvParam.SubjectId = "PR6";
+            _bvParam.SubjectId = "2000002";
 
             BVUIContent _bvOutput = new BVManagedUIContent(_bvConfig);
 
@@ -158,10 +160,10 @@ namespace BVSEOSDKTest
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
             _bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "adobe-55d020998d7b4776fb0f9df49278083c");
-            _bvConfig.addProperty(BVClientConfig.STAGING, "false");
-            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "8814");
-            _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
+            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca");
+            _bvConfig.addProperty(BVClientConfig.STAGING, "true");
+            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344seob");
+            _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "3000");
 
             BVParameters _bvParam = new BVParameters();
             _bvParam.UserAgent = "googlebot";
@@ -169,7 +171,7 @@ namespace BVSEOSDKTest
             _bvParam.PageURI = "http://localhost:8080/abcd" + "?" + "notSure=1&letSee=2";
             _bvParam.ContentType = new BVContentType(BVContentType.REVIEWS);
             _bvParam.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
-            _bvParam.SubjectId = "PR6";
+            _bvParam.SubjectId = "2000001";
 
             BVUIContent _bvOutput = new BVManagedUIContent(_bvConfig);
 

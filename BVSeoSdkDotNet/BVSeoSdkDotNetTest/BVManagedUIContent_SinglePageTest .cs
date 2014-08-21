@@ -182,9 +182,10 @@ namespace BVSeoSdkDotNet
         {
             BVConfiguration bvConfig = new BVSdkConfiguration();
             bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "bodyglove-8e186f6e16e2d688784728b360df41c5");
-            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
-            bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
+            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-126b543c32d9079f120a575ece25bad6");
+            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344ia");
+            bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "3000");
+            bvConfig.addProperty(BVClientConfig.STAGING, "true");
 
             BVUIContent uiContent = new BVManagedUIContent(bvConfig);
 
@@ -192,29 +193,10 @@ namespace BVSeoSdkDotNet
             bvParameters.UserAgent = "google";
             bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
             bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
-            bvParameters.SubjectId = "50524";
+            bvParameters.SubjectId = "2000001";
             
             String theUIContent = uiContent.getContent(bvParameters);
-            Assert.AreEqual<Boolean>(theUIContent.Contains("bvseo-reviewsSection"), true, "there should be bvseo-reviewsSection in the content");
-        }
-
-        [TestMethod]
-        public void TestSEOContentFromHTTP_SinglePageC2013()
-        {
-            BVConfiguration bvConfig = new BVSdkConfiguration();
-            bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "bodyglove-8e186f6e16e2d688784728b360df41c5");
-            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
-            bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
-
-            BVUIContent uiContent = new BVManagedUIContent(bvConfig);
-
-            BVParameters bvParameters = new BVParameters();
-            bvParameters.UserAgent = "google";
-            bvParameters.PageURI = "http://localhost:8080/sample/someproduct.jsp?bvpage=ctre/id50524/stp";
-
-            String theUIContent = uiContent.getContent(bvParameters);
-            Assert.AreEqual<Boolean>(theUIContent.Contains("bvseo-reviewsSection"), true, "there should be bvseo-reviewsSection in the content");
+            Assert.AreEqual<Boolean>(theUIContent.Contains("BVRRSourceID"), true, "there should be BVRRSourceID in the content");
         }
 
         [TestMethod]
