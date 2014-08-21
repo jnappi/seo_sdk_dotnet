@@ -7,6 +7,7 @@ using BVSeoSdkDotNet.Config;
 using BVSeoSdkDotNet.Content;
 using BVSeoSdkDotNet.Model;
 using BVSeoSdkDotNet.BVException;
+using System.Diagnostics;
 
 namespace BVSEOSDKTest
 {
@@ -20,6 +21,8 @@ namespace BVSEOSDKTest
 
         private const String CLOUD_KEY = "bodyglove-8e186f6e16e2d688784728b360df41c5";
         private const String DISPLAY_CODE = "Main_Site-en_US";
+        private const long CONTENT_RETRIEVAL_THRESHOLD = 1500;
+        private Stopwatch stopwatch = new Stopwatch();
 
         public BVManagedUIContent2_Test()
         {
@@ -97,12 +100,16 @@ namespace BVSEOSDKTest
             String content = null;
             try
             {
+                stopwatch.Restart();
                 content = _bvUIContent.getContent(bvParameters);
+                stopwatch.Stop();
             }
             catch (BVSdkException e)
             {
                 erroMessage = e.getMessage();
             }
+
+            Assert.IsTrue(stopwatch.ElapsedMilliseconds <= CONTENT_RETRIEVAL_THRESHOLD, String.Format("Content retrieval time exceeded {0} milliseconds", CONTENT_RETRIEVAL_THRESHOLD));
             Assert.IsNull(erroMessage, "There should not be any errorMessage");
             Assert.IsNotNull(content, "There should be content to proceed further assertion!!");
             Assert.IsFalse(content.Contains("HTTP 403 Forbidden"), "There should be valid content");
@@ -122,13 +129,17 @@ namespace BVSEOSDKTest
             String content = null;
 		    try 
             {
-			    content = _bvUIContent.getContent(bvParameters);
-		    } 
+                stopwatch.Restart();
+                content = _bvUIContent.getContent(bvParameters);
+                stopwatch.Stop();
+            }
             catch (BVSdkException e) 
             {
 			    erroMessage = e.getMessage();
 		    }
-		    Assert.IsNull(erroMessage, "There should not be any errorMessage");
+
+            Assert.IsTrue(stopwatch.ElapsedMilliseconds <= CONTENT_RETRIEVAL_THRESHOLD, String.Format("Content retrieval time exceeded {0} milliseconds", CONTENT_RETRIEVAL_THRESHOLD));
+            Assert.IsNull(erroMessage, "There should not be any errorMessage");
 		    Assert.IsNotNull(content, "There should be content to proceed further assertion!!");
 		    Assert.IsFalse(content.Contains("HTTP 403 Forbidden"), "There should be valid content");
 	    }
@@ -148,12 +159,16 @@ namespace BVSEOSDKTest
             String content = null;
             try
             {
+                stopwatch.Restart();
                 content = _bvUIContent.getContent(bvParameters);
+                stopwatch.Stop();
             }
             catch (BVSdkException e)
             {
                 erroMessage = e.getMessage();
             }
+
+            Assert.IsTrue(stopwatch.ElapsedMilliseconds <= CONTENT_RETRIEVAL_THRESHOLD, String.Format("Content retrieval time exceeded {0} milliseconds", CONTENT_RETRIEVAL_THRESHOLD));
             Assert.IsNull(erroMessage, "There should not be any errorMessage");
             Assert.IsNotNull(content, "There should be content to proceed further assertion!!");
             Assert.IsFalse(content.Contains("HTTP 403 Forbidden"), "There should be valid content");
@@ -174,12 +189,16 @@ namespace BVSEOSDKTest
             String content = null;
             try
             {
+                stopwatch.Restart();
                 content = _bvUIContent.getContent(bvParameters);
+                stopwatch.Stop();
             }
             catch (BVSdkException e)
             {
                 erroMessage = e.getMessage();
             }
+
+            Assert.IsTrue(stopwatch.ElapsedMilliseconds <= CONTENT_RETRIEVAL_THRESHOLD, String.Format("Content retrieval time exceeded {0} milliseconds", CONTENT_RETRIEVAL_THRESHOLD));
             Assert.IsNull(erroMessage, "There should not be any errorMessage");
             Assert.IsNotNull(content, "There should be content to proceed further assertion!!");
             Assert.IsFalse(content.Contains("HTTP 403 Forbidden"), "There should be valid content");
@@ -200,12 +219,16 @@ namespace BVSEOSDKTest
             String content = null;
             try
             {
+                stopwatch.Restart();
                 content = _bvUIContent.getContent(bvParameters);
+                stopwatch.Stop();
             }
             catch (BVSdkException e)
             {
                 erroMessage = e.getMessage();
             }
+
+            Assert.IsTrue(stopwatch.ElapsedMilliseconds <= CONTENT_RETRIEVAL_THRESHOLD, String.Format("Content retrieval time exceeded {0} milliseconds", CONTENT_RETRIEVAL_THRESHOLD));
             Assert.IsNull(erroMessage, "There should not be any errorMessage");
             Assert.IsNotNull(content, "There should be content to proceed further assertion!!");
             Assert.IsFalse(content.Contains("HTTP 403 Forbidden"), "There should be valid content");
@@ -226,12 +249,16 @@ namespace BVSEOSDKTest
             String content = null;
             try
             {
+                stopwatch.Restart();
                 content = _bvUIContent.getContent(bvParameters);
+                stopwatch.Stop();
             }
             catch (BVSdkException e)
             {
                 erroMessage = e.getMessage();
             }
+
+            Assert.IsTrue(stopwatch.ElapsedMilliseconds <= CONTENT_RETRIEVAL_THRESHOLD, String.Format("Content retrieval time exceeded {0} milliseconds", CONTENT_RETRIEVAL_THRESHOLD));
             Assert.IsNull(erroMessage, "There should not be any errorMessage");
             Assert.IsNotNull(content, "There should be content to proceed further assertion!!");
             Assert.IsFalse(content.Contains("HTTP 403 Forbidden"), "There should be valid content");
