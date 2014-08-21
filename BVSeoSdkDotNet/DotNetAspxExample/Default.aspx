@@ -7,10 +7,8 @@
     <title>Untitled Page</title>
 </head>
 <body>
-    <form id="form1" runat="server">
     <div id="BVRRContainer" runat="server">
         
     </div>
-    </form>
 </body>
 </html>

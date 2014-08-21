@@ -173,7 +173,7 @@ namespace BVSeoSdkDotNet.Url
 		    BVContentType contentType = null;
 		    BVSubjectType subjectType = null;
 		    String subjectId = null;
-		    String pageNumber = null;
+            String pageNumber = bvParameters.PageNumber;
     		
             NameValueCollection parameters = HttpUtility.ParseQueryString(_queryString, Encoding.UTF8);
 		    for(int i=0; i < parameters.Count; i++ ) 
@@ -183,7 +183,7 @@ namespace BVSeoSdkDotNet.Url
                     string[] tokens = parameters[parameters.Keys[i]].Split('/');
             	    foreach(string token in tokens)
                     {
-            		    if (token.StartsWith("pg")) 
+                        if (token.StartsWith("pg") && !IsValidPageNumber(pageNumber)) 
                         {
             			    pageNumber = getValue(token);
             		    } 
@@ -206,8 +206,10 @@ namespace BVSeoSdkDotNet.Url
             contentType = (contentType == null) ? bvParameters.ContentType : contentType;
             subjectType = (subjectType == null) ? bvParameters.SubjectType : subjectType;
             subjectId = (String.IsNullOrEmpty(subjectId)) ? bvParameters.SubjectId : subjectId;
-            pageNumber = (String.IsNullOrEmpty(pageNumber)) ? NUM_ONE_STR : pageNumber;
-            
+
+            if (!IsValidPageNumber(pageNumber))
+                pageNumber = NUM_ONE_STR;
+
             String path = getPath(contentType, subjectType, pageNumber, subjectId, bvParameters.ContentSubType);
 		    if (isContentFromFile()) {
 			    return fileUri(path);
@@ -246,8 +248,24 @@ namespace BVSeoSdkDotNet.Url
             return path.ToString();
         }
 
+        // return true if given string is a parseable integer > 0 and false otherwise
+        private bool IsValidPageNumber(string pageNumber)
+        {
+            int result;
+            bool success = Int32.TryParse(pageNumber, out result);
+
+            if (success && result > 0)
+                return true;
+            else
+                return false;
+        }
+
+        // try and take BVParameters.PageNumber first, then check query string
         private String getPageNumber()
         {
+            if (IsValidPageNumber(bvParameters.PageNumber))
+                return bvParameters.PageNumber;
+
             return BVUtilty.getPageNumber(queryString());
         }
 
