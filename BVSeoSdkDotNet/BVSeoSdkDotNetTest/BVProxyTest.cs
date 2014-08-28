@@ -47,7 +47,7 @@ namespace BVSEOSDKTest
             var theUiContent = uiContent.getContent(bvParameters);
 
             Assert.AreEqual(theUiContent.Contains("BVRRSourceID"), true, "there should be BvRRSourceID in the content");
-            Assert.AreEqual(theUiContent.Contains("bvseo-msg: Connect to localhost:9999 timed out"), false,
+            Assert.AreEqual(theUiContent.Contains("bvseo-msg: Connect to localhost:12345 timed out"), false,
                 "there should not be connection a timed out message.");
         }
 
@@ -56,7 +56,7 @@ namespace BVSEOSDKTest
         {
             var bvConfig = GetCommonConfig();
             bvConfig.addProperty(BVClientConfig.PROXY_HOST, "localhost");
-            bvConfig.addProperty(BVClientConfig.PROXY_PORT, "9999");
+            bvConfig.addProperty(BVClientConfig.PROXY_PORT, "12345");
 
             var uiContent = new BVManagedUIContent(bvConfig);
             var bvParameters = GetCommonParams();
@@ -84,7 +84,7 @@ namespace BVSEOSDKTest
 
             result.AsyncWaitHandle.WaitOne();
             Assert.AreEqual(theUiContent.Contains("BVRRSourceID"), true, "there should be BvRRSourceID in the content");
-            Assert.AreEqual(theUiContent.Contains("bvseo-msg: Connect to localhost:9999 timed out"), false,
+            Assert.AreEqual(theUiContent.Contains("bvseo-msg: Connect to localhost:12345 timed out"), false,
                 "there should not be connection a timed out message.");
         }
 
