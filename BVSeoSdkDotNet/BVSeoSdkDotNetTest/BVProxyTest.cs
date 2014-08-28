@@ -70,13 +70,13 @@ namespace BVSEOSDKTest
         public void TestProxyImplementation_Success()
         {
             var listener = new HttpListener();
-            listener.Prefixes.Add("http://+:9999/");
+            listener.Prefixes.Add("http://+:12345/");
             listener.Start();
             IAsyncResult result = listener.BeginGetContext(new AsyncCallback(ListenerCallback), listener);
 
             var bvConfig = GetCommonConfig();
             bvConfig.addProperty(BVClientConfig.PROXY_HOST, "localhost");
-            bvConfig.addProperty(BVClientConfig.PROXY_PORT, "9999");
+            bvConfig.addProperty(BVClientConfig.PROXY_PORT, "12345");
 
             var uiContent = new BVManagedUIContent(bvConfig);
             var bvParameters = GetCommonParams();
