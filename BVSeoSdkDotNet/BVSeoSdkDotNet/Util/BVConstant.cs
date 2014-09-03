@@ -39,7 +39,8 @@ namespace BVSeoSdkDotNet.Util
         /// </summary>
 	    public const String STAGING_S3_HOSTNAME = "seo-stg.bazaarvoice.com"; 
 	    public const String PRODUCTION_S3_HOSTNAME = "seo.bazaarvoice.com";
-	    public const String EXECUTION_TIMEOUT = "3000";
+	    public const String EXECUTION_TIMEOUT = "500";
+        public const String EXECUTION_TIMEOUT_BOT = "2000";
 	    public const String CRAWLER_AGENT_PATTERN = "msnbot|google|teoma|bingbot|yandexbot|yahoo";
 	    public const String CONNECT_TIMEOUT = "1000";
 	    public const String SOCKET_TIMEOUT = "1000";

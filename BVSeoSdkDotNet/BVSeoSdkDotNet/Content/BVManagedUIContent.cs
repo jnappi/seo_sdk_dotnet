@@ -50,6 +50,7 @@ namespace BVSeoSdkDotNet.Content
         private Boolean reloadContent;
         private BVUIContentService bvUiContentService;
         private String validationError;
+        private bool matchesBotCrawlerPattern;
 
         /// <summary>
         /// Default constructor.
@@ -136,7 +137,7 @@ namespace BVSeoSdkDotNet.Content
                 int startIndex = uiContent.ToString().IndexOf("<!--begin-reviews-->");
                 if (startIndex == -1)
                 {
-                    if (bvUiContentService.showUserAgentSEOContent() &&
+                    if ((!matchesBotCrawlerPattern || bvUiContentService.showUserAgentSEOContent()) &&
                             bvUiContentService.getMessage().Length == 0 && bvUiContentService.isSdkEnabled())
                     {
                         String messageString = BVMessageUtil.getMessage("ERR0003");
@@ -205,7 +206,7 @@ namespace BVSeoSdkDotNet.Content
 
                 if (startIndex == -1)
                 {
-                    if (bvUiContentService.showUserAgentSEOContent() &&
+                    if ((!matchesBotCrawlerPattern || bvUiContentService.showUserAgentSEOContent()) &&
                             bvUiContentService.getMessage().Length == 0 && bvUiContentService.isSdkEnabled())
                     {
                         String messageString = BVMessageUtil.getMessage("ERR0013");
@@ -271,6 +272,7 @@ namespace BVSeoSdkDotNet.Content
                 this.bvParameters = bvParameters;
 
                 bvSeoSdkUrl = new BVSeoSdkURLBuilder(_bvConfiguration, bvParameters);
+                matchesBotCrawlerPattern = _bvConfiguration.getProperty(BVClientConfig.CRAWLER_AGENT_PATTERN).ToLower().Contains(bvParameters.UserAgent.ToLower());
 
                 bvUiContentService = new BVUIContentServiceProvider(_bvConfiguration);
                 bvUiContentService.setBVParameters(this.bvParameters);

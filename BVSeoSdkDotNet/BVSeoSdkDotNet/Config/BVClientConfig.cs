@@ -40,6 +40,7 @@ namespace BVSeoSdkDotNet.Config
         public const string SEO_SDK_ENABLED = "seo.sdk.enabled";
         public const string STAGING = "staging";
         public const string EXECUTION_TIMEOUT = "seo.sdk.execution.timeout";
+        public const string EXECUTION_TIMEOUT_BOT = "seo.sdk.execution.timeout.bot";
         public const string PROXY_HOST = "seo.sdk.execution.proxy.host";
         public const string PROXY_PORT = "seo.sdk.execution.proxy.port";
         public const string SSL_ENABLED = "seo.sdk.ssl.enabled";
@@ -59,6 +60,7 @@ namespace BVSeoSdkDotNet.Config
             _configs.Add(SEO_SDK_ENABLED);
             _configs.Add(STAGING);
             _configs.Add(EXECUTION_TIMEOUT);
+            _configs.Add(EXECUTION_TIMEOUT_BOT);
             _configs.Add(PROXY_HOST);
             _configs.Add(PROXY_PORT);
             _configs.Add(SSL_ENABLED);

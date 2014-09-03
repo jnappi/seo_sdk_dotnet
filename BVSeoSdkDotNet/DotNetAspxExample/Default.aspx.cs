@@ -55,10 +55,11 @@ namespace DotNetAspxExample
             bvParameters.BaseURI = Request.Url.ToString().Contains("?") ? Request.Url.ToString().Substring(0, Request.Url.ToString().IndexOf("?")) : Request.Url.ToString();
             bvParameters.PageURI = Request.Url.ToString();
             bvParameters.UserAgent = Request.UserAgent;
+            //bvParameters.UserAgent = "yand";
 
-            bvParameters.ContentType = new BVContentType(BVContentType.QUESTIONSPAGE);
-            bvParameters.SubjectType = new BVSubjectType(BVSubjectType.CATEGORY);
-            bvParameters.SubjectId = "Retail";
+            bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
+            bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
+            bvParameters.SubjectId = "5000001";
 
             //bvParameters.BaseURI = Request.Url.AbsoluteUri;
             //bvParameters.PageURI = Request.Url.AbsoluteUri + "?bvrrp=8814/reviews/product/4/PR6.htm&bvreveal=debug";

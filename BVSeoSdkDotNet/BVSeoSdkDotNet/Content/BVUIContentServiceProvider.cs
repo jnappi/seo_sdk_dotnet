@@ -337,7 +337,9 @@ namespace BVSeoSdkDotNet.Content
                 return new StringBuilder(_uiContent.ToString());
             }
 
-            long executionTimeout = long.Parse(_bvConfiguration.getProperty(BVClientConfig.EXECUTION_TIMEOUT));
+            bool matchesBotCrawlerPattern = _bvConfiguration.getProperty(BVClientConfig.CRAWLER_AGENT_PATTERN).ToLower().Contains(_bvParameters.UserAgent.ToLower());
+            long executionTimeout = matchesBotCrawlerPattern ? long.Parse(_bvConfiguration.getProperty(BVClientConfig.EXECUTION_TIMEOUT_BOT)) :
+                long.Parse(_bvConfiguration.getProperty(BVClientConfig.EXECUTION_TIMEOUT));
 
             try
             {
