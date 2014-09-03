@@ -89,34 +89,5 @@ namespace BVSEOSDKTest
 
             Assert.AreEqual<Boolean>(errorMessage.Contains("SubjectId cannot be null or empty.;"), true, "Error Messages are different.");
         }
-
-        [TestMethod]
-        public void TestValidation_When_Bot_Detection_Set_True()
-        {
-            TestValidation_When_Bot_Detection_Set("true");
-
-            errorMessage = bvValidator.validate(bvConfig, bvParams);
-            
-            Assert.AreEqual<Boolean>(errorMessage.Contains("SubjectId cannot be null or empty"), true, "Error Messages are different.");
-            Assert.AreEqual<Boolean>(errorMessage.Contains("userAgent in BVParameters is null"), true, "Error Messages are different.");
-        }
-
-        [TestMethod]
-        public void TestValidation_When_Bot_Detection_Set_False()
-        {
-            TestValidation_When_Bot_Detection_Set("false");
-
-            errorMessage = bvValidator.validate(bvConfig, bvParams);
-
-            Assert.AreEqual<Boolean>(errorMessage.Contains("SubjectId cannot be null or empty"), true, "Error Messages are different.");
-        }
-
-        private void TestValidation_When_Bot_Detection_Set(string botDetectionVal)
-        {
-            bvConfig = new BVSdkConfiguration();
-            bvConfig.addProperty(BVClientConfig.BOT_DETECTION, botDetectionVal);
-            bvValidator = new BVDefaultValidator();
-            bvParams = new BVParameters();
-        }
     }
 }

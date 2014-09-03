@@ -47,7 +47,6 @@ namespace BVSeoSdkDotNet.Util
 	    public const String SEO_SDK_ENABLED = "true";
         public const String PROXY_HOST = "none";
         public const String PROXY_PORT = "0";
-        public const String BOT_DETECTION = "false";
         public const String INCLUDE_DISPLAY_INTEGRATION_CODE = "false";
         public const String LOAD_SEO_FILES_LOCALLY = "false";
         public const String LOCAL_SEO_FILE_ROOT = "/";

@@ -56,7 +56,6 @@ namespace BVSeoSdkDotNet.Config
             addProperty(BVClientConfig.SEO_SDK_ENABLED, BVConstant.SEO_SDK_ENABLED);
             addProperty(BVClientConfig.PROXY_HOST, BVConstant.PROXY_HOST);
             addProperty(BVClientConfig.PROXY_PORT, BVConstant.PROXY_PORT);
-            addProperty(BVClientConfig.BOT_DETECTION, BVConstant.BOT_DETECTION);
             addProperty(BVClientConfig.INCLUDE_DISPLAY_INTEGRATION_CODE, BVConstant.INCLUDE_DISPLAY_INTEGRATION_CODE);
             addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, BVConstant.LOAD_SEO_FILES_LOCALLY);
             addProperty(BVClientConfig.LOCAL_SEO_FILE_ROOT, BVConstant.LOCAL_SEO_FILE_ROOT);

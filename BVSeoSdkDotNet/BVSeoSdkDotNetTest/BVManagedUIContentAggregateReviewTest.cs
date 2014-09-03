@@ -119,7 +119,6 @@ namespace BVSEOSDKTest
         {
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
-            _bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca");
             _bvConfig.addProperty(BVClientConfig.STAGING, "true");
@@ -158,7 +157,6 @@ namespace BVSEOSDKTest
         {
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
-            _bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca");
             _bvConfig.addProperty(BVClientConfig.STAGING, "true");
@@ -195,7 +193,6 @@ namespace BVSEOSDKTest
         {
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
-            _bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "adobe-55d020998d7b4776fb0f9df49278083c");
             _bvConfig.addProperty(BVClientConfig.STAGING, "false");
@@ -231,7 +228,6 @@ namespace BVSEOSDKTest
         {
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
-            _bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "seo_sdk_testcase-159b6108bb11967e554a92c6a3c39cb3");
             _bvConfig.addProperty(BVClientConfig.STAGING, "true");
@@ -264,7 +260,6 @@ namespace BVSEOSDKTest
         {
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
-            _bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "false");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "seo_sdk_testcase-159b6108bb11967e554a92c6a3c39cb3");
             _bvConfig.addProperty(BVClientConfig.STAGING, "false");
@@ -297,7 +292,6 @@ namespace BVSEOSDKTest
         {
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
-            _bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "adobe-55d020998d7b4776fb0f9df49278083c");
             _bvConfig.addProperty(BVClientConfig.STAGING, "false");
@@ -326,7 +320,6 @@ namespace BVSEOSDKTest
         {
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "false");
-            _bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "hartz-2605f8e4ef6790962627644cc195acf2");
             _bvConfig.addProperty(BVClientConfig.STAGING, "false");
@@ -357,7 +350,6 @@ namespace BVSEOSDKTest
         {
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "false");
-            _bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "hartz-2605f8e4ef6790962627644cc195acf2");
             _bvConfig.addProperty(BVClientConfig.STAGING, "false");
@@ -386,7 +378,6 @@ namespace BVSEOSDKTest
         {
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "false");
-            _bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "hartz-2605f8e4ef6790962627644cc195acf2");
             _bvConfig.addProperty(BVClientConfig.STAGING, "false");
@@ -481,7 +472,6 @@ namespace BVSEOSDKTest
         {
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
-            _bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "hartz-2605f8e4ef6790962627644cc195acf2");
             _bvConfig.addProperty(BVClientConfig.STAGING, "false");
@@ -519,7 +509,6 @@ namespace BVSEOSDKTest
         {
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
-            _bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "adobe-invalid-55d020998d7b4776fb0f9df49278083c");
             _bvConfig.addProperty(BVClientConfig.STAGING, "false");

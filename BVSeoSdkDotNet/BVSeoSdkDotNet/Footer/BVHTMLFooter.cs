@@ -111,7 +111,6 @@ namespace BVSeoSdkDotNet.Footer
                 context.Put("executionTime", executionTime);
                 context.Put("accessMethod", accessMethod);
                 context.Put("version", assemblyVersion);
-                context.Put("isBd", _bvConfiguration.getProperty(BVClientConfig.BOT_DETECTION));
 
                 String message = null;
                 if (messageList != null && messageList.Count > 0)

@@ -36,7 +36,6 @@ namespace BVSeoSdkDotNet.Config
         public const string CONNECT_TIMEOUT = "connectTimeout";
         public const string SOCKET_TIMEOUT = "socketTimeout";
         public const string INCLUDE_DISPLAY_INTEGRATION_CODE = "includeDisplayIntegrationCode";
-        public const string BOT_DETECTION = "botDetection";
         public const string CRAWLER_AGENT_PATTERN = "crawlerAgentPattern";
         public const string SEO_SDK_ENABLED = "seo.sdk.enabled";
         public const string STAGING = "staging";
@@ -56,7 +55,6 @@ namespace BVSeoSdkDotNet.Config
             _configs.Add(CONNECT_TIMEOUT);
             _configs.Add(SOCKET_TIMEOUT);
             _configs.Add(INCLUDE_DISPLAY_INTEGRATION_CODE);
-            _configs.Add(BOT_DETECTION);
             _configs.Add(CRAWLER_AGENT_PATTERN);
             _configs.Add(SEO_SDK_ENABLED);
             _configs.Add(STAGING);
