@@ -41,7 +41,8 @@ namespace DotNetAspxExample
             //_bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
             //_bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "adobe-55d020998d7b4776fb0f9df49278083c"); // get this value from BV
             //_bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "8814"); //get this value from BV
-            _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "5000");
+//            _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "0");
+            _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT_BOT, "2000");
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-126b543c32d9079f120a575ece25bad6");
             _bvConfig.addProperty(BVClientConfig.STAGING, "true");
             _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344ia");
@@ -55,7 +56,7 @@ namespace DotNetAspxExample
             bvParameters.BaseURI = Request.Url.ToString().Contains("?") ? Request.Url.ToString().Substring(0, Request.Url.ToString().IndexOf("?")) : Request.Url.ToString();
             bvParameters.PageURI = Request.Url.ToString();
             bvParameters.UserAgent = Request.UserAgent;
-            bvParameters.UserAgent = "yand";
+            //bvParameters.UserAgent = "yandex 2.0";
 
             bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
             bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);

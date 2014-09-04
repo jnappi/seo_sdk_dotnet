@@ -29,8 +29,6 @@ namespace BVSeoSdkDotNet.Config
     /// <summary>
     /// Default implementation of configuration settings. This loads the Bazaarvoice
     /// specific configuration and also user specific setting.
-    /// 
-    /// @author Mohan Krupanandan
     /// </summary>
     public class BVSdkConfiguration : BVConfiguration
     {

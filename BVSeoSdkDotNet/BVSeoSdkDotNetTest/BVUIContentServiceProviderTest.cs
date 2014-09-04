@@ -79,59 +79,6 @@ namespace BVSEOSDKTest
         }
 
         /// <summary>
-        /// Test case to check if showUserAgentSEOContent is working as expected.
-        /// Refer to implementation on various cases how this is achieved.
-        /// </summary>
-        [TestMethod]
-        public void TestShowUserAgentSeoContent()
-        {
-            bvUIContentService = new BVUIContentServiceProvider(bvConfiguration);
-
-            BVParameters bvParameters = null;
-            bvUIContentService.setBVParameters(bvParameters);
-
-            Boolean showUserAgent = bvUIContentService.showUserAgentSEOContent();
-            StringBuilder message = bvUIContentService.getMessage();
-            Assert.IsFalse(showUserAgent, "value retuned should be false");
-            Assert.IsTrue(String.IsNullOrEmpty(message.ToString()), "there should not be any message.");
-
-            bvParameters = new BVParameters();
-            bvUIContentService.setBVParameters(bvParameters);
-            showUserAgent = bvUIContentService.showUserAgentSEOContent();
-            message = bvUIContentService.getMessage();
-            Assert.IsFalse(showUserAgent, "value retuned should be false");
-            Assert.IsTrue(String.IsNullOrEmpty(message.ToString()), "there should not be any message.");
-
-            bvParameters = new BVParameters();
-            bvParameters.UserAgent = "some other string representation";
-            bvUIContentService.setBVParameters(bvParameters);
-            showUserAgent = bvUIContentService.showUserAgentSEOContent();
-            message = bvUIContentService.getMessage();
-            Assert.IsFalse(showUserAgent, "value retuned should be false");
-            Assert.IsTrue(String.IsNullOrEmpty(message.ToString()), "there should not be any message.");
-
-            /** Custom configuration for crawler agent **/
-            bvConfiguration.addProperty(BVClientConfig.CRAWLER_AGENT_PATTERN, "custombot");
-            bvParameters = new BVParameters();
-            bvParameters.UserAgent = "custombot";
-            bvUIContentService.setBVParameters(bvParameters);
-            showUserAgent = bvUIContentService.showUserAgentSEOContent();
-            message = bvUIContentService.getMessage();
-            Assert.IsTrue(showUserAgent, "value retuned should be true");
-            Assert.IsTrue(String.IsNullOrEmpty(message.ToString()), "there should not be any message.");
-
-            /** Custom crawler but with google user agent. **/
-		    bvConfiguration.addProperty(BVClientConfig.CRAWLER_AGENT_PATTERN, "custombot");
-            bvParameters = new BVParameters();
-            bvParameters.UserAgent = "googlebot";
-		    bvUIContentService.setBVParameters(bvParameters);
-		    showUserAgent = bvUIContentService.showUserAgentSEOContent();
-		    message = bvUIContentService.getMessage();
-            Assert.IsTrue(showUserAgent, "value retuned should be true");
-            Assert.IsTrue(String.IsNullOrEmpty(message.ToString()), "there should not be any message.");
-        }
-
-        /// <summary>
         /// Test case to check if sdkEnabled gives the expected result.
         /// </summary>
         [TestMethod]

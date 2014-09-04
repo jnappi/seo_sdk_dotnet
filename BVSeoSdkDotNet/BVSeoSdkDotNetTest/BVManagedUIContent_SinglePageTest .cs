@@ -76,7 +76,7 @@ namespace BVSeoSdkDotNet
             BVUIContent uiContent = new BVManagedUIContent(bvConfig);
 
             BVParameters bvParameters = new BVParameters();
-            bvParameters.UserAgent = "google";
+            bvParameters.UserAgent = "FireFox";
             bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
             bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
             bvParameters.SubjectId = "3000001";
@@ -98,7 +98,7 @@ namespace BVSeoSdkDotNet
             BVUIContent uiContent = new BVManagedUIContent(bvConfig);
 
             BVParameters bvParameters = new BVParameters();
-            bvParameters.UserAgent = "google";
+            bvParameters.UserAgent = "FireFox";
             bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
             bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
             bvParameters.SubjectId = "3000001";
@@ -121,7 +121,7 @@ namespace BVSeoSdkDotNet
             BVUIContent uiContent = new BVManagedUIContent(bvConfig);
 
             BVParameters bvParameters = new BVParameters();
-            bvParameters.UserAgent = "google";
+            bvParameters.UserAgent = "FireFox";
             bvParameters.PageURI = "http://localhost:8080/sample/someproduct.jsp?bvpage=ctre/id3000001/stp";
 
             String theUIContent = uiContent.getContent(bvParameters);

@@ -29,8 +29,6 @@ namespace BVSeoSdkDotNet.Validation
 {
     /// <summary>
     /// Validator implementation class for BVParameters & BVConfiguration.
-    /// 
-    /// @author Mohan Krupanandan
     /// </summary>
     public class BVDefaultValidator : BVValidator
     {

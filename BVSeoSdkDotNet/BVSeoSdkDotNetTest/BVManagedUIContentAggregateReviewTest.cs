@@ -115,7 +115,7 @@ namespace BVSEOSDKTest
         }
 
         [TestMethod]
-        public void TestSEOContent_SinglePageHTTP_AggregateRating_BotDetectionEnabled()
+        public void TestSEOContent_SinglePageHTTP_AggregateRating_BotDetected()
         {
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
@@ -123,10 +123,12 @@ namespace BVSEOSDKTest
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca");
             _bvConfig.addProperty(BVClientConfig.STAGING, "true");
             _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344seob");
-            _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "3000");
+            _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "1");
+            _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT_BOT, "10000");
 
             BVParameters _bvParam = new BVParameters();
-            _bvParam.UserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.29.13 (KHTML, like Gecko) Version/6.0.4 Safari/536.29.13";
+            //_bvParam.UserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.29.13 (KHTML, like Gecko) Version/6.0.4 Safari/536.29.13";
+            _bvParam.UserAgent = "google";
             _bvParam.BaseURI = "http://localhost:8080/thispage.htm"; 
             _bvParam.PageURI = "http://localhost:8080/abcd" + "?" + "notSure=1&letSee=2";
             _bvParam.ContentType = new BVContentType(BVContentType.REVIEWS);
@@ -137,18 +139,16 @@ namespace BVSEOSDKTest
 
             String sBvOutputSummary = _bvOutput.getAggregateRating(_bvParam);
 
-            Assert.AreEqual<Boolean>(!sBvOutputSummary.Contains("itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\""),
-                true, "there should not be AggregateRating in the content");
+            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\""),
+                true, "there should be AggregateRating in the content");
             Assert.AreEqual<Boolean>(!sBvOutputSummary.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\""), true, 
 				"there should not be reviews section in the content");
-            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("JavaScript-only Display"), true, "There should be JavaScript display element");
-		
+
 		    String sBvOutputReviews = _bvOutput.getReviews(_bvParam);
-            Assert.AreEqual<Boolean>(!sBvOutputReviews.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\""), true, 
-				    "there should not be reviews section in the content");
+            Assert.AreEqual<Boolean>(sBvOutputReviews.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\""), true, 
+				    "there should be reviews section in the content");
             Assert.AreEqual<Boolean>(!sBvOutputReviews.Contains("itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\""),
                     true, "there should not be AggregateRating in the content");
-            Assert.AreEqual<Boolean>(sBvOutputReviews.Contains("JavaScript-only Display"), true, "There should be JavaScript display element");
         }
 
 

@@ -24,14 +24,11 @@ namespace BVSeoSdkDotNet.Util
 {
     /// <summary>
     /// Common constants class used through out SEO SDK implementations.
-    /// 
-    /// @author Mohan Krupanandan
     /// </summary>
     public sealed class BVConstant
     {
         public const String BVREVEAL = "bvreveal";
 	    public const String BVREVEAL_DEBUG = "bvreveal=debug";
-	    public const String JS_DISPLAY_MSG = "JavaScript-only Display;";
 	    public const String INCLUDE_PAGE_URI = "{INSERT_PAGE_URI}";
     	
         /// <summary>

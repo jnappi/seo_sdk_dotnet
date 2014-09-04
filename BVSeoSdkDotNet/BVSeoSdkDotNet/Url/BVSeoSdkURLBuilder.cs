@@ -34,8 +34,6 @@ namespace BVSeoSdkDotNet.Url
 {
     /// <summary>
     /// Class to support building the proper url to access the bazaarvoice content
-    /// 
-    /// @author Mohan Krupanandan
     /// </summary>
     public class BVSeoSdkURLBuilder : BVSeoSdkUrl
     {

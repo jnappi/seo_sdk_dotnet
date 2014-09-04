@@ -35,8 +35,6 @@ namespace BVSeoSdkDotNet.Content
 {
     /// <summary>
     /// Implementation class for BVUIContentService
-    /// 
-    /// @author Mohan Krupanandan
     /// </summary>
     public class BVUIContentServiceProvider : BVUIContentService
     {
@@ -226,21 +224,7 @@ namespace BVSeoSdkDotNet.Content
         /// <returns>A boolean value</returns>
         public Boolean showUserAgentSEOContent()
         {
-            if (_bvParameters == null || String.IsNullOrEmpty(_bvParameters.UserAgent))
-            {
-                return false;
-            }
-
-            String crawlerAgentPattern = _bvConfiguration.getProperty(BVClientConfig.CRAWLER_AGENT_PATTERN);
-            if (!String.IsNullOrEmpty(crawlerAgentPattern))
-            {
-                crawlerAgentPattern = ".*(" + crawlerAgentPattern + ").*";
-            }
-            Regex pattern = new Regex(crawlerAgentPattern, RegexOptions.IgnoreCase);
-
-            _logger.Debug("userAgent is : " + _bvParameters.UserAgent);
-            
-            return (pattern.IsMatch(_bvParameters.UserAgent) || _bvParameters.UserAgent.ToLower().Contains("google"));
+            return true;
         }
 
         /// <summary>
@@ -275,42 +259,20 @@ namespace BVSeoSdkDotNet.Content
 
         private void call() 
         {
-            String displayJSOnly = null;
-            Uri seoContentUrl = null;
             try 
             {
                 //includes integration script if one is enabled.
                 includeIntegrationCode();
 
-                bool matchesBotCrawlerPattern = _bvConfiguration.getProperty(BVClientConfig.CRAWLER_AGENT_PATTERN).ToLower().Contains(_bvParameters.UserAgent.ToLower());
-
-                /*
-                 * Hit only when botDetection is disabled or if the queryString is appended with bvreveal or if it matches any 
-                 * crawler pattern that is configured at the client configuration. 
-                 */
-                if (!matchesBotCrawlerPattern || _bvSeoSdkUrl.queryString().Contains(BVConstant.BVREVEAL) || showUserAgentSEOContent()) 
-                {
-                    seoContentUrl = _bvSeoSdkUrl.seoContentUri();
-                    String correctedBaseUri = _bvSeoSdkUrl.correctedBaseUri();
-                    getBvContent(_uiContent, seoContentUrl, correctedBaseUri);
-                } 
-                else 
-                {
-                    displayJSOnly = BVConstant.JS_DISPLAY_MSG;
-                }
+                Uri seoContentUrl = _bvSeoSdkUrl.seoContentUri();
+                String correctedBaseUri = _bvSeoSdkUrl.correctedBaseUri();
+                getBvContent(_uiContent, seoContentUrl, correctedBaseUri);
             } 
             catch (BVSdkException e) 
             {
                 _logger.Error(e.getMessage(), e);
                 _message.Append(e.getMessage());
             }
-
-            if (displayJSOnly != null) 
-            {
-                _message.Append(displayJSOnly);
-            }
-            
-            //return _uiContent;
         }
 
         private bool RunWithTimeout(ThreadStart threadStart, TimeSpan timeout)
@@ -339,8 +301,16 @@ namespace BVSeoSdkDotNet.Content
                 return new StringBuilder(_uiContent.ToString());
             }
 
-            bool matchesBotCrawlerPattern = _bvConfiguration.getProperty(BVClientConfig.CRAWLER_AGENT_PATTERN).ToLower().Contains(_bvParameters.UserAgent.ToLower());
-            long executionTimeout = matchesBotCrawlerPattern ? long.Parse(_bvConfiguration.getProperty(BVClientConfig.EXECUTION_TIMEOUT_BOT)) :
+            Boolean userAgentFitsCrawlerPattern = false;
+            String crawlerAgentPattern = _bvConfiguration.getProperty(BVClientConfig.CRAWLER_AGENT_PATTERN);
+            if (!String.IsNullOrEmpty(crawlerAgentPattern) && _bvParameters != null && !String.IsNullOrEmpty(_bvParameters.UserAgent))
+            {
+                crawlerAgentPattern = ".*(" + crawlerAgentPattern + ").*";
+                Regex pattern = new Regex(crawlerAgentPattern, RegexOptions.IgnoreCase);
+                userAgentFitsCrawlerPattern = pattern.IsMatch(_bvParameters.UserAgent);
+            }
+
+            long executionTimeout = userAgentFitsCrawlerPattern ? long.Parse(_bvConfiguration.getProperty(BVClientConfig.EXECUTION_TIMEOUT_BOT)) :
                 long.Parse(_bvConfiguration.getProperty(BVClientConfig.EXECUTION_TIMEOUT));
 
             try

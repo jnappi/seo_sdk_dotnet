@@ -24,8 +24,6 @@ namespace BVSeoSdkDotNet.Config
 {
     /// <summary>
     /// Bazaarvoice SEO SDK Client Configuration Values class.
-    /// 
-    /// @author Mohan Krupanandan
     /// </summary>
     public class BVClientConfig
     {

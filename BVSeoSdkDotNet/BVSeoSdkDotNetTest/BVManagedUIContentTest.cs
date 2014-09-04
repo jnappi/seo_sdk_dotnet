@@ -110,7 +110,7 @@ namespace BVSeoSdkDotNet
             BVUIContent uiContent = new BVManagedUIContent(bvConfig);
 
             BVParameters bvParameters = new BVParameters();
-            bvParameters.UserAgent = "google";
+            bvParameters.UserAgent = "Firefox";
             bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
             bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
             bvParameters.SubjectId = "3000001";
@@ -118,6 +118,28 @@ namespace BVSeoSdkDotNet
             String theUIContent = uiContent.getContent(bvParameters);
 
             Assert.AreEqual<bool>(theUIContent.Contains("bvseo-msg: Execution timed out, exceeded"), true, "there should be execution timeout message");
+        }
+
+        [TestMethod]
+        public void BVManagedUIContentTestBotExecutionTimeOut()
+        {
+            BVConfiguration bvConfig = new BVSdkConfiguration();
+            bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
+            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca");
+            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344seob");
+            bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "2");
+
+            BVUIContent uiContent = new BVManagedUIContent(bvConfig);
+
+            BVParameters bvParameters = new BVParameters();
+            bvParameters.UserAgent = "google";
+            bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
+            bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
+            bvParameters.SubjectId = "3000001";
+
+            String theUIContent = uiContent.getContent(bvParameters);
+
+            Assert.AreNotEqual<bool>(theUIContent.Contains("bvseo-msg: Execution timed out, exceeded"), true, "there should be execution timeout message");
         }
 
         [TestMethod]
