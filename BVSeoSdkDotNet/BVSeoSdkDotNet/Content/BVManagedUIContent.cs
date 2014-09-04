@@ -172,7 +172,7 @@ namespace BVSeoSdkDotNet.Content
 
             bvFooter.addMessage(message.ToString());
             bvFooter.setExecutionTime(TimeinMilliSeconds() - startTime);
-            uiContent.Append(bvFooter.displayFooter("getAggretateRating"));
+            uiContent.Append(bvFooter.displayFooter("getAggregateRating"));
 
             return uiContent.ToString();
         }

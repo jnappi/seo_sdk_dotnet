@@ -282,11 +282,13 @@ namespace BVSeoSdkDotNet.Content
                 //includes integration script if one is enabled.
                 includeIntegrationCode();
 
+                bool matchesBotCrawlerPattern = _bvConfiguration.getProperty(BVClientConfig.CRAWLER_AGENT_PATTERN).ToLower().Contains(_bvParameters.UserAgent.ToLower());
+
                 /*
                  * Hit only when botDetection is disabled or if the queryString is appended with bvreveal or if it matches any 
                  * crawler pattern that is configured at the client configuration. 
                  */
-                if (_bvSeoSdkUrl.queryString().Contains(BVConstant.BVREVEAL) || showUserAgentSEOContent()) 
+                if (!matchesBotCrawlerPattern || _bvSeoSdkUrl.queryString().Contains(BVConstant.BVREVEAL) || showUserAgentSEOContent()) 
                 {
                     seoContentUrl = _bvSeoSdkUrl.seoContentUri();
                     String correctedBaseUri = _bvSeoSdkUrl.correctedBaseUri();
