@@ -343,8 +343,13 @@ namespace BVSeoSdkDotNet.Content
 
             try
             {
-                Boolean fCallFinished;
-                fCallFinished = RunWithTimeout(call, TimeSpan.FromMilliseconds(executionTimeout));
+                Boolean fCallFinished = false;
+
+                if (executionTimeout > 0)
+                {
+                    fCallFinished = RunWithTimeout(call, TimeSpan.FromMilliseconds(executionTimeout));
+                }
+
                 if (!fCallFinished) _message.Append(String.Format(BVMessageUtil.getMessage("ERR0018"), new Object[] { executionTimeout }));
             }
             catch (ThreadInterruptedException e)
