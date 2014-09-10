@@ -39,8 +39,8 @@ namespace BVSeoSdkDotNet.Util
 	    public const String EXECUTION_TIMEOUT = "500";
         public const String EXECUTION_TIMEOUT_BOT = "2000";
 	    public const String CRAWLER_AGENT_PATTERN = "msnbot|google|teoma|bingbot|yandexbot|yahoo";
-	    public const String CONNECT_TIMEOUT = "1000";
-	    public const String SOCKET_TIMEOUT = "1000";
+	    public const String CONNECT_TIMEOUT = "2000";
+	    public const String SOCKET_TIMEOUT = "2000";
 	    public const String STAGING = "false";
 	    public const String SEO_SDK_ENABLED = "true";
         public const String PROXY_HOST = "none";
