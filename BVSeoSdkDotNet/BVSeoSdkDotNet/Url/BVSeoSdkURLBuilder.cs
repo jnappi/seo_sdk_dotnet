@@ -158,8 +158,8 @@ namespace BVSeoSdkDotNet.Url
             }
             catch (UriFormatException e)
             {
-                _logger.Error(BVMessageUtil.getMessage("ERR0026"), e);
-                throw new BVSdkException("ERR0026");
+                _logger.Error(BVMessageUtil.getMessage("ERR0027"), e);
+                throw new BVSdkException("ERR0027");
             }
 
             return null;

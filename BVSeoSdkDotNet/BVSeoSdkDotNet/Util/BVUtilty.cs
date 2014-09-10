@@ -104,8 +104,8 @@ namespace BVSeoSdkDotNet.Util
             }
             catch (Exception ex)
             {
-                _logger.Error(BVMessageUtil.getMessage("ERR0026"),ex);
-                throw new BVSdkException("ERR0026");
+                _logger.Error(BVMessageUtil.getMessage("ERR0027"),ex);
+                throw new BVSdkException("ERR0027");
             }
 
             return _uri.Query;

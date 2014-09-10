@@ -313,6 +313,18 @@ namespace BVSeoSdkDotNet.Content
             long executionTimeout = userAgentFitsCrawlerPattern ? long.Parse(_bvConfiguration.getProperty(BVClientConfig.EXECUTION_TIMEOUT_BOT)) :
                 long.Parse(_bvConfiguration.getProperty(BVClientConfig.EXECUTION_TIMEOUT));
 
+            if (!userAgentFitsCrawlerPattern && executionTimeout == 0)
+            {
+                _message.Append(String.Format(BVMessageUtil.getMessage("MSG0004"))); 
+                return new StringBuilder();
+            }
+            
+            if (userAgentFitsCrawlerPattern && executionTimeout < 100) 
+            {
+        	    executionTimeout = 100;
+                _message.Append(String.Format(BVMessageUtil.getMessage("MSG0005")));
+            }
+
             try
             {
                 Boolean fCallFinished = false;
@@ -336,8 +348,9 @@ namespace BVSeoSdkDotNet.Content
             }
             catch (TimeoutException e)
             {
-                _logger.Error(String.Format(BVMessageUtil.getMessage("ERR0018"), new Object[] { executionTimeout }), e);
-                _message.Append(String.Format(BVMessageUtil.getMessage("ERR0018"), new Object[] { executionTimeout }));
+                String errorCode = userAgentFitsCrawlerPattern ? "ERR0026" : "ERR0018";
+                _logger.Error(String.Format(BVMessageUtil.getMessage(errorCode), new Object[] { executionTimeout }), e);
+                _message.Append(String.Format(BVMessageUtil.getMessage(errorCode), new Object[] { executionTimeout }));
             }
             catch (Exception e)
             {
