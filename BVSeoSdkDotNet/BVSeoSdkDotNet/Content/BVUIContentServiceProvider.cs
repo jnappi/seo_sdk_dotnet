@@ -17,7 +17,6 @@
  * 
  */
 using System;
-using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
@@ -315,14 +314,14 @@ namespace BVSeoSdkDotNet.Content
 
             if (!userAgentFitsCrawlerPattern && executionTimeout == 0)
             {
-                _message.Append(String.Format(BVMessageUtil.getMessage("MSG0004"))); 
+                _message.Append(BVMessageUtil.getMessage("MSG0004")); 
                 return new StringBuilder();
             }
             
             if (userAgentFitsCrawlerPattern && executionTimeout < 100) 
             {
         	    executionTimeout = 100;
-                _message.Append(String.Format(BVMessageUtil.getMessage("MSG0005")));
+                _message.Append(BVMessageUtil.getMessage("MSG0005"));
             }
 
             try

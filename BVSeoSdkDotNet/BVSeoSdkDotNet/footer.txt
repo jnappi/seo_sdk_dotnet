@@ -7,7 +7,7 @@
 	<li id="et">bvseo-${executionTime}ms</li>
 	<li id="ct">bvseo-${_bvParameters.ContentType.uriValue().ToUpper()}</li>
 	<li id="st">bvseo-${_bvParameters.SubjectType.uriValue().ToUpper()}</li>
-	<li id="pn">bvseo-${_bvParameters.pageNumber}</li>
+	<li id="pn">bvseo-${_bvParameters.PageNumber}</li>
 	<li id="am">bvseo-${accessMethod}</li>
 #if (${message}) 
 	<li id="ms">bvseo-msg: ${message}</li>
