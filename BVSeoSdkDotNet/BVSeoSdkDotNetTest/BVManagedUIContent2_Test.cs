@@ -262,5 +262,37 @@ namespace BVSEOSDKTest
             Assert.IsNotNull(content, "There should be content to proceed further assertion!!");
             Assert.IsFalse(content.Contains("HTTP 403 Forbidden"), "There should be valid content");
         }
+
+        [TestMethod]
+        public void Test_PageNumber_C2013()
+        {
+            BVConfiguration bvConfiguration = new BVSdkConfiguration();
+            bvConfiguration.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
+            bvConfiguration.addProperty(BVClientConfig.CLOUD_KEY, "agileville-78B2EF7DE83644CAB5F8C72F2D8C8491");
+            bvConfiguration.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
+            bvConfiguration.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
+            bvConfiguration.addProperty(BVClientConfig.STAGING, "true");
+
+            BVUIContent bvUIContent = new BVManagedUIContent(bvConfiguration);
+
+            BVParameters bvParameters = new BVParameters();
+            bvParameters.UserAgent = "google";
+            bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
+            bvParameters.PageNumber = "2";
+            bvParameters.BaseURI = "http://www.example.com/store/products/reviews";
+            bvParameters.PageURI =
+                "http://www.example.com/store/products/data-gen-696yl2lg1kurmqxn88fqif5y2/?utm_campaign=bazaarvoice&utm_medium=SearchVoice&utm_source=RatingsAndReviews&utm_content=Default&bvpage=pg3/ctre/stp/iddata-gen-5zkafmln4wymhcfbp5u6hmv5q&bvreveal=debug";
+
+            String content = bvUIContent.getContent(bvParameters);
+
+            Assert.IsTrue(
+                content.Contains("http://seo-stg.bazaarvoice.com/agileville-78B2EF7DE83644CAB5F8C72F2D8C8491/"
+                                 + "Main_Site-en_US/reviews/product/2/data-gen-5zkafmln4wymhcfbp5u6hmv5q.htm"),
+                "URL should be valid url");
+            Assert.IsTrue(!content.Contains("The resource to the URL or file is currently unavailable"),
+                "resource not found or unavailable message should not be there");
+
+            Debug.WriteLine(content);
+        }
     }
 }

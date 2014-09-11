@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BVHTMLFooterTest.cs" />
     <Compile Include="BVManagedUIContentAggregateReviewTest.cs" />
+    <Compile Include="BVManagedUiContent_ExecutionTimeoutTest.cs" />
     <Compile Include="BVManagedUIContent_SinglePageTest .cs" />
     <Compile Include="BVManagedUIContent3_Test.cs" />
     <Compile Include="BVManagedUIContent4_Test.cs" />
