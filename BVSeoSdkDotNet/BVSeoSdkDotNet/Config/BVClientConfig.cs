@@ -24,8 +24,6 @@ namespace BVSeoSdkDotNet.Config
 {
     /// <summary>
     /// Bazaarvoice SEO SDK Client Configuration Values class.
-    /// 
-    /// @author Mohan Krupanandan
     /// </summary>
     public class BVClientConfig
     {
@@ -36,11 +34,11 @@ namespace BVSeoSdkDotNet.Config
         public const string CONNECT_TIMEOUT = "connectTimeout";
         public const string SOCKET_TIMEOUT = "socketTimeout";
         public const string INCLUDE_DISPLAY_INTEGRATION_CODE = "includeDisplayIntegrationCode";
-        public const string BOT_DETECTION = "botDetection";
         public const string CRAWLER_AGENT_PATTERN = "crawlerAgentPattern";
         public const string SEO_SDK_ENABLED = "seo.sdk.enabled";
         public const string STAGING = "staging";
         public const string EXECUTION_TIMEOUT = "seo.sdk.execution.timeout";
+        public const string EXECUTION_TIMEOUT_BOT = "seo.sdk.execution.timeout.bot";
         public const string PROXY_HOST = "seo.sdk.execution.proxy.host";
         public const string PROXY_PORT = "seo.sdk.execution.proxy.port";
         public const string SSL_ENABLED = "seo.sdk.ssl.enabled";
@@ -56,11 +54,11 @@ namespace BVSeoSdkDotNet.Config
             _configs.Add(CONNECT_TIMEOUT);
             _configs.Add(SOCKET_TIMEOUT);
             _configs.Add(INCLUDE_DISPLAY_INTEGRATION_CODE);
-            _configs.Add(BOT_DETECTION);
             _configs.Add(CRAWLER_AGENT_PATTERN);
             _configs.Add(SEO_SDK_ENABLED);
             _configs.Add(STAGING);
             _configs.Add(EXECUTION_TIMEOUT);
+            _configs.Add(EXECUTION_TIMEOUT_BOT);
             _configs.Add(PROXY_HOST);
             _configs.Add(PROXY_PORT);
             _configs.Add(SSL_ENABLED);

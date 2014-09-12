@@ -69,8 +69,6 @@ namespace BVSeoSdkDotNet
             bvConfig = new BVSdkConfiguration();
             bvConfig.addProperty(BVCoreConfig.STAGING_S3_HOSTNAME, "google.com:81");
             bvConfig.addProperty(BVCoreConfig.PRODUCTION_S3_HOSTNAME, "google.com:81");
-
-            bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true");
             bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "rootFolder");
             bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "cloudKey");
             bvConfig.addProperty(BVClientConfig.CONNECT_TIMEOUT, "100");
@@ -112,7 +110,7 @@ namespace BVSeoSdkDotNet
             BVUIContent uiContent = new BVManagedUIContent(bvConfig);
 
             BVParameters bvParameters = new BVParameters();
-            bvParameters.UserAgent = "google";
+            bvParameters.UserAgent = "Firefox";
             bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
             bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
             bvParameters.SubjectId = "3000001";
@@ -123,13 +121,34 @@ namespace BVSeoSdkDotNet
         }
 
         [TestMethod]
+        public void BVManagedUIContentTestBotExecutionTimeOut()
+        {
+            BVConfiguration bvConfig = new BVSdkConfiguration();
+            bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
+            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca");
+            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344seob");
+            bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "2");
+
+            BVUIContent uiContent = new BVManagedUIContent(bvConfig);
+
+            BVParameters bvParameters = new BVParameters();
+            bvParameters.UserAgent = "google";
+            bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
+            bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
+            bvParameters.SubjectId = "3000001";
+
+            String theUIContent = uiContent.getContent(bvParameters);
+
+            Assert.AreNotEqual<bool>(theUIContent.Contains("bvseo-msg: Execution timed out, exceeded"), true, "there should be execution timeout message");
+        }
+
+        [TestMethod]
         public void BVManagedUIContentTestPagination()
         {
             //Establish a new BVConfiguration.  Properties within this configuration are typically set in bvconfig.properties.
             //addProperty can be used to override configurations set in bvconfig.properties.
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");  // use this as a kill switch
-            _bvConfig.addProperty(BVClientConfig.BOT_DETECTION, "true"); // set to true if user agent/bot detection is desired
 
             //this SDK supports retrieval of SEO contents from the cloud or local file system
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false"); // set to false if using cloud-based content

@@ -34,8 +34,6 @@ namespace BVSeoSdkDotNet.Url
 {
     /// <summary>
     /// Class to support building the proper url to access the bazaarvoice content
-    /// 
-    /// @author Mohan Krupanandan
     /// </summary>
     public class BVSeoSdkURLBuilder : BVSeoSdkUrl
     {
@@ -101,7 +99,8 @@ namespace BVSeoSdkDotNet.Url
 
         private Uri prrUri()
         {
-            String path = getPath(bvParameters.ContentType, bvParameters.SubjectType, getPageNumber(), bvParameters.SubjectId, bvParameters.ContentSubType);
+            setPageNumber();
+            String path = getPath(bvParameters.ContentType, bvParameters.SubjectType, bvParameters.PageNumber, bvParameters.SubjectId, bvParameters.ContentSubType);
             if (isContentFromFile())
             {
                 return fileUri(path);
@@ -160,8 +159,8 @@ namespace BVSeoSdkDotNet.Url
             }
             catch (UriFormatException e)
             {
-                _logger.Error(BVMessageUtil.getMessage("ERR0026"), e);
-                throw new BVSdkException("ERR0026");
+                _logger.Error(BVMessageUtil.getMessage("ERR0027"), e);
+                throw new BVSdkException("ERR0027");
             }
 
             return null;
@@ -173,7 +172,6 @@ namespace BVSeoSdkDotNet.Url
 		    BVContentType contentType = null;
 		    BVSubjectType subjectType = null;
 		    String subjectId = null;
-            String pageNumber = bvParameters.PageNumber;
     		
             NameValueCollection parameters = HttpUtility.ParseQueryString(_queryString, Encoding.UTF8);
 		    for(int i=0; i < parameters.Count; i++ ) 
@@ -183,9 +181,9 @@ namespace BVSeoSdkDotNet.Url
                     string[] tokens = parameters[parameters.Keys[i]].Split('/');
             	    foreach(string token in tokens)
                     {
-                        if (token.StartsWith("pg") && !IsValidPageNumber(pageNumber)) 
+                        if (token.StartsWith("pg") && !IsValidPageNumber(bvParameters.PageNumber)) 
                         {
-            			    pageNumber = getValue(token);
+            			    bvParameters.PageNumber = getValue(token);
             		    } 
                         else if (token.StartsWith("ct")) 
                         {
@@ -207,10 +205,10 @@ namespace BVSeoSdkDotNet.Url
             subjectType = (subjectType == null) ? bvParameters.SubjectType : subjectType;
             subjectId = (String.IsNullOrEmpty(subjectId)) ? bvParameters.SubjectId : subjectId;
 
-            if (!IsValidPageNumber(pageNumber))
-                pageNumber = NUM_ONE_STR;
+            if (!IsValidPageNumber(bvParameters.PageNumber))
+                bvParameters.PageNumber = NUM_ONE_STR;
 
-            String path = getPath(contentType, subjectType, pageNumber, subjectId, bvParameters.ContentSubType);
+            String path = getPath(contentType, subjectType, bvParameters.PageNumber, subjectId, bvParameters.ContentSubType);
 		    if (isContentFromFile()) {
 			    return fileUri(path);
 		    }
@@ -260,13 +258,13 @@ namespace BVSeoSdkDotNet.Url
                 return false;
         }
 
-        // try and take BVParameters.PageNumber first, then check query string
-        private String getPageNumber()
+        // if BVParameters.PageNumber isn't valid, check query string for page # (return default of "1")
+        private void setPageNumber()
         {
             if (IsValidPageNumber(bvParameters.PageNumber))
-                return bvParameters.PageNumber;
-
-            return BVUtilty.getPageNumber(queryString());
+                return;
+            
+            bvParameters.PageNumber = BVUtilty.getPageNumber(queryString());
         }
 
         private String getRootFolder()

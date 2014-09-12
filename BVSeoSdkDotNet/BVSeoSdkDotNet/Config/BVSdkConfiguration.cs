@@ -29,8 +29,6 @@ namespace BVSeoSdkDotNet.Config
     /// <summary>
     /// Default implementation of configuration settings. This loads the Bazaarvoice
     /// specific configuration and also user specific setting.
-    /// 
-    /// @author Mohan Krupanandan
     /// </summary>
     public class BVSdkConfiguration : BVConfiguration
     {
@@ -49,6 +47,7 @@ namespace BVSeoSdkDotNet.Config
             _instanceConfiguration.Add(BVCoreConfig.STAGING_S3_HOSTNAME, BVConstant.STAGING_S3_HOSTNAME);
 
             addProperty(BVClientConfig.EXECUTION_TIMEOUT, BVConstant.EXECUTION_TIMEOUT);
+            addProperty(BVClientConfig.EXECUTION_TIMEOUT_BOT, BVConstant.EXECUTION_TIMEOUT_BOT);
             addProperty(BVClientConfig.CRAWLER_AGENT_PATTERN, BVConstant.CRAWLER_AGENT_PATTERN);
             addProperty(BVClientConfig.CONNECT_TIMEOUT, BVConstant.CONNECT_TIMEOUT);
             addProperty(BVClientConfig.SOCKET_TIMEOUT, BVConstant.SOCKET_TIMEOUT);
@@ -56,7 +55,6 @@ namespace BVSeoSdkDotNet.Config
             addProperty(BVClientConfig.SEO_SDK_ENABLED, BVConstant.SEO_SDK_ENABLED);
             addProperty(BVClientConfig.PROXY_HOST, BVConstant.PROXY_HOST);
             addProperty(BVClientConfig.PROXY_PORT, BVConstant.PROXY_PORT);
-            addProperty(BVClientConfig.BOT_DETECTION, BVConstant.BOT_DETECTION);
             addProperty(BVClientConfig.INCLUDE_DISPLAY_INTEGRATION_CODE, BVConstant.INCLUDE_DISPLAY_INTEGRATION_CODE);
             addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, BVConstant.LOAD_SEO_FILES_LOCALLY);
             addProperty(BVClientConfig.LOCAL_SEO_FILE_ROOT, BVConstant.LOCAL_SEO_FILE_ROOT);

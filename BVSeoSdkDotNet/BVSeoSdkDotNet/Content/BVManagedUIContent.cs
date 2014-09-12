@@ -34,8 +34,6 @@ namespace BVSeoSdkDotNet.Content
     /// Implementation class for BVUIContent.
     /// This class is the default implementation class to get Bazaarvoice content.
     /// Based on the configurations that are set, the actual contents will be retrieved.
-    /// 
-    /// @author Mohan Krupanandan
     /// </summary>
     public class BVManagedUIContent : BVUIContent
     {
@@ -46,7 +44,6 @@ namespace BVSeoSdkDotNet.Content
         private BVSeoSdkUrl bvSeoSdkUrl;
         private BVFooter bvFooter;
         private StringBuilder message;
-        private Boolean isBotDetection;
         private BVParameters bvParameters;
         private Boolean reloadContent;
         private BVUIContentService bvUiContentService;
@@ -137,8 +134,7 @@ namespace BVSeoSdkDotNet.Content
                 int startIndex = uiContent.ToString().IndexOf("<!--begin-reviews-->");
                 if (startIndex == -1)
                 {
-                    if ((!isBotDetection || bvUiContentService.showUserAgentSEOContent()) &&
-                            bvUiContentService.getMessage().Length == 0 && bvUiContentService.isSdkEnabled())
+                    if (bvUiContentService.getMessage().Length == 0 && bvUiContentService.isSdkEnabled())
                     {
                         String messageString = BVMessageUtil.getMessage("ERR0003");
                         _logger.Error(BVMessageUtil.getMessage("ERR0003"));
@@ -172,7 +168,7 @@ namespace BVSeoSdkDotNet.Content
 
             bvFooter.addMessage(message.ToString());
             bvFooter.setExecutionTime(TimeinMilliSeconds() - startTime);
-            uiContent.Append(bvFooter.displayFooter("getAggretateRating"));
+            uiContent.Append(bvFooter.displayFooter("getAggregateRating"));
 
             return uiContent.ToString();
         }
@@ -206,8 +202,7 @@ namespace BVSeoSdkDotNet.Content
 
                 if (startIndex == -1)
                 {
-                    if ((!isBotDetection || bvUiContentService.showUserAgentSEOContent()) &&
-                            bvUiContentService.getMessage().Length == 0 && bvUiContentService.isSdkEnabled())
+                    if (bvUiContentService.getMessage().Length == 0 && bvUiContentService.isSdkEnabled())
                     {
                         String messageString = BVMessageUtil.getMessage("ERR0013");
                         _logger.Error(BVMessageUtil.getMessage("ERR0013"));
@@ -272,7 +267,6 @@ namespace BVSeoSdkDotNet.Content
                 this.bvParameters = bvParameters;
 
                 bvSeoSdkUrl = new BVSeoSdkURLBuilder(_bvConfiguration, bvParameters);
-                isBotDetection = Boolean.Parse(_bvConfiguration.getProperty(BVClientConfig.BOT_DETECTION));
 
                 bvUiContentService = new BVUIContentServiceProvider(_bvConfiguration);
                 bvUiContentService.setBVParameters(this.bvParameters);
