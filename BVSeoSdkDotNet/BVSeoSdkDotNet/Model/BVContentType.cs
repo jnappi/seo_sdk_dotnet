@@ -141,6 +141,11 @@ namespace BVSeoSdkDotNet.Model
     		    return STORIES;
     	    }
 
+            if (ctxKeyWord.Equals("sp", StringComparison.OrdinalIgnoreCase))
+            {
+                return STORIESPAGE;
+            }
+
             if (ctxKeyWord.Equals("un", StringComparison.OrdinalIgnoreCase))
             {
     		    return UNIVERSAL;
