@@ -93,7 +93,7 @@ namespace BVSEOSDKTest
             bvParam.SubjectId = "ssl-certificates";
 
             bvSeoSdkUrl = new BVSeoSdkURLBuilder(bvConfiguration, bvParam);
-
+            
             String expectedBaseUri = "";
             String expectedQueryString = "";
             String expectedSeoContentUri = "http://seo.bazaarvoice.com/godaddy-a4501eb5be8bf8efda68f3f4ff7b3cf4/6574-en_us/reviews/product/1/ssl-certificates.htm";
@@ -102,8 +102,10 @@ namespace BVSEOSDKTest
             String actualQueryString = bvSeoSdkUrl.queryString();
             String actualSeoContentUri = bvSeoSdkUrl.seoContentUri().ToString();
 
+
             Assert.AreEqual<string>(actualBaseUri, expectedBaseUri, "actual and expected base uri should be same");
             Assert.AreEqual<string>(actualQueryString, expectedQueryString, "actual and expected query string should be same");
+            Console.WriteLine("1 "+actualSeoContentUri + "\n" + expectedSeoContentUri + "\n\n");
             Assert.AreEqual<string>(actualSeoContentUri, expectedSeoContentUri, "actual and expected seo content uri should be same");
 
             /** When base uri and page uri are empty. **/
@@ -122,6 +124,7 @@ namespace BVSEOSDKTest
 
             Assert.AreEqual<string>(actualBaseUri, expectedBaseUri, "actual and expected base uri should be same");
             Assert.AreEqual<string>(actualQueryString, expectedQueryString, "actual and expected query string should be same");
+            Console.WriteLine("2 "+ actualSeoContentUri + "\n" + expectedSeoContentUri + "\n\n");
             Assert.AreEqual<string>(actualSeoContentUri, expectedSeoContentUri, "actual and expected seo content uri should be same");
 
             /** When base uri and page uri are complete urls. **/
@@ -140,6 +143,7 @@ namespace BVSEOSDKTest
 
             Assert.AreEqual<string>(actualBaseUri, expectedBaseUri, "actual and expected base uri should be same");
             Assert.AreEqual<string>(actualQueryString, expectedQueryString, "actual and expected query string should be same");
+            Console.WriteLine("3 "+actualSeoContentUri + "\n" + expectedSeoContentUri + "\n\n");
             Assert.AreEqual<string>(actualSeoContentUri, expectedSeoContentUri, "actual and expected seo content uri should be same");
 
             /** When base uri and page uri has bvrrp parameters. **/
@@ -158,6 +162,7 @@ namespace BVSEOSDKTest
 
             Assert.AreEqual<string>(actualBaseUri, expectedBaseUri, "actual and expected base uri should be same");
             Assert.AreEqual<string>(actualQueryString, expectedQueryString, "actual and expected query string should be same");
+            Console.WriteLine("4 " + actualSeoContentUri + "\n" + expectedSeoContentUri + "\n\n");
             Assert.AreEqual<string>(actualSeoContentUri, expectedSeoContentUri, "actual and expected seo content uri should be same");
 
             /** When base uri and page uri has bvrrp parameters. **/
@@ -174,8 +179,13 @@ namespace BVSEOSDKTest
             actualQueryString = bvSeoSdkUrl.queryString();
             actualSeoContentUri = bvSeoSdkUrl.seoContentUri().ToString();
 
+            Console.WriteLine(actualBaseUri);
+            Console.WriteLine(actualQueryString);
+            Console.WriteLine(actualSeoContentUri);
+
             Assert.AreEqual<string>(actualBaseUri, expectedBaseUri, "actual and expected base uri should be same");
             Assert.AreEqual<string>(actualQueryString, expectedQueryString, "actual and expected query string should be same");
+            Console.WriteLine("5 "+ actualSeoContentUri + "\n" + expectedSeoContentUri + "\n\n");
             Assert.AreEqual<string>(actualSeoContentUri, expectedSeoContentUri, "actual and expected seo content uri should be same");
         }
 
@@ -394,7 +404,7 @@ namespace BVSEOSDKTest
             bvSeoSdkUrl = new BVSeoSdkURLBuilder(bvConfiguration, bvParam);
 
             expectedBaseUri = "";
-            expectedQueryString = "?null&bvpage=ctun/ste/idmyshirtspage";
+            expectedQueryString = "?null&   =ctun/ste/idmyshirtspage";
             expectedSeoContentUri = "http://seo.bazaarvoice.com/godaddy-a4501eb5be8bf8efda68f3f4ff7b3cf4/6574-en_us/universal/entry/1/myshirtspage.htm";
 
             actualBaseUri = bvSeoSdkUrl.correctedBaseUri();

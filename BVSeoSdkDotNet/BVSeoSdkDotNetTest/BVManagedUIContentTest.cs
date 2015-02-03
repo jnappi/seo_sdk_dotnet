@@ -116,8 +116,9 @@ namespace BVSeoSdkDotNet
             bvParameters.SubjectId = "3000001";
 
             String theUIContent = uiContent.getContent(bvParameters);
+            Console.WriteLine(theUIContent);
 
-            Assert.AreEqual<bool>(theUIContent.Contains("bvseo-msg: Execution timed out, exceeded"), true, "there should be execution timeout message");
+            Assert.AreEqual<bool>(theUIContent.Contains("Execution timed out, exceeded"), true, "there should be execution timeout message");
         }
 
         [TestMethod]
@@ -138,8 +139,9 @@ namespace BVSeoSdkDotNet
             bvParameters.SubjectId = "3000001";
 
             String theUIContent = uiContent.getContent(bvParameters);
+            Console.WriteLine(theUIContent);
 
-            Assert.AreNotEqual<bool>(theUIContent.Contains("bvseo-msg: Execution timed out, exceeded"), true, "there should be execution timeout message");
+            Assert.AreNotEqual<bool>(theUIContent.Contains("Execution timed out, exceeded"), true, "there should be execution timeout message");
         }
 
         [TestMethod]
@@ -154,13 +156,13 @@ namespace BVSeoSdkDotNet
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false"); // set to false if using cloud-based content
             _bvConfig.addProperty(BVClientConfig.LOCAL_SEO_FILE_ROOT, "/");
             //if LOAD_SEO_FILES_LOCALLY = false, configure CLOUD_KEY and STAGING
-            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY,"adobe-55d020998d7b4776fb0f9df49278083c"); // get this value from BV
+            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "totalgymdirect-f19e9cfeb9917d0c20afdfbe06483f1b"); // get this value from BV
             _bvConfig.addProperty(BVClientConfig.STAGING, "false");  // set to true for staging environment data
             _bvConfig.addProperty(BVClientConfig.CRAWLER_AGENT_PATTERN, "yandex");
 
             //insert root folder with the value provided.
             //if multiple deployment zones/display codes are used for this implementation, use conditional logic to set the appropriate BV_ROOT_FOLDER
-            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "8814"); //get this value from BV
+            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US"); //get this value from BV
             _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
 
 
@@ -171,12 +173,13 @@ namespace BVSeoSdkDotNet
             _bvParam.PageURI = "http://localhost:8080/Sample/Example-Adobe.jsp?bvrrp=8814/reviews/product/4/PR6.htm&bvreveal=debug"; //this should be the current page, full URL
             _bvParam.ContentType = new BVContentType(BVContentType.REVIEWS);
             _bvParam.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
-            _bvParam.SubjectId = "PR6";
+            _bvParam.SubjectId = "PRTG2000";
 
             BVUIContent _bvOutput = new BVManagedUIContent(_bvConfig);
 
             String sBvOutputReviews = _bvOutput.getContent(_bvParam); //String sBvOutputSummary = _bvOutput.getAggregateRating(_bvParam);
-            Assert.AreEqual<Boolean>(sBvOutputReviews.Contains("BVRRSelectedPageNumber\">4<"), true, "there should be BVRRSelectedPageNumber as 4 in the content");
+            Console.WriteLine(sBvOutputReviews);
+            Assert.AreEqual<Boolean>(sBvOutputReviews.Contains("bvseo-4"), true, "there should be BVRRSelectedPageNumber as 4 in the content");
         }
 
         [TestMethod]
@@ -186,7 +189,7 @@ namespace BVSeoSdkDotNet
 		    String bvContent = null;
 		
 		    bvContent = bvUIContent.getContent(null);
-			Assert.IsTrue(bvContent.Contains("<li id=\"ms\">bvseo-msg: BVParameters is null.;</li>"), "Message are not same please verify.");
+			Assert.IsTrue(bvContent.Contains("<li data-bvseo=\"ms\">bvseo-msg: BVParameters is null.;</li>"), "Message are not same please verify.");
         }
 
         //[TestMethod]

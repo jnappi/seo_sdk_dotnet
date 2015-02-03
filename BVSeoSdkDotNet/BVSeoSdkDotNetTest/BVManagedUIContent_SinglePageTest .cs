@@ -125,6 +125,7 @@ namespace BVSeoSdkDotNet
             bvParameters.PageURI = "http://localhost:8080/sample/someproduct.jsp?bvpage=ctre/id3000001/stp";
 
             String theUIContent = uiContent.getContent(bvParameters);
+            Console.WriteLine(theUIContent);
             Assert.AreEqual<Boolean>(theUIContent.Contains("BVRRSourceID"), true, "there should be BvRRSourceID in the content");
         }
 

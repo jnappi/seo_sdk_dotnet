@@ -82,6 +82,7 @@ namespace BVSEOSDKTest
             bvParameters.SubjectId = "2000002";
 
             String theUIContent = uiContent.getAggregateRating(bvParameters);
+            Console.WriteLine(theUIContent);
             Assert.AreEqual<Boolean>(theUIContent.Contains("itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\""),
                 true, "there should be BvRRSourceID in the content");
             Assert.AreEqual<Boolean>(!theUIContent.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\""), true,
@@ -194,7 +195,7 @@ namespace BVSEOSDKTest
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "adobe-55d020998d7b4776fb0f9df49278083c");
+            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca"); //"adobe-55d020998d7b4776fb0f9df49278083c");
             _bvConfig.addProperty(BVClientConfig.STAGING, "false");
             _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "8814");
             _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
@@ -210,7 +211,7 @@ namespace BVSEOSDKTest
             BVUIContent _bvOutput = new BVManagedUIContent(_bvConfig);
 
             String sBvOutputSummary = _bvOutput.getAggregateRating(_bvParam);
-
+            Console.WriteLine(sBvOutputSummary);
             Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\""),
                 true, "there should be AggregateRating in the content");
             Assert.AreEqual<Boolean>(!sBvOutputSummary.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\""), true,
@@ -245,7 +246,7 @@ namespace BVSEOSDKTest
             BVUIContent _bvOutput = new BVManagedUIContent(_bvConfig);
 
             String sBvOutputSummary = _bvOutput.getReviews(_bvParam);
-
+            Console.WriteLine(sBvOutputSummary);
             Assert.AreEqual<Boolean>(!sBvOutputSummary.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\""), true,
                     "there should not be reviews section in the content");
             Assert.AreEqual<Boolean>(!sBvOutputSummary.Contains("itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\""),
@@ -275,9 +276,9 @@ namespace BVSEOSDKTest
             _bvParam.SubjectId = "5000002_No_Aggr_Rating";
 
             BVUIContent _bvOutput = new BVManagedUIContent(_bvConfig);
-
+            Console.WriteLine(_bvOutput);
             String sBvOutputSummary = _bvOutput.getAggregateRating(_bvParam);
-
+            Console.WriteLine(sBvOutputSummary);
             Assert.AreEqual<Boolean>(!sBvOutputSummary.Contains("itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\""),
                     true, "there should not be AggregateRating in the content");
             Assert.AreEqual<Boolean>(!sBvOutputSummary.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\""), true,
@@ -309,6 +310,7 @@ namespace BVSEOSDKTest
             BVUIContent _bvOutput = new BVManagedUIContent(_bvConfig);
 
             String sBvOutputSummary = _bvOutput.getAggregateRating(_bvParam);
+            Console.WriteLine(sBvOutputSummary);
 
             Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<!--begin-aggregate-rating-->"), true, "there should be AggregateRating in the content");
             Assert.AreEqual<Boolean>(!sBvOutputSummary.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\""), true,
@@ -338,7 +340,7 @@ namespace BVSEOSDKTest
 
             String sBvOutputSummary = _bvOutput.getContent(_bvParam);
 
-            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<li id=\"en\">bvseo-false</li>"), true, "There should only footer message");
+            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<li data-bvseo=\"en\">bvseo-false</li>"), true, "There should only footer message");
             Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("BVRRReviewsSoiSectionID"), false, "There should not be any reviews");
             Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<span itemprop=\"aggregateRating\" itemscope "), false, "There should not be any ratings");
 
@@ -368,7 +370,7 @@ namespace BVSEOSDKTest
 
             String sBvOutputSummary = _bvOutput.getAggregateRating(_bvParam);
 
-            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<li id=\"en\">bvseo-false</li>"), true, "There should only footer message");
+            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<li data-bvseo=\"en\">bvseo-false</li>"), true, "There should only footer message");
             Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<!--begin-aggregate-rating-->"), false, "there should not be aggregateRating in the content");
         }
 
@@ -395,8 +397,8 @@ namespace BVSEOSDKTest
             BVUIContent _bvOutput = new BVManagedUIContent(_bvConfig);
 
             String sBvOutputSummary = _bvOutput.getReviews(_bvParam);
-
-            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<li id=\"en\">bvseo-false</li>"), true, "There should only footer message");
+            Console.WriteLine(sBvOutputSummary);
+            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<li data-bvseo=\"en\">bvseo-false</li>"), true, "There should only footer message");
             Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("BVRRReviewsSoiSectionID"), false, "There should not be any reviews");
         }
 
@@ -409,7 +411,7 @@ namespace BVSEOSDKTest
         {
             BVConfiguration bvConfig = new BVSdkConfiguration();
             bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "adobe-55d020998d7b4776fb0f9df49278083c");
+            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "totalgymdirect-f19e9cfeb9917d0c20afdfbe06483f1b");//"adobe-55d020998d7b4776fb0f9df49278083c");
             bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "8814");
             bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
             bvConfig.addProperty(BVClientConfig.CRAWLER_AGENT_PATTERN, "mysearchbot");
@@ -423,6 +425,8 @@ namespace BVSEOSDKTest
             bvParameters.SubjectId = "PR6";
 
             String theUIContent = uiContent.getAggregateRating(bvParameters);
+            Console.WriteLine(theUIContent);
+
             Assert.IsTrue(theUIContent.Contains("<span itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\">"),
                  "there should be BvRRSourceID in the content");
             Assert.IsFalse(theUIContent.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\">"),
@@ -445,6 +449,7 @@ namespace BVSEOSDKTest
             bvParameters.SubjectId = "PR6";
 
             theUIContent = uiContent.getAggregateRating(bvParameters);
+            Console.WriteLine(theUIContent);
             Assert.IsTrue(theUIContent.Contains("<span itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\">"),
                  "there should be BvRRSourceID in the content");
             Assert.IsFalse(theUIContent.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\">"),
@@ -457,6 +462,7 @@ namespace BVSEOSDKTest
             bvParameters.SubjectId = "PR6";
 
             theUIContent = uiContent.getAggregateRating(bvParameters);
+            Console.WriteLine(theUIContent);
             Assert.IsTrue(theUIContent.Contains("<span itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\">"),
                  "there should be BvRRSourceID in the content");
             Assert.IsFalse(theUIContent.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\">"),
@@ -489,15 +495,15 @@ namespace BVSEOSDKTest
             BVUIContent _bvOutput = new BVManagedUIContent(_bvConfig);
 
             String sBvOutputSummary = _bvOutput.getAggregateRating(_bvParam);
-            Assert.IsTrue(sBvOutputSummary.Contains("<li id=\"ms\">bvseo-msg: SubjectId cannot be null or empty.;</li>"), 
+            Assert.IsTrue(sBvOutputSummary.Contains("<li data-bvseo=\"ms\">bvseo-msg: SubjectId cannot be null or empty.;</li>"), 
 						"there should be error message for SubjectId");
 
             sBvOutputSummary = _bvOutput.getReviews(_bvParam);
-            Assert.IsTrue(sBvOutputSummary.Contains("<li id=\"ms\">bvseo-msg: SubjectId cannot be null or empty.;</li>"),
+            Assert.IsTrue(sBvOutputSummary.Contains("<li data-bvseo=\"ms\">bvseo-msg: SubjectId cannot be null or empty.;</li>"),
                         "there should be error message for SubjectId");
 
             sBvOutputSummary = _bvOutput.getContent(_bvParam);
-            Assert.IsTrue(sBvOutputSummary.Contains("<li id=\"ms\">bvseo-msg: SubjectId cannot be null or empty.;</li>"),
+            Assert.IsTrue(sBvOutputSummary.Contains("<li data-bvseo=\"ms\">bvseo-msg: SubjectId cannot be null or empty.;</li>"),
                         "there should be error message for SubjectId");
         }
 
@@ -526,15 +532,15 @@ namespace BVSEOSDKTest
             BVUIContent _bvOutput = new BVManagedUIContent(_bvConfig);
 
             String sBvOutputSummary = _bvOutput.getAggregateRating(_bvParam);
-            Assert.IsTrue(sBvOutputSummary.Contains("<li id=\"ms\">bvseo-msg: The resource to the URL or file is currently unavailable.;</li>"),
+            Assert.IsTrue(sBvOutputSummary.Contains("<li data-bvseo=\"ms\">bvseo-msg: The resource to the URL or file is currently unavailable.;</li>"),
                         "there should be error message for SubjectId");
-
+            
             sBvOutputSummary = _bvOutput.getReviews(_bvParam);
-            Assert.IsTrue(sBvOutputSummary.Contains("<li id=\"ms\">bvseo-msg: The resource to the URL or file is currently unavailable.;</li>"),
+            Assert.IsTrue(sBvOutputSummary.Contains("<li data-bvseo=\"ms\">bvseo-msg: The resource to the URL or file is currently unavailable.;</li>"),
                         "there should be error message for SubjectId");
 
             sBvOutputSummary = _bvOutput.getContent(_bvParam);
-            Assert.IsTrue(sBvOutputSummary.Contains("<li id=\"ms\">bvseo-msg: The resource to the URL or file is currently unavailable.;</li>"),
+            Assert.IsTrue(sBvOutputSummary.Contains("<li data-bvseo=\"ms\">bvseo-msg: The resource to the URL or file is currently unavailable.;</li>"),
                         "there should be error message for SubjectId");
         }
     }

@@ -75,10 +75,11 @@ namespace BVSEOSDKTest
             BVFooter bvFooter = new BVHTMLFooter(bvConfiguration, bvParameters);
 
             String displayFooter = bvFooter.displayFooter("getContent");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"mt\">bvseo-CLOUD</li>"), true, "the content string should match.");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"ct\">bvseo-REVIEWS</li>"), true, "the content string should match.");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"st\">bvseo-PRODUCT</li>"), true, "the content string should match.");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=seo.sdk.execution.timeout>"), false, "the content string should not match.");
+            Console.WriteLine(displayFooter);
+            Assert.AreEqual<Boolean>(displayFooter.Contains("CLOUD"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("REVIEWS"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("PRODUCT"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("<li data-bvseo=seo.sdk.execution.timeout>"), false, "the content string should not match.");
         }
 
         [TestMethod]
@@ -96,10 +97,11 @@ namespace BVSEOSDKTest
             bvFooter.setBvSeoSdkUrl(_bvSeoSdkUrl);
 
             String displayFooter = bvFooter.displayFooter("getContent");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"mt\">bvseo-LOCAL</li>"), true, "the content string should match.");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"ct\">bvseo-REVIEWS</li>"), true, "the content string should match.");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"st\">bvseo-PRODUCT</li>"), true, "the content string should match.");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"loadSEOFilesLocally\">true</li>"), true, "the content string should match.");
+            Console.WriteLine(displayFooter);
+            Assert.AreEqual<Boolean>(displayFooter.Contains("LOCAL"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("REVIEWS"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("PRODUCT"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("<li data-bvseo=\"loadSEOFilesLocally\">true</li>"), true, "the content string should match.");
         }
 
         [TestMethod]
@@ -118,10 +120,10 @@ namespace BVSEOSDKTest
             bvFooter.setBvSeoSdkUrl(_bvSeoSdkUrl);
 
             String displayFooter = bvFooter.displayFooter("getContent");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"mt\">bvseo-CLOUD</li>"), true, "the content string should match.");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"ct\">bvseo-REVIEWS</li>"), true, "the content string should match.");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"st\">bvseo-PRODUCT</li>"), true, "the content string should match.");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"contentURL\">http://seo.bazaarvoice.com"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("CLOUD"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("REVIEWS"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("PRODUCT"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("<li data-bvseo=\"contentURL\">http://seo.bazaarvoice.com"), true, "the content string should match.");
 
             /** When loading from files it should not display URL. **/
             bvConfiguration = new BVSdkConfiguration();
@@ -137,10 +139,11 @@ namespace BVSEOSDKTest
             bvFooter.setBvSeoSdkUrl(_bvSeoSdkUrl);
 
             displayFooter = bvFooter.displayFooter("getContent");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"mt\">bvseo-LOCAL</li>"), true, "the content string should match.");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"ct\">bvseo-REVIEWS</li>"), true, "the content string should match.");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"st\">bvseo-PRODUCT</li>"), true, "the content string should match.");
-            Assert.AreEqual<Boolean>(displayFooter.Contains("<li id=\"contentURL\">http://seo.bazaarvoice.com"), false, "there should not be any url pattern.");
+            Console.WriteLine(displayFooter);
+            Assert.AreEqual<Boolean>(displayFooter.Contains("LOCAL"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("REVIEWS"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("PRODUCT"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("<li data-bvseo=\"contentURL\">http://seo.bazaarvoice.com"), false, "there should not be any url pattern.");
         }
 
 

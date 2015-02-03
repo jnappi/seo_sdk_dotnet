@@ -55,20 +55,20 @@ namespace BVSeoSdkDotNet
 
             String theUiContent = uiContent.getContent(bvParameters);
             Assert.IsTrue(theUiContent.Contains("getContent"), "there should be getContent word/message");
-            Assert.IsTrue(theUiContent.Contains("bvseo-msg: Execution timed out, exceeded"), 
+            Assert.IsTrue(theUiContent.Contains("Execution timed out, exceeded"), 
                 "there should be execution timeout message");
 
             uiContent = new BVManagedUIContent(bvConfig);
             theUiContent = uiContent.getReviews(bvParameters);
             Assert.IsTrue(theUiContent.Contains("getReviews"), "there should be getReviews word/message");
-            Assert.IsTrue(theUiContent.Contains("bvseo-msg: Execution timed out, exceeded"),
+            Assert.IsTrue(theUiContent.Contains("Execution timed out, exceeded"),
                 "there should be execution timeout message");
 
             uiContent = new BVManagedUIContent(bvConfig);
             theUiContent = uiContent.getAggregateRating(bvParameters);
             Debug.WriteLine(theUiContent);
             Assert.IsTrue(theUiContent.Contains("getAggregateRating"), "there should be getAggregateRating word/message");
-            Assert.IsTrue(theUiContent.Contains("bvseo-msg: Execution timed out, exceeded"),
+            Assert.IsTrue(theUiContent.Contains(" Execution timed out, exceeded"),
                 "there should be execution timeout message");
         }
 
