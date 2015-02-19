@@ -1,32 +1,28 @@
 
-<ul id="BVSEOSDK" style="display:none;">
-	<li id="vn">bvseo-${version}</li>
-	<li id="en">bvseo-${sdk_enabled}</li>
-	<li id="sl">bvseo-n</li>
-	<li id="mt">bvseo-${methodType}</li>
-	<li id="et">bvseo-${executionTime}ms</li>
-	<li id="ct">bvseo-${_bvParameters.ContentType.uriValue().ToUpper()}</li>
-	<li id="st">bvseo-${_bvParameters.SubjectType.uriValue().ToUpper()}</li>
-	<li id="pn">bvseo-${_bvParameters.PageNumber}</li>
-	<li id="am">bvseo-${accessMethod}</li>
+<ul id="BVSEOSDK_meta" style="display:none!important;">
+	<li data-bvseo="sdk">bvseo,net_sdk,${version}</li>
+	<li data-bvseo="sp_mt">${accessMethod},method:${methodType},${executionTime}ms</li>
+	<li id="ct_st">${_bvParameters.ContentType.uriValue().ToUpper()},${_bvParameters.SubjectType.uriValue().ToUpper()}</li>
 #if (${message}) 
-	<li id="ms">bvseo-msg: ${message}</li>
+	<li data-bvseo="ms">bvseo-msg: ${message}</li>
 #end
 </ul>
 
 #if (${revealMap})
 <ul id="BVSEOSDK_DEBUG" style="display:none;">
 #foreach ($config in $revealMap)
-	<li id="$config.Key">$config.Value</li>
+	<li data-bvseo="$config.Key">$config.Value</li>
 #end
-	<li id="userAgent">${_bvParameters.UserAgent}</li>
-	<li id="baseURI">${_bvParameters.BaseURI}</li>
-	<li id="pageURI">${_bvParameters.PageURI}</li>
-	<li id="subjectId">${_bvParameters.SubjectId}</li>
-	<li id="contentType">${_bvParameters.ContentType.uriValue()}</li>
-	<li id="subjectType">${_bvParameters.SubjectType.uriValue()}</li>
+	<li data-bvseo="en">${sdk_enabled}</li>
+	<li data-bvseo="pn">bvseo-${_bvParameters.PageNumber}</li>
+	<li data-bvseo="userAgent">${_bvParameters.UserAgent}</li>
+	<li data-bvseo="baseURI">${_bvParameters.BaseURI}</li>
+	<li data-bvseo="pageURI">${_bvParameters.PageURI}</li>
+	<li data-bvseo="subjectId">${_bvParameters.SubjectId}</li>
+	<li data-bvseo="contentType">${_bvParameters.ContentType.uriValue()}</li>
+	<li data-bvseo="subjectType">${_bvParameters.SubjectType.uriValue()}</li>
 	#if (${url})
-	<li id="contentURL">${url}</li>
+	<li data-bvseo="contentURL">${url}</li>
 	#end
 </ul>
 #end
