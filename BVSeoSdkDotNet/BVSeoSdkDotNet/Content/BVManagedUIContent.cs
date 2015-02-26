@@ -58,6 +58,13 @@ namespace BVSeoSdkDotNet.Content
         }
 
         /// <summary>
+        /// Add this method to provide assistance in debugging issues.
+        /// </summary>
+        public String getUrl()
+        {
+            return bvSeoSdkUrl.seoContentUri().AbsoluteUri;
+        }
+        /// <summary>
         /// Constructor with BVConfiguration argument.
         /// </summary>
         /// <param name="bvConfiguration">The configuration/settings that has to be provided</param>

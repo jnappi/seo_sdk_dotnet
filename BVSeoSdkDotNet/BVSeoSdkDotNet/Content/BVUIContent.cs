@@ -50,5 +50,13 @@ namespace BVSeoSdkDotNet.Content
         /// <param name="bvQueryParams">Query Parameters of type BVParameters</param>
         /// <returns>Returns the Reviews section of the Bazaarvoice SEO Content as String</returns>
         String getReviews(BVParameters bvQueryParams);
+
+       
+        /// <summary>
+        /// provides the Url for reference.
+        /// </summary>
+        /// <returns></returns>
+        String getUrl();
+
     }
 }

@@ -94,6 +94,7 @@ namespace BVSeoSdkDotNet.Url
             {
                 return c2013Uri();
             }
+
             return prrUri();
         }
 
@@ -105,7 +106,7 @@ namespace BVSeoSdkDotNet.Url
             {
                 return fileUri(path);
             }
-
+            
             return httpUri(path);
         }
 
@@ -127,8 +128,9 @@ namespace BVSeoSdkDotNet.Url
         private Uri httpUri(String path)
         {
             Boolean isStaging = Boolean.Parse(bvConfiguration.getProperty(BVClientConfig.STAGING));
+            Boolean isTesting = Boolean.Parse(bvConfiguration.getProperty(BVClientConfig.TESTING));
             Boolean isHttpsEnabled = Boolean.Parse(bvConfiguration.getProperty(BVClientConfig.SSL_ENABLED));
-            String s3Hostname = isStaging ? bvConfiguration.getProperty(BVCoreConfig.STAGING_S3_HOSTNAME) :
+            String s3Hostname = isTesting ? bvConfiguration.getProperty(BVCoreConfig.TESTING_S3_HOSTNAME) : isStaging ? bvConfiguration.getProperty(BVCoreConfig.STAGING_S3_HOSTNAME) :
                 bvConfiguration.getProperty(BVCoreConfig.PRODUCTION_S3_HOSTNAME);
             
             String cloudKey = bvConfiguration.getProperty(BVClientConfig.CLOUD_KEY);
@@ -166,7 +168,8 @@ namespace BVSeoSdkDotNet.Url
             return null;
         }
 
-
+        //need to change this method to handle the changes for BVState
+        //Future FIXME
        	private Uri c2013Uri() 
         {
 		    BVContentType contentType = null;
@@ -216,24 +219,108 @@ namespace BVSeoSdkDotNet.Url
 		    return httpUri(path);
 	    }
 
+
+        private Uri SpotlightsUri()
+        {
+            BVContentType contentType = null;
+            BVSubjectType subjectType = null;
+            String subjectId = null;
+
+            NameValueCollection parameters = HttpUtility.ParseQueryString(_queryString, Encoding.UTF8);
+            for (int i = 0; i < parameters.Count; i++)
+            {
+                if (parameters.Keys[i] != null && parameters.Keys[i].Equals(BV_PAGE))
+                {
+                    string[] tokens = parameters[parameters.Keys[i]].Split('/');
+                    foreach (string token in tokens)
+                    {
+                        if (token.StartsWith("pg") && !IsValidPageNumber(bvParameters.PageNumber))
+                        {
+                            bvParameters.PageNumber = getValue(token);
+                        }
+                        else if (token.StartsWith("ct"))
+                        {
+                            contentType = new BVContentType(BVContentType.ctFromKeyWord(getValue(token)));
+                        }
+                        else if (token.StartsWith("st"))
+                        {
+                            subjectType = new BVSubjectType(BVSubjectType.subjectType(getValue(token)));
+                        }
+                        else if (token.StartsWith("id"))
+                        {
+                            subjectId = getValue(token);
+                        }
+                    }
+                }
+            }
+
+            contentType = (contentType == null) ? bvParameters.ContentType : contentType;
+            subjectType = (subjectType == null) ? bvParameters.SubjectType : subjectType;
+            subjectId = (String.IsNullOrEmpty(subjectId)) ? bvParameters.SubjectId : subjectId;
+
+            if (!IsValidPageNumber(bvParameters.PageNumber))
+                bvParameters.PageNumber = NUM_ONE_STR;
+
+            String path = getSpotlightsPath(contentType, subjectType, bvParameters.PageNumber, subjectId, bvParameters.ContentSubType);
+            if (isContentFromFile())
+            {
+                return fileUri(path);
+            }
+
+            return httpUri(path);
+        }
         private String getValue(String valueString)
         {
             return valueString.Substring(2, valueString.Length-2);
         }
 
+        private String getSpotlightsPath(BVContentType contentType, BVSubjectType subjectType, String pageNumber, String subjectId, BVContentSubType contentSubType)
+        {
+            StringBuilder path = new StringBuilder();
+            path.Append(getRootFolder());
+            path.Append(PATH_SEPARATOR);
+            
+            path.Append(BVConstant.BV_SPOTLIGHTS_SUB_FOLDER); //this is a constant for now.  If we should add additional spotlights types then this should be algorithmically determined
+            path.Append(PATH_SEPARATOR);
+
+            path.Append(pageNumber);
+            path.Append(PATH_SEPARATOR);
+
+            if (contentSubType != null && !contentSubType.getContentKeyword().Equals(BVContentSubType.NONE))
+            {
+                path.Append(contentSubType.getContentKeyword());
+                path.Append(PATH_SEPARATOR);
+            }
+
+            path.Append(subjectId);
+            path.Append(HTML_EXT);
+
+            return path.ToString();
+        }
 
         private String getPath(BVContentType contentType, BVSubjectType subjectType, String pageNumber, String subjectId, BVContentSubType contentSubType)
         {
             StringBuilder path = new StringBuilder();
             path.Append(getRootFolder());
             path.Append(PATH_SEPARATOR);
-            path.Append(contentType.uriValue());
-            path.Append(PATH_SEPARATOR);
-            path.Append(subjectType.uriValue());
-            path.Append(PATH_SEPARATOR);
+            if (contentType.uriValue().ToLower() != "spotlights")
+            {
+                path.Append(contentType.uriValue());
+                path.Append(PATH_SEPARATOR);
+
+                path.Append(subjectType.uriValue());
+                path.Append(PATH_SEPARATOR);
+            }
+            if (contentType.uriValue().ToLower() == "spotlights")
+            {
+                path.Append("reviews/category");
+                    //path.Append("spotlights");
+                path.Append(PATH_SEPARATOR);
+                
+            }
             path.Append(pageNumber);
             path.Append(PATH_SEPARATOR);
-
+            
             if (contentSubType != null && !contentSubType.getContentKeyword().Equals(BVContentSubType.NONE))
             {
                 path.Append(contentSubType.getContentKeyword());
