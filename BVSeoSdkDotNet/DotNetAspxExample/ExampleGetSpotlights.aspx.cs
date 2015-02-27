@@ -29,7 +29,6 @@ namespace DotNetAspxExample
             };
 
             BVUIContent bvOutput = new BVManagedUIContent(bvConfig);
-            //BVRRContainer.InnerHtml = bvOutput.getSpotlights(bvParameters, "1");
             BVRRContainer.InnerHtml = bvOutput.getContent(bvParameters);
             BVSEOURL.InnerHtml = bvOutput.getUrl();
             

@@ -188,7 +188,7 @@ namespace BVSeoSdkDotNet.Url
                         {
             			    bvParameters.PageNumber = getValue(token);
             		    } 
-                        else if (token.StartsWith("ct")) 
+                        else if (token.StartsWith("ct") ) 
                         {
             			    contentType = new BVContentType(BVContentType.ctFromKeyWord(getValue(token)));
             		    } 
@@ -204,7 +204,7 @@ namespace BVSeoSdkDotNet.Url
                 }
             }   
 
-            contentType = (contentType == null) ? bvParameters.ContentType : contentType;
+            contentType = (contentType == null)  ? bvParameters.ContentType : contentType;
             subjectType = (subjectType == null) ? bvParameters.SubjectType : subjectType;
             subjectId = (String.IsNullOrEmpty(subjectId)) ? bvParameters.SubjectId : subjectId;
 
@@ -220,55 +220,7 @@ namespace BVSeoSdkDotNet.Url
 	    }
 
 
-        private Uri SpotlightsUri()
-        {
-            BVContentType contentType = null;
-            BVSubjectType subjectType = null;
-            String subjectId = null;
-
-            NameValueCollection parameters = HttpUtility.ParseQueryString(_queryString, Encoding.UTF8);
-            for (int i = 0; i < parameters.Count; i++)
-            {
-                if (parameters.Keys[i] != null && parameters.Keys[i].Equals(BV_PAGE))
-                {
-                    string[] tokens = parameters[parameters.Keys[i]].Split('/');
-                    foreach (string token in tokens)
-                    {
-                        if (token.StartsWith("pg") && !IsValidPageNumber(bvParameters.PageNumber))
-                        {
-                            bvParameters.PageNumber = getValue(token);
-                        }
-                        else if (token.StartsWith("ct"))
-                        {
-                            contentType = new BVContentType(BVContentType.ctFromKeyWord(getValue(token)));
-                        }
-                        else if (token.StartsWith("st"))
-                        {
-                            subjectType = new BVSubjectType(BVSubjectType.subjectType(getValue(token)));
-                        }
-                        else if (token.StartsWith("id"))
-                        {
-                            subjectId = getValue(token);
-                        }
-                    }
-                }
-            }
-
-            contentType = (contentType == null) ? bvParameters.ContentType : contentType;
-            subjectType = (subjectType == null) ? bvParameters.SubjectType : subjectType;
-            subjectId = (String.IsNullOrEmpty(subjectId)) ? bvParameters.SubjectId : subjectId;
-
-            if (!IsValidPageNumber(bvParameters.PageNumber))
-                bvParameters.PageNumber = NUM_ONE_STR;
-
-            String path = getSpotlightsPath(contentType, subjectType, bvParameters.PageNumber, subjectId, bvParameters.ContentSubType);
-            if (isContentFromFile())
-            {
-                return fileUri(path);
-            }
-
-            return httpUri(path);
-        }
+        
         private String getValue(String valueString)
         {
             return valueString.Substring(2, valueString.Length-2);
@@ -303,21 +255,11 @@ namespace BVSeoSdkDotNet.Url
             StringBuilder path = new StringBuilder();
             path.Append(getRootFolder());
             path.Append(PATH_SEPARATOR);
-            if (contentType.uriValue().ToLower() != "spotlights")
-            {
-                path.Append(contentType.uriValue());
-                path.Append(PATH_SEPARATOR);
+            path.Append(contentType.uriValue());
+            path.Append(PATH_SEPARATOR);
 
-                path.Append(subjectType.uriValue());
-                path.Append(PATH_SEPARATOR);
-            }
-            if (contentType.uriValue().ToLower() == "spotlights")
-            {
-                path.Append("reviews/category");
-                    //path.Append("spotlights");
-                path.Append(PATH_SEPARATOR);
-                
-            }
+            path.Append(subjectType.uriValue());
+            path.Append(PATH_SEPARATOR);
             path.Append(pageNumber);
             path.Append(PATH_SEPARATOR);
             
