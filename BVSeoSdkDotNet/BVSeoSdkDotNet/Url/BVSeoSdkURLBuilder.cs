@@ -226,29 +226,6 @@ namespace BVSeoSdkDotNet.Url
             return valueString.Substring(2, valueString.Length-2);
         }
 
-        private String getSpotlightsPath(BVContentType contentType, BVSubjectType subjectType, String pageNumber, String subjectId, BVContentSubType contentSubType)
-        {
-            StringBuilder path = new StringBuilder();
-            path.Append(getRootFolder());
-            path.Append(PATH_SEPARATOR);
-            
-            path.Append(BVConstant.BV_SPOTLIGHTS_SUB_FOLDER); //this is a constant for now.  If we should add additional spotlights types then this should be algorithmically determined
-            path.Append(PATH_SEPARATOR);
-
-            path.Append(pageNumber);
-            path.Append(PATH_SEPARATOR);
-
-            if (contentSubType != null && !contentSubType.getContentKeyword().Equals(BVContentSubType.NONE))
-            {
-                path.Append(contentSubType.getContentKeyword());
-                path.Append(PATH_SEPARATOR);
-            }
-
-            path.Append(subjectId);
-            path.Append(HTML_EXT);
-
-            return path.ToString();
-        }
 
         private String getPath(BVContentType contentType, BVSubjectType subjectType, String pageNumber, String subjectId, BVContentSubType contentSubType)
         {
