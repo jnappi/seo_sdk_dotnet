@@ -94,7 +94,6 @@ namespace BVSeoSdkDotNet.Url
             {
                 return c2013Uri();
             }
-
             return prrUri();
         }
 
@@ -106,7 +105,6 @@ namespace BVSeoSdkDotNet.Url
             {
                 return fileUri(path);
             }
-            
             return httpUri(path);
         }
 
@@ -204,7 +202,7 @@ namespace BVSeoSdkDotNet.Url
                 }
             }   
 
-            contentType = (contentType == null)  ? bvParameters.ContentType : contentType;
+            contentType = (contentType == null) ? bvParameters.ContentType : contentType;
             subjectType = (subjectType == null) ? bvParameters.SubjectType : subjectType;
             subjectId = (String.IsNullOrEmpty(subjectId)) ? bvParameters.SubjectId : subjectId;
 

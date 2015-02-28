@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head><title>ExampleSpotlights</title></head>
 <body>	
-	<div id="BVRRContainer" runat="server"></div>
+	<div id="BVSpotlightsContainer" runat="server"></div>
     <div id="BVSEOURL" style="display:none" runat="server"></div>
 </body>
 </html>

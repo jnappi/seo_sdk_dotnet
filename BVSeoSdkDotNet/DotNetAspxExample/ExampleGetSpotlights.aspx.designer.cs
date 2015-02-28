@@ -13,22 +13,13 @@ namespace DotNetAspxExample {
     public partial class ExampleGetSpotlights {
         
         /// <summary>
-        /// BVRRSummaryContainer control.
+        /// BVSpotlightsContainer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl BVRRSummaryContainer;
-        
-        /// <summary>
-        /// BVRRContainer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl BVRRContainer;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl BVSpotlightsContainer;
         
         /// <summary>
         /// BVSEOURL control.

@@ -29,7 +29,7 @@ namespace BVSeoSdkDotNet.Config
     {
         public const string BV_ROOT_FOLDER = "bv.root.folder";
         public const string CLOUD_KEY = "cloudKey";
-        public const string LOAD_SEO_FILES_LOCALLY = "loadSEOFiles Locally";
+        public const string LOAD_SEO_FILES_LOCALLY = "loadSEOFilesLocally";
         public const string LOCAL_SEO_FILE_ROOT = "localSEOFileRoot";
         public const string CONNECT_TIMEOUT = "connectTimeout";
         public const string SOCKET_TIMEOUT = "socketTimeout";

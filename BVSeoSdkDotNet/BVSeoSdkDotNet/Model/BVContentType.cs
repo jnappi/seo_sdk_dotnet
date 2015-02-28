@@ -65,7 +65,7 @@ namespace BVSeoSdkDotNet.Model
         public const string UNIVERSAL = "un";
 
         /// <summary>
-        /// UNIVERSAL
+        /// SPOTLIGHTS
         /// </summary>
         public const string SPOTLIGHTS = "spotlights";
 
