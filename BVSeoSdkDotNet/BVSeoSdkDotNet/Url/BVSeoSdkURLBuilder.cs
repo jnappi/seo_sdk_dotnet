@@ -128,8 +128,30 @@ namespace BVSeoSdkDotNet.Url
             Boolean isStaging = Boolean.Parse(bvConfiguration.getProperty(BVClientConfig.STAGING));
             Boolean isTesting = Boolean.Parse(bvConfiguration.getProperty(BVClientConfig.TESTING));
             Boolean isHttpsEnabled = Boolean.Parse(bvConfiguration.getProperty(BVClientConfig.SSL_ENABLED));
-            String s3Hostname = isTesting ? bvConfiguration.getProperty(BVCoreConfig.TESTING_S3_HOSTNAME) : isStaging ? bvConfiguration.getProperty(BVCoreConfig.STAGING_S3_HOSTNAME) :
-                bvConfiguration.getProperty(BVCoreConfig.PRODUCTION_S3_HOSTNAME);
+            String s3Hostname=null;
+
+            if (isTesting)
+            {
+                if (isStaging)
+                {
+                    s3Hostname = bvConfiguration.getProperty(BVCoreConfig.TESTING_STAGING_S3_HOSTNAME);
+                }
+                else
+                {
+                    s3Hostname = bvConfiguration.getProperty(BVCoreConfig.TESTING_PRODUCTiON_S3_HOSTNAME);
+                }
+            }
+            else
+            {
+                if (isStaging)
+                {
+                    s3Hostname = bvConfiguration.getProperty(BVCoreConfig.STAGING_S3_HOSTNAME);
+                }
+                else
+                {
+                    s3Hostname = bvConfiguration.getProperty(BVCoreConfig.PRODUCTION_S3_HOSTNAME);
+                }
+            }
             
             String cloudKey = bvConfiguration.getProperty(BVClientConfig.CLOUD_KEY);
             String urlPath = "/" + cloudKey + "/" + path;

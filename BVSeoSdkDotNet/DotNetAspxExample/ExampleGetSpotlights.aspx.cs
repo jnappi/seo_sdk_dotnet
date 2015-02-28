@@ -10,10 +10,35 @@ namespace DotNetAspxExample
         protected void Page_Load(object sender, EventArgs e)
         {
             BVConfiguration bvConfig = new BVSdkConfiguration();
-            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "spotlight-four-746e2fc1211dc8964560350c9f28b67a");
-            bvConfig.addProperty(BVClientConfig.STAGING, "false");
-            bvConfig.addProperty(BVClientConfig.TESTING, "true");
-            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
+            String cloudKey = Request.QueryString["cloudkey"];
+            String staging = Request.QueryString["staging"];
+            String testing = Request.QueryString["testing"];
+            String rootFolder = Request.QueryString["site"];
+            String category = Request.QueryString["category"];
+            String subjectId = "category-1";
+
+            if (cloudKey != null)
+                bvConfig.addProperty(BVClientConfig.CLOUD_KEY, cloudKey);
+            else
+                bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "spotlight-four-746e2fc1211dc8964560350c9f28b67a");
+            if (staging != null)
+                bvConfig.addProperty(BVClientConfig.STAGING, staging);
+            else
+                bvConfig.addProperty(BVClientConfig.STAGING, "false");
+            if (testing != null)
+                bvConfig.addProperty(BVClientConfig.TESTING, testing);
+            else
+                bvConfig.addProperty(BVClientConfig.TESTING, "true");
+
+            if (rootFolder != null)
+                bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, rootFolder);
+            else
+                bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
+
+            if (category != null)
+                subjectId = category;
+            else
+                subjectId = "category-1";
 
             var bvParameters = new BVParameters
             {
@@ -25,9 +50,9 @@ namespace DotNetAspxExample
                 UserAgent = Request.UserAgent,
                 ContentType = new BVContentType(BVContentType.SPOTLIGHTS),
                 SubjectType = new BVSubjectType(BVSubjectType.CATEGORY),
-                SubjectId = "category-1"
+                SubjectId = subjectId
             };
-
+            
             BVUIContent bvOutput = new BVManagedUIContent(bvConfig);
             BVSpotlightsContainer.InnerHtml = bvOutput.getContent(bvParameters);
             BVSEOURL.InnerHtml = bvOutput.getUrl();

@@ -45,7 +45,8 @@ namespace BVSeoSdkDotNet.Config
 
             _instanceConfiguration.Add(BVCoreConfig.PRODUCTION_S3_HOSTNAME, BVConstant.PRODUCTION_S3_HOSTNAME);
             _instanceConfiguration.Add(BVCoreConfig.STAGING_S3_HOSTNAME, BVConstant.STAGING_S3_HOSTNAME);
-            _instanceConfiguration.Add(BVCoreConfig.TESTING_S3_HOSTNAME, BVConstant.TESTING_S3_HOSTNAME);
+            _instanceConfiguration.Add(BVCoreConfig.TESTING_STAGING_S3_HOSTNAME, BVConstant.TESTING_STAGING_S3_HOSTNAME);
+            _instanceConfiguration.Add(BVCoreConfig.TESTING_PRODUCTiON_S3_HOSTNAME, BVConstant.TESTING_PRODUCTION_S3_HOSTNAME);
 
             addProperty(BVClientConfig.EXECUTION_TIMEOUT, BVConstant.EXECUTION_TIMEOUT);
             addProperty(BVClientConfig.EXECUTION_TIMEOUT_BOT, BVConstant.EXECUTION_TIMEOUT_BOT);
