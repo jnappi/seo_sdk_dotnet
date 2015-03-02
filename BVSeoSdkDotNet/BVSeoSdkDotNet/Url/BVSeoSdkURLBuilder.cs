@@ -138,7 +138,7 @@ namespace BVSeoSdkDotNet.Url
                 }
                 else
                 {
-                    s3Hostname = bvConfiguration.getProperty(BVCoreConfig.TESTING_PRODUCTiON_S3_HOSTNAME);
+                    s3Hostname = bvConfiguration.getProperty(BVCoreConfig.TESTING_PRODUCTION_S3_HOSTNAME);
                 }
             }
             else
