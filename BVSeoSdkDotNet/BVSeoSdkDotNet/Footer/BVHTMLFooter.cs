@@ -130,7 +130,7 @@ namespace BVSeoSdkDotNet.Footer
                     url = _bvSeoSdkUrl.seoContentUri().ToString();
                 }
                 context.Put("url", url);
-
+                
                 StringWriter writer = new StringWriter();
                 _velocityEngine.Evaluate(context,writer, "footer",FooterTemplate);
 

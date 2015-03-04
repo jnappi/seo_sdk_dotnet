@@ -105,7 +105,6 @@ namespace BVSeoSdkDotNet.Url
             {
                 return fileUri(path);
             }
-
             return httpUri(path);
         }
 
@@ -127,9 +126,32 @@ namespace BVSeoSdkDotNet.Url
         private Uri httpUri(String path)
         {
             Boolean isStaging = Boolean.Parse(bvConfiguration.getProperty(BVClientConfig.STAGING));
+            Boolean isTesting = Boolean.Parse(bvConfiguration.getProperty(BVClientConfig.TESTING));
             Boolean isHttpsEnabled = Boolean.Parse(bvConfiguration.getProperty(BVClientConfig.SSL_ENABLED));
-            String s3Hostname = isStaging ? bvConfiguration.getProperty(BVCoreConfig.STAGING_S3_HOSTNAME) :
-                bvConfiguration.getProperty(BVCoreConfig.PRODUCTION_S3_HOSTNAME);
+            String s3Hostname=null;
+
+            if (isTesting)
+            {
+                if (isStaging)
+                {
+                    s3Hostname = bvConfiguration.getProperty(BVCoreConfig.TESTING_STAGING_S3_HOSTNAME);
+                }
+                else
+                {
+                    s3Hostname = bvConfiguration.getProperty(BVCoreConfig.TESTING_PRODUCTION_S3_HOSTNAME);
+                }
+            }
+            else
+            {
+                if (isStaging)
+                {
+                    s3Hostname = bvConfiguration.getProperty(BVCoreConfig.STAGING_S3_HOSTNAME);
+                }
+                else
+                {
+                    s3Hostname = bvConfiguration.getProperty(BVCoreConfig.PRODUCTION_S3_HOSTNAME);
+                }
+            }
             
             String cloudKey = bvConfiguration.getProperty(BVClientConfig.CLOUD_KEY);
             String urlPath = "/" + cloudKey + "/" + path;
@@ -166,7 +188,8 @@ namespace BVSeoSdkDotNet.Url
             return null;
         }
 
-
+        //need to change this method to handle the changes for BVState
+        //Future FIXME
        	private Uri c2013Uri() 
         {
 		    BVContentType contentType = null;
@@ -185,7 +208,7 @@ namespace BVSeoSdkDotNet.Url
                         {
             			    bvParameters.PageNumber = getValue(token);
             		    } 
-                        else if (token.StartsWith("ct")) 
+                        else if (token.StartsWith("ct") ) 
                         {
             			    contentType = new BVContentType(BVContentType.ctFromKeyWord(getValue(token)));
             		    } 
@@ -216,6 +239,8 @@ namespace BVSeoSdkDotNet.Url
 		    return httpUri(path);
 	    }
 
+
+        
         private String getValue(String valueString)
         {
             return valueString.Substring(2, valueString.Length-2);
@@ -229,11 +254,12 @@ namespace BVSeoSdkDotNet.Url
             path.Append(PATH_SEPARATOR);
             path.Append(contentType.uriValue());
             path.Append(PATH_SEPARATOR);
+
             path.Append(subjectType.uriValue());
             path.Append(PATH_SEPARATOR);
             path.Append(pageNumber);
             path.Append(PATH_SEPARATOR);
-
+            
             if (contentSubType != null && !contentSubType.getContentKeyword().Equals(BVContentSubType.NONE))
             {
                 path.Append(contentSubType.getContentKeyword());

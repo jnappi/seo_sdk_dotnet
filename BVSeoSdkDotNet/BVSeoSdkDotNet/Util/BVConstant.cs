@@ -36,12 +36,15 @@ namespace BVSeoSdkDotNet.Util
         /// </summary>
 	    public const String STAGING_S3_HOSTNAME = "seo-stg.bazaarvoice.com"; 
 	    public const String PRODUCTION_S3_HOSTNAME = "seo.bazaarvoice.com";
+        public const String TESTING_STAGING_S3_HOSTNAME = "seo-qa-stg.bazaarvoice.com";
+        public const String TESTING_PRODUCTION_S3_HOSTNAME = "seo-qa.bazaarvoice.com";
 	    public const String EXECUTION_TIMEOUT = "500";
         public const String EXECUTION_TIMEOUT_BOT = "2000";
 	    public const String CRAWLER_AGENT_PATTERN = "msnbot|google|teoma|bingbot|yandexbot|yahoo";
 	    public const String CONNECT_TIMEOUT = "2000";
 	    public const String SOCKET_TIMEOUT = "2000";
 	    public const String STAGING = "false";
+        public const String TESTING = "false";
 	    public const String SEO_SDK_ENABLED = "true";
         public const String PROXY_HOST = "none";
         public const String PROXY_PORT = "0";
@@ -50,8 +53,10 @@ namespace BVSeoSdkDotNet.Util
         public const String LOCAL_SEO_FILE_ROOT = "/";
         public const String CLOUD_KEY = "cloudKey";
         public const String BV_ROOT_FOLDER = "rootFolder";
+        public const String BV_SPOTLIGHTS_ROOT_FOLDER = "rootFolder";
         public const String SSL_ENABLED = "false";
         public const String CHARSET = "UTF-8";
         public const String BV_STRING_PATTERN = "BV";
+        public const String BV_SPOTLIGHTS_SUB_FOLDER ="spotlights/category";
     }
 }

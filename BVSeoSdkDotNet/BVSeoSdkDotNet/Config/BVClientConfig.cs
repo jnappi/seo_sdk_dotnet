@@ -37,6 +37,7 @@ namespace BVSeoSdkDotNet.Config
         public const string CRAWLER_AGENT_PATTERN = "crawlerAgentPattern";
         public const string SEO_SDK_ENABLED = "seo.sdk.enabled";
         public const string STAGING = "staging";
+        public const string TESTING = "testing";
         public const string EXECUTION_TIMEOUT = "seo.sdk.execution.timeout";
         public const string EXECUTION_TIMEOUT_BOT = "seo.sdk.execution.timeout.bot";
         public const string PROXY_HOST = "seo.sdk.execution.proxy.host";
@@ -57,6 +58,7 @@ namespace BVSeoSdkDotNet.Config
             _configs.Add(CRAWLER_AGENT_PATTERN);
             _configs.Add(SEO_SDK_ENABLED);
             _configs.Add(STAGING);
+            _configs.Add(TESTING);
             _configs.Add(EXECUTION_TIMEOUT);
             _configs.Add(EXECUTION_TIMEOUT_BOT);
             _configs.Add(PROXY_HOST);

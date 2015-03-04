@@ -31,12 +31,16 @@ namespace BVSeoSdkDotNet.Config
     {
         public const string STAGING_S3_HOSTNAME = "stagingS3Hostname";
         public const string PRODUCTION_S3_HOSTNAME = "productionS3Hostname";
+        public const string TESTING_STAGING_S3_HOSTNAME = "testingStagingS3Hostname";
+        public const string TESTING_PRODUCTION_S3_HOSTNAME = "testingProductionS3Hostname";
 
         public static List<string> values()
         {
             List<string> _configs = new List<string>();
             _configs.Add(STAGING_S3_HOSTNAME);
             _configs.Add(PRODUCTION_S3_HOSTNAME);
+            _configs.Add(TESTING_STAGING_S3_HOSTNAME);
+            _configs.Add(TESTING_PRODUCTION_S3_HOSTNAME);
 
             return _configs;
         }

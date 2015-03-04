@@ -64,6 +64,10 @@ namespace BVSeoSdkDotNet.Model
         /// </summary>
         public const string UNIVERSAL = "un";
 
+        /// <summary>
+        /// SPOTLIGHTS
+        /// </summary>
+        public const string SPOTLIGHTS = "spotlights";
 
         private String _bvContentType;
 
@@ -73,6 +77,11 @@ namespace BVSeoSdkDotNet.Model
         }
 
         public String uriValue() {
+            if (this._bvContentType.Equals(SPOTLIGHTS, StringComparison.OrdinalIgnoreCase))
+            {
+                return "SPOTLIGHTS".ToLower();
+            }
+
             if (this._bvContentType.Equals(REVIEWS, StringComparison.OrdinalIgnoreCase))
             {
                 return "reviews";
@@ -108,6 +117,7 @@ namespace BVSeoSdkDotNet.Model
                 return "UNIVERSAL".ToLower();
             }
 
+            
             return null;
         }
 
@@ -150,7 +160,11 @@ namespace BVSeoSdkDotNet.Model
             {
     		    return UNIVERSAL;
     	    }
-        	
+
+            if (ctxKeyWord.Equals("spotlights", StringComparison.OrdinalIgnoreCase))
+            {
+                return SPOTLIGHTS;
+            }
     	    return null;
         }
 
