@@ -15,7 +15,8 @@ namespace DotNetAspxExample
             String staging = Request.QueryString["staging"];
             String testing = Request.QueryString["testing"];
             String rootFolder = Request.QueryString["site"];
-            String category = Request.QueryString["category"];
+            String productIdParam = Request.QueryString["productid"];
+            
             String subjectId = "5000001";
 
             if (cloudKey != null)
@@ -36,8 +37,11 @@ namespace DotNetAspxExample
             else
                 bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344");
 
-            if (category != null)
-                subjectId = category;
+            if (productIdParam != null)
+            {
+                //if productIdParameter is null then use the default value.  If it's not null then use the parameter.  If category
+                subjectId = productIdParam;
+            }
             else
                 subjectId = "5000001";
 
