@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.bazaarvoice</groupId>
+	<artifactId>bv-seo-sdk</artifactId>
+	<version>2.2.0.1</version>
+	<name>bv-seo-sdk</name>
+	<description>bazaarvoice seo-sdk dot net project</description>
+        
+        <scm>
+		<!-- example for scm.connection.url : 
+		scm:ssh:git@github.com:bazaarvoice/bv_seo_sdk_dotnet.git 
+		Use -D options in the maven or a property variable setter.
+		-->
+		<connection>${scm.connection.url}</connection>
+        </scm>
+	
+        <build>
+          <plugins>              
+            <!-- bypass/skip the actual maven deploy and run custom s3 plugin upload -->
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-deploy-plugin</artifactId>
+              <version>2.7</version>
+              <configuration>
+                <skip>true</skip>
+              </configuration>
+            </plugin>
+      		 
+            <!-- Upload the install script into the scripts directory. -->
+            <!-- command to execute : 
+		 mvn -Ds3.repo.path=<THE_PATH> -Dartifact.source=<ARTIFACT_DIR> deploy -->
+            <plugin>
+              <groupId>com.bazaarvoice.maven.plugins</groupId>
+              <artifactId>s3-upload-maven-plugin</artifactId>
+              <version>1.2</version>
+              <executions>
+                <execution>
+                  <phase>deploy</phase>
+                  <goals>
+                    <goal>s3-upload</goal>
+                  </goals>
+                  <configuration>
+                    <bucketName>nexus-private-artifacts</bucketName>
+		    <source>${artifact.source}</source>
+                    <destination>${s3.repo.path}/${project.version}</destination>
+                    <recursive>false</recursive>
+                  </configuration>
+                </execution>
+              </executions>
+            </plugin>
+            
+            <!-- maven scm plugin -->
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-scm-plugin</artifactId>
+              <version>1.9.2</version>
+              <configuration>
+                <connectionType>connection</connectionType>
+                <tag>Release_v${project.version}</tag>
+              </configuration>
+            </plugin>
+          </plugins>
+      </build>
+        
+</project>
