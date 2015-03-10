@@ -89,7 +89,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BVLog4Net.config" />
+    <Content Include="BVLog4Net.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
