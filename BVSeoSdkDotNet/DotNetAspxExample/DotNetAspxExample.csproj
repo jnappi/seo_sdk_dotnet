@@ -94,6 +94,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\bvseodotnettest - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\bvseodotnettest - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\bvvseodotnetdevelopment - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\bvvseodotnetdevelopment - Web Deploy.pubxml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
