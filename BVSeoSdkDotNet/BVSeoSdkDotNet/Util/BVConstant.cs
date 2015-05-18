@@ -29,7 +29,16 @@ namespace BVSeoSdkDotNet.Util
     {
         public const String BVREVEAL = "bvreveal";
 	    public const String BVREVEAL_DEBUG = "bvreveal=debug";
-	    public const String INCLUDE_PAGE_URI = "{INSERT_PAGE_URI}";
+        public const String BVSTATE_REGEX = "bvstate=((([^?&/%:])*:([^?&/%])*)(/)?)+";
+        // Add & or %26 to be extracted from the end of bvstate parameter
+        public const String BVSTATE_REGEX_WITH_TRAILING_SEPERATOR = BVSTATE_REGEX + "(&|%26){0,1}";
+        public const String BVSTATE_REVEAL_DEBUG_REGEX = "bvstate=((([^?&/%:])*:([^?&/%])*)(/)?)+(reveal:debug)";
+        public const Char BVSTATE_KEYVALUE_SEPARATOR_CHAR = ':';
+        public const Char BVSTATE_TOKEN_SEPARATOR_CHAR = '/';
+        public const String ESCAPED_FRAGMENT_KEY = "_escaped_fragment_=";
+        public const String ESCAPED_FRAGMENT_MULTIVALUE_SEPERATOR = "%26";
+        public const String FRAGMENT_MARKER = "#!";
+        public const String INCLUDE_PAGE_URI = "{INSERT_PAGE_URI}";
     	
         /// <summary>
         /// Some of the Default Property Values

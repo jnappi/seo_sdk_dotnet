@@ -97,6 +97,7 @@ namespace BVSEOSDKTest
             bvParameters.PageURI = "http://localhost:8080/sampleapp/thecontent.jsp?product=abc";
             BVSeoSdkUrl bvSeoSdkUrl = new BVSeoSdkURLBuilder(bvConfiguration, bvParameters);
             bvUIContentService = new BVUIContentServiceProvider(bvConfiguration);
+            bvUIContentService.setBVParameters(bvParameters);
             bvUIContentService.setBVSeoSdkUrl(bvSeoSdkUrl);
             isSdkEnabled = bvUIContentService.isSdkEnabled();
             Assert.IsFalse(isSdkEnabled, "SDK enabled should be false here.");
@@ -107,9 +108,21 @@ namespace BVSEOSDKTest
             bvParameters.PageURI = "http://localhost:8080/sampleapp/thecontent.jsp?product=abc&bvreveal=debug";
             bvSeoSdkUrl = new BVSeoSdkURLBuilder(bvConfiguration, bvParameters);
             bvUIContentService = new BVUIContentServiceProvider(bvConfiguration);
+            bvUIContentService.setBVParameters(bvParameters);
             bvUIContentService.setBVSeoSdkUrl(bvSeoSdkUrl);
             isSdkEnabled = bvUIContentService.isSdkEnabled();
             Assert.IsTrue(isSdkEnabled, "SDK enabled should be true here.");
+
+            /** Disable SDK but upon reveal:debug in bvstate sdkEnabled should be true. **/
+            bvConfiguration.addProperty(BVClientConfig.SEO_SDK_ENABLED, "False");
+            bvParameters = new BVParameters();
+            bvParameters.PageURI = "http://localhost:8080/sampleapp/thecontent.jsp?product=abc&bvstate=ct:q/pg:1/st:p/reveal:debug";
+            bvSeoSdkUrl = new BVSeoSdkURLBuilder(bvConfiguration, bvParameters);
+            bvUIContentService = new BVUIContentServiceProvider(bvConfiguration);
+            bvUIContentService.setBVParameters(bvParameters);
+            bvUIContentService.setBVSeoSdkUrl(bvSeoSdkUrl);
+            isSdkEnabled = bvUIContentService.isSdkEnabled();
+            Assert.IsTrue(isSdkEnabled, "SDK enabled should be true when bvstate has reveal:debug.");
         }
     }
 }

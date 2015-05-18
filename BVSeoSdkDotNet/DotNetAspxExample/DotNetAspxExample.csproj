@@ -53,12 +53,28 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ExampleGetContent.aspx" />
+    <Content Include="ExampleGetMultipleContent.aspx" />
     <Content Include="ExampleGetSpotlights.aspx" />
     <Content Include="ExampleMyscho.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExampleGetContent.aspx.cs">
+      <DependentUpon>ExampleGetContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExampleGetContent.aspx.designer.cs">
+      <DependentUpon>ExampleGetContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleGetMultipleContent.aspx.cs">
+      <DependentUpon>ExampleGetMultipleContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExampleGetMultipleContent.aspx.designer.cs">
+      <DependentUpon>ExampleGetMultipleContent.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ExampleGetSpotlights.aspx.cs">
       <DependentUpon>ExampleGetSpotlights.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

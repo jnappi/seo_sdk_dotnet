@@ -13,7 +13,7 @@ namespace IntegrationTest.Subject_Content
         protected void Page_Load(object sender, EventArgs e)
         {
             Helper helper = new Helper(Page.Request);
-            BVSdkConfiguration config = helper.GetConfiguration("myshco-126b543c32d9079f120a575ece25bad6", "9344ia");
+            BVSdkConfiguration config = helper.GetConfiguration("myshco-69cb945801532dcfb57ad2b0d2471b68", "Main_Site-en_US");
             BVParameters bvParams = helper.GetParams("5000001", "p", "rp");
             BVManagedUIContent uiContent = new BVManagedUIContent(config);
             string content = uiContent.getContent(bvParams);

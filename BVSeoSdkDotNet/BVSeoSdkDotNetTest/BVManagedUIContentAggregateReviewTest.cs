@@ -68,8 +68,8 @@ namespace BVSEOSDKTest
         {
             BVConfiguration bvConfig = new BVSdkConfiguration();
             bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca");
-            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344seob");
+            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-69cb945801532dcfb57ad2b0d2471b68");
+            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
             bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "3000");
             bvConfig.addProperty(BVClientConfig.STAGING, "true");
 
@@ -94,8 +94,8 @@ namespace BVSEOSDKTest
         {
             BVConfiguration bvConfig = new BVSdkConfiguration();
             bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca");
-            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344seob");
+            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-69cb945801532dcfb57ad2b0d2471b68");
+            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
             bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "3000");
             bvConfig.addProperty(BVClientConfig.STAGING, "true");
 
@@ -121,9 +121,9 @@ namespace BVSEOSDKTest
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca");
+            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-69cb945801532dcfb57ad2b0d2471b68");
             _bvConfig.addProperty(BVClientConfig.STAGING, "true");
-            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344seob");
+            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
             _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "1");
             _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT_BOT, "10000");
 
@@ -159,9 +159,9 @@ namespace BVSEOSDKTest
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca");
+            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-69cb945801532dcfb57ad2b0d2471b68");
             _bvConfig.addProperty(BVClientConfig.STAGING, "true");
-            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344seob");
+            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
             _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "3000");
 
             BVParameters _bvParam = new BVParameters();
@@ -188,6 +188,44 @@ namespace BVSEOSDKTest
                     true, "there should not be AggregateRating in the content");
         }
 
+        [TestMethod]
+        public void TestSEOContent_SinglePageHTTP_AggregateRatingAndReviewsWithbvrevealDebug()
+        {
+            BVConfiguration _bvConfig = new BVSdkConfiguration();
+            _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
+            _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
+            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-69cb945801532dcfb57ad2b0d2471b68");
+            _bvConfig.addProperty(BVClientConfig.STAGING, "true");
+            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
+            _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "3000");
+
+            BVParameters _bvParam = new BVParameters();
+            _bvParam.UserAgent = "googlebot";
+            _bvParam.BaseURI = "http://localhost:8080/thispage.htm";
+            _bvParam.PageURI = "http://localhost:8080/abcd" + "?" + "bvreveal=debug&notSure=1&letSee=2";
+            _bvParam.ContentType = new BVContentType(BVContentType.REVIEWS);
+            _bvParam.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
+            _bvParam.SubjectId = "2000001";
+
+            BVUIContent _bvOutput = new BVManagedUIContent(_bvConfig);
+
+            String sBvOutputSummary = _bvOutput.getAggregateRating(_bvParam);
+
+            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\""),
+                true, "there should be AggregateRating in the content");
+            Assert.AreEqual<Boolean>(!sBvOutputSummary.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\""), true,
+                "there should not be reviews section in the content");
+            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("contentURL"),
+                true, "there should be contentURL in the content");
+
+            String sBvOutputReviews = _bvOutput.getReviews(_bvParam);
+            Assert.AreEqual<Boolean>(sBvOutputReviews.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\""), true,
+                    "there should be reviews section in the content");
+            Assert.AreEqual<Boolean>(!sBvOutputReviews.Contains("itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\""),
+                    true, "there should not be AggregateRating in the content");
+            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("contentURL"),
+                true, "there should be contentURL in the content");
+        }
 
         [TestMethod]
         public void TestSEOContent_SinglePageHTTP_GetReviews_ERR0013()
@@ -195,9 +233,9 @@ namespace BVSEOSDKTest
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca"); //"adobe-55d020998d7b4776fb0f9df49278083c");
-            _bvConfig.addProperty(BVClientConfig.STAGING, "false");
-            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "8814");
+            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-69cb945801532dcfb57ad2b0d2471b68"); //"adobe-55d020998d7b4776fb0f9df49278083c");
+            _bvConfig.addProperty(BVClientConfig.STAGING, "true");
+            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
             _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
 
             BVParameters _bvParam = new BVParameters();
@@ -206,7 +244,7 @@ namespace BVSEOSDKTest
             _bvParam.PageURI = "http://localhost:8080/abcd" + "?" + "notSure=1&letSee=2";
             _bvParam.ContentType = new BVContentType(BVContentType.REVIEWS);
             _bvParam.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
-            _bvParam.SubjectId = "PR6";
+            _bvParam.SubjectId = "3000001";
 
             BVUIContent _bvOutput = new BVManagedUIContent(_bvConfig);
 
@@ -232,7 +270,7 @@ namespace BVSEOSDKTest
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "seo_sdk_testcase-159b6108bb11967e554a92c6a3c39cb3");
             _bvConfig.addProperty(BVClientConfig.STAGING, "true");
-            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344seob");
+            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
             _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
 
             BVParameters _bvParam = new BVParameters();
@@ -264,7 +302,7 @@ namespace BVSEOSDKTest
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
             _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "seo_sdk_testcase-159b6108bb11967e554a92c6a3c39cb3");
             _bvConfig.addProperty(BVClientConfig.STAGING, "false");
-            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344seob");
+            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
             _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
 
             BVParameters _bvParam = new BVParameters();
@@ -294,9 +332,9 @@ namespace BVSEOSDKTest
             BVConfiguration _bvConfig = new BVSdkConfiguration();
             _bvConfig.addProperty(BVClientConfig.SEO_SDK_ENABLED, "true");
             _bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "adobe-55d020998d7b4776fb0f9df49278083c");
-            _bvConfig.addProperty(BVClientConfig.STAGING, "false");
-            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "8814");
+            _bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "totalgymdirect-f19e9cfeb9917d0c20afdfbe06483f1b");
+            _bvConfig.addProperty(BVClientConfig.STAGING, "true");
+            _bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
             _bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
 
             BVParameters _bvParam = new BVParameters();
@@ -305,7 +343,7 @@ namespace BVSEOSDKTest
             _bvParam.PageURI = "http://localhost:8080/abcd" + "?" + "notSure=1&letSee=2";
             _bvParam.ContentType = new BVContentType(BVContentType.REVIEWS);
             _bvParam.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
-            _bvParam.SubjectId = "PR6";
+            _bvParam.SubjectId = "PRTG2000";
 
             BVUIContent _bvOutput = new BVManagedUIContent(_bvConfig);
 
@@ -340,7 +378,7 @@ namespace BVSEOSDKTest
 
             String sBvOutputSummary = _bvOutput.getContent(_bvParam);
 
-            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<li data-bvseo=\"en\">bvseo-false</li>"), true, "There should only footer message");
+            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<li data-bvseo=\"sdk\">"), true, "There should be footer");
             Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("BVRRReviewsSoiSectionID"), false, "There should not be any reviews");
             Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<span itemprop=\"aggregateRating\" itemscope "), false, "There should not be any ratings");
 
@@ -370,7 +408,7 @@ namespace BVSEOSDKTest
 
             String sBvOutputSummary = _bvOutput.getAggregateRating(_bvParam);
 
-            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<li data-bvseo=\"en\">bvseo-false</li>"), true, "There should only footer message");
+            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<li data-bvseo=\"sdk\">"), true, "There should be footer");
             Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<!--begin-aggregate-rating-->"), false, "there should not be aggregateRating in the content");
         }
 
@@ -398,7 +436,7 @@ namespace BVSEOSDKTest
 
             String sBvOutputSummary = _bvOutput.getReviews(_bvParam);
             Console.WriteLine(sBvOutputSummary);
-            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<li data-bvseo=\"en\">bvseo-false</li>"), true, "There should only footer message");
+            Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("<li data-bvseo=\"sdk\">"), true, "There should be footer");
             Assert.AreEqual<Boolean>(sBvOutputSummary.Contains("BVRRReviewsSoiSectionID"), false, "There should not be any reviews");
         }
 
@@ -412,7 +450,7 @@ namespace BVSEOSDKTest
             BVConfiguration bvConfig = new BVSdkConfiguration();
             bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
             bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "totalgymdirect-f19e9cfeb9917d0c20afdfbe06483f1b");//"adobe-55d020998d7b4776fb0f9df49278083c");
-            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "8814");
+            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
             bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
             bvConfig.addProperty(BVClientConfig.CRAWLER_AGENT_PATTERN, "mysearchbot");
 
@@ -422,21 +460,21 @@ namespace BVSEOSDKTest
             bvParameters.UserAgent = "111mysearchbot122";
             bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
             bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
-            bvParameters.SubjectId = "PR6";
+            bvParameters.SubjectId = "PRTG2000";
 
             String theUIContent = uiContent.getAggregateRating(bvParameters);
             Console.WriteLine(theUIContent);
 
-            Assert.IsTrue(theUIContent.Contains("<span itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\">"),
-                 "there should be BvRRSourceID in the content");
+            Assert.IsTrue(theUIContent.Contains("<div id=\"bvseo-aggregateRatingSection\" itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\">"),
+                 "there should be bvseo-aggregateRatingSection in the content");
             Assert.IsFalse(theUIContent.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\">"),
                 "there should not be reviews section in the content");
 
             /** Scenario for multiple crawler patterh **/
             bvConfig = new BVSdkConfiguration();
             bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "adobe-55d020998d7b4776fb0f9df49278083c");
-            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "8814");
+            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "totalgymdirect-f19e9cfeb9917d0c20afdfbe06483f1b");
+            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
             bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "300000");
             bvConfig.addProperty(BVClientConfig.CRAWLER_AGENT_PATTERN, "mysearchbot|anotherbot");
 
@@ -446,12 +484,12 @@ namespace BVSEOSDKTest
             bvParameters.UserAgent = "111mysearchbot122";
             bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
             bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
-            bvParameters.SubjectId = "PR6";
+            bvParameters.SubjectId = "PRTG2000";
 
             theUIContent = uiContent.getAggregateRating(bvParameters);
             Console.WriteLine(theUIContent);
-            Assert.IsTrue(theUIContent.Contains("<span itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\">"),
-                 "there should be BvRRSourceID in the content");
+            Assert.IsTrue(theUIContent.Contains("<div id=\"bvseo-aggregateRatingSection\" itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\">"),
+                 "there should be bvseo-aggregateRatingSection in the content");
             Assert.IsFalse(theUIContent.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\">"),
                 "there should not be reviews section in the content");
 
@@ -459,12 +497,12 @@ namespace BVSEOSDKTest
             bvParameters.UserAgent = "111anotherbot122";
             bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
             bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
-            bvParameters.SubjectId = "PR6";
+            bvParameters.SubjectId = "PRTG2000";
 
             theUIContent = uiContent.getAggregateRating(bvParameters);
             Console.WriteLine(theUIContent);
-            Assert.IsTrue(theUIContent.Contains("<span itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\">"),
-                 "there should be BvRRSourceID in the content");
+            Assert.IsTrue(theUIContent.Contains("<div id=\"bvseo-aggregateRatingSection\" itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\">"),
+                 "there should be bvseo-aggregateRatingSection in the content");
             Assert.IsFalse(theUIContent.Contains("itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\">"),
                 "there should not be reviews section in the content");
         }

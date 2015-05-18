@@ -67,8 +67,7 @@ namespace BVSeoSdkDotNet.Content
             {
                 sb.Append(loadContentFromHttp(seoContentUrl));
             }
-
-            BVUtilty.replaceString(sb, BVConstant.INCLUDE_PAGE_URI, baseUri + (baseUri.Contains("?") ? "&" : "?"));
+            BVUtility.replacePageURIFromContent(sb, baseUri);
         }
 
         private Boolean isContentFromFile()
@@ -142,7 +141,7 @@ namespace BVSeoSdkDotNet.Content
                 throw new BVSdkException(e.Message);
             }
 
-            bool isValidContent = BVUtilty.validateBVContent(content);
+            bool isValidContent = BVUtility.validateBVContent(content);
             if (!isValidContent)
             {
                 _logger.Error(BVMessageUtil.getMessage("ERR0025"));
@@ -252,7 +251,7 @@ namespace BVSeoSdkDotNet.Content
         public Boolean isSdkEnabled()
         {
             sdkEnabled = Boolean.Parse(_bvConfiguration.getProperty(BVClientConfig.SEO_SDK_ENABLED));
-            sdkEnabled = sdkEnabled || _bvSeoSdkUrl.queryString().Contains(BVConstant.BVREVEAL);
+            sdkEnabled = sdkEnabled || BVUtility.isRevealDebugEnabled(_bvParameters);
             return sdkEnabled;
         }
 

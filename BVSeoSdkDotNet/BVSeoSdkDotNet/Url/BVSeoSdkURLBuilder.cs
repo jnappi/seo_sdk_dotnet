@@ -21,6 +21,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.IO;
 using System.Reflection;
@@ -38,13 +39,16 @@ namespace BVSeoSdkDotNet.Url
     public class BVSeoSdkURLBuilder : BVSeoSdkUrl
     {
         private static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        private const String BV_PAGE = "bvpage"; 
+        private const String BV_PAGE = "bvpage";
+        private const String BV_STATE = "bvstate";
+        private const String ESCAPED_FRAGMENT = "_escaped_fragment_=";
 	    private const String NUM_ONE_STR = "1";
 	    private const String HTML_EXT = ".htm";
         private const String PATH_SEPARATOR = "/";
 
         private BVConfiguration bvConfiguration;
         private BVParameters bvParameters;
+        private String _fragmentString;
         private String _queryString;
 
         public BVSeoSdkURLBuilder(BVConfiguration bvConfiguration, BVParameters bvParameters)
@@ -60,15 +64,10 @@ namespace BVSeoSdkDotNet.Url
         /// <returns>Corrected Base URI as String</returns>
         public String correctedBaseUri()
         {
-            String baseUri = bvParameters.BaseURI == null ? "" : bvParameters.BaseURI;
-
-            if (baseUri.Contains("bvrrp") || baseUri.Contains("bvqap") ||
-                    baseUri.Contains("bvsyp") || baseUri.Contains("bvpage"))
-            {
-                baseUri = BVUtilty.removeBVQuery(baseUri);
-            }
-
-            return baseUri;
+            return BVUtility.removeBVParameters
+            (
+                (bvParameters.BaseURI == null) ? "" : bvParameters.BaseURI
+            );
         }
 
         /// <summary>
@@ -79,9 +78,22 @@ namespace BVSeoSdkDotNet.Url
         {
             if (this._queryString == null)
             {
-                this._queryString = BVUtilty.getQueryString(bvParameters.PageURI);
+                this._queryString = BVUtility.getQueryString(bvParameters.PageURI);
             }
             return this._queryString;
+        }
+
+        /// <summary>
+        /// Retrieves the fragment string portion from the URL.
+        /// </summary>
+        /// <returns>Returns the Fragment String</returns>
+        public String fragmentString()
+        {
+            if (this._fragmentString == null)
+            {
+                this._fragmentString = BVUtility.getFragmentString(bvParameters.PageURI);
+            }
+            return this._fragmentString;
         }
 
         /// <summary>
@@ -90,10 +102,75 @@ namespace BVSeoSdkDotNet.Url
         /// <returns>Returns the URL in URI format</returns>
         public Uri seoContentUri()
         {
+            Uri uri = null;
+            // Extract from bvstate
+            if
+            (
+                bvParameters.PageURI != null &&
+                bvParameters.PageURI.Contains(BV_STATE)
+            )
+            {
+                Regex regex = new Regex(BVConstant.BVSTATE_REGEX);
+                // Url Fragment has highest priority for bvstate
+                String fragment = fragmentString();
+
+                if (fragment.Contains(BV_STATE))
+                {
+                    Match match = regex.Match(fragment);
+                    if (match.Success)
+                    {
+                        uri = bvstateUri(match.Value);
+                    }
+                }
+
+                if (uri == null)
+                {
+                    // Try bvstate in ESCAPED_FRAGMENT
+                    String query = queryString();
+                    if (query.Contains(ESCAPED_FRAGMENT))
+                    {
+                        String escapedFragmentValue = Regex.Split(
+                            query,
+                            ESCAPED_FRAGMENT
+                        )[1];
+                        if
+                        (
+                            escapedFragmentValue != null &&
+                            escapedFragmentValue.Length > 0
+                        )
+                        {
+                            Match match = regex.Match(escapedFragmentValue);
+                            if (match.Success)
+                            {
+                                uri = bvstateUri(match.Value);
+                            }
+                        }
+                    }
+
+                    // Try bvstate in query parameter
+                    if(uri == null)
+                    {
+                        Match match = regex.Match(queryString());
+                        if (match.Success)
+                        {
+                            uri = bvstateUri(match.Value);
+                        }
+                    }
+                }
+            }
+            if (uri != null)
+            {
+                return uri;
+            }
+
+            // Fallback to extract from bvpage
+            // We can think about removing this when we no longer support 
             if (_queryString != null && _queryString.Contains(BV_PAGE))
             {
                 return c2013Uri();
             }
+            // Fallback to old legacy seo parameters
+            // This can be removed when we no longer support old seo parameters
             return prrUri();
         }
 
@@ -188,14 +265,13 @@ namespace BVSeoSdkDotNet.Url
             return null;
         }
 
-        //need to change this method to handle the changes for BVState
-        //Future FIXME
+        // bvpage is present here to have back compatability support if some sites
        	private Uri c2013Uri() 
         {
 		    BVContentType contentType = null;
 		    BVSubjectType subjectType = null;
 		    String subjectId = null;
-    		
+
             NameValueCollection parameters = HttpUtility.ParseQueryString(_queryString, Encoding.UTF8);
 		    for(int i=0; i < parameters.Count; i++ ) 
             {
@@ -239,11 +315,127 @@ namespace BVSeoSdkDotNet.Url
 		    return httpUri(path);
 	    }
 
+        private Uri bvstateUri(String queryString)
+        {
+            BVContentType contentType = null;
+            BVSubjectType subjectType = null;
+            String subjectId = null;
+            String pageNumber = null;
+
+            NameValueCollection parameters = HttpUtility.ParseQueryString(
+                queryString,
+                Encoding.UTF8
+            );
+            for (int i = 0; i < parameters.Count; i++)
+            {
+                if
+                (
+                    parameters.Keys[i] != null &&
+                    parameters.Keys[i].Equals(BV_STATE)
+                )
+                {
+                    string[] tokens = parameters[parameters.Keys[i]].Split(BVConstant.BVSTATE_TOKEN_SEPARATOR_CHAR);
+                    foreach (string token in tokens)
+                    {
+                        if (token.StartsWith("pg"))
+                        {
+                            pageNumber = extractValue(token);
+                        }
+                        else if (token.StartsWith("ct"))
+                        {
+                            contentType = new BVContentType(
+                                BVContentType.ctFromBVStateKeyword(
+                                    extractValue(token)
+                                )
+                            );
+                        }
+                        else if (token.StartsWith("st"))
+                        {
+                            subjectType = new BVSubjectType(
+                                extractValue(token)
+                            );
+                        }
+                        else if (token.StartsWith("id"))
+                        {
+                            subjectId = extractValue(token);
+                        }
+                    }
+                }
+            }
+
+            if
+            (
+                // Ignore bvstate if ContentType is Missing
+                contentType == null ||
+                // Ignore bvstate if contentType doesn't match bvParameters contentType
+                (
+                    bvParameters.ContentType != null &&
+                    !contentType.getContentType().Equals(
+                        bvParameters.ContentType.getContentType(),
+                        StringComparison.OrdinalIgnoreCase
+                    )
+                )
+            )
+            {
+                // when no uri is returned, it falls back to legacy seo parameters
+                return null;
+            }
+
+            // Defaulting logic if no subjectType is provided
+            if (subjectType == null)
+            {
+                if
+                (
+                    contentType.getContentType().Equals(
+                        BVContentType.SPOTLIGHTS,
+                        StringComparison.OrdinalIgnoreCase
+                    )
+                )
+                {
+                    subjectType = new BVSubjectType(BVSubjectType.CATEGORY);
+                } 
+                else 
+                {
+                    subjectType = new BVSubjectType(BVSubjectType.PRODUCT);
+                }
+            }
+            subjectId = (String.IsNullOrEmpty(subjectId)) ? bvParameters.SubjectId : subjectId;
+
+            if (!IsValidPageNumber(pageNumber))
+            {
+                pageNumber = NUM_ONE_STR;
+            }
+            bvParameters.PageNumber = pageNumber;
+
+            String path = getPath(
+                contentType,
+                subjectType,
+                bvParameters.PageNumber,
+                subjectId,
+                bvParameters.ContentSubType
+            );
+            if (isContentFromFile())
+            {
+                return fileUri(path);
+            }
+
+            return httpUri(path);
+        }
 
         
         private String getValue(String valueString)
         {
             return valueString.Substring(2, valueString.Length-2);
+        }
+
+        private String extractValue(String valueString)
+        {
+            if (valueString.Contains(BVConstant.BVSTATE_KEYVALUE_SEPARATOR_CHAR+""))
+            {
+                String[] data = valueString.Split(BVConstant.BVSTATE_KEYVALUE_SEPARATOR_CHAR);
+                return data[1];
+            }
+            return "";
         }
 
 
@@ -290,7 +482,7 @@ namespace BVSeoSdkDotNet.Url
             if (IsValidPageNumber(bvParameters.PageNumber))
                 return;
             
-            bvParameters.PageNumber = BVUtilty.getPageNumber(queryString());
+            bvParameters.PageNumber = BVUtility.getPageNumber(queryString());
         }
 
         private String getRootFolder()

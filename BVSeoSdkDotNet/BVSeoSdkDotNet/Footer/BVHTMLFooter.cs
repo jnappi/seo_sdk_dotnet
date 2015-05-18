@@ -21,6 +21,7 @@ using System.Collections;
 using System.Collections.Specialized;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.IO;
 using System.Reflection;
 using BVSeoSdkDotNet.Model;
@@ -84,7 +85,7 @@ namespace BVSeoSdkDotNet.Footer
             {
                 VelocityContext context = new VelocityContext();
 
-                if (_bvParameters != null && _bvParameters.PageURI != null && _bvParameters.PageURI.Contains(BVConstant.BVREVEAL_DEBUG))
+                if (BVUtility.isRevealDebugEnabled(_bvParameters))
                 {
                     Hashtable revealMap = null;
                     revealMap = new Hashtable();

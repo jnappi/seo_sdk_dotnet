@@ -278,8 +278,8 @@ namespace BVSeoSdkDotNet.Content
                 bvUiContentService = new BVUIContentServiceProvider(_bvConfiguration);
                 bvUiContentService.setBVParameters(this.bvParameters);
                 bvUiContentService.setBVSeoSdkUrl(bvSeoSdkUrl);
-                bvFooter.setBvSeoSdkUrl(bvSeoSdkUrl);
             }
+            bvFooter.setBvSeoSdkUrl(bvSeoSdkUrl);
 
         }
 

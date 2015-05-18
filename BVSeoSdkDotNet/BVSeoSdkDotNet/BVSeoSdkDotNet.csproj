@@ -76,7 +76,7 @@
     <Compile Include="Url\BVSeoSdkUrl.cs" />
     <Compile Include="Util\BVConstant.cs" />
     <Compile Include="Util\BVMessageUtil.cs" />
-    <Compile Include="Util\BVUtilty.cs" />
+    <Compile Include="Util\BVUtility.cs" />
     <Compile Include="Validation\BVDefaultValidator.cs" />
     <Compile Include="Validation\BVValidator.cs" />
   </ItemGroup>

@@ -178,13 +178,15 @@ namespace BVSeoSdkDotNet
             Assert.AreEqual<Boolean>(theUIContent.Contains("debug"), true, "there should be debug message");
         }
         
-        [TestMethod]
+        //TODO: myshco is no more prr. It is hard to find prr test clients now.
+        // Switch this to a working PRR HTTP testing after mocking
+        /*[TestMethod]
         public void TestSEOContentFromHTTP_SinglePagePRR()
         {
             BVConfiguration bvConfig = new BVSdkConfiguration();
             bvConfig.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
-            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-126b543c32d9079f120a575ece25bad6");
-            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344ia");
+            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-69cb945801532dcfb57ad2b0d2471b68");
+            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
             bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "3000");
             bvConfig.addProperty(BVClientConfig.STAGING, "true");
 
@@ -198,7 +200,7 @@ namespace BVSeoSdkDotNet
             
             String theUIContent = uiContent.getContent(bvParameters);
             Assert.AreEqual<Boolean>(theUIContent.Contains("BVRRSourceID"), true, "there should be BVRRSourceID in the content");
-        }
+        }*/
 
         [TestMethod]
         public void TestSEOContentFromHTTP_SinglePage_FileUnavailableError()

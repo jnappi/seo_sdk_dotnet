@@ -88,6 +88,7 @@ namespace BVSEOSDKTest
         {
             _bvConfiguration.addProperty(BVClientConfig.STAGING, "false");
             _bvConfiguration.addProperty(BVClientConfig.TESTING, "false");
+            _bvConfiguration.addProperty(BVClientConfig.CLOUD_KEY, "spotlight-five-311f5a3337b8d5e0d817adb7af279b0a");
             _bvUIContent = new BVManagedUIContent(_bvConfiguration);
 
             BVParameters bvParameters = new BVParameters();
@@ -123,6 +124,7 @@ namespace BVSEOSDKTest
         {
             _bvConfiguration.addProperty(BVClientConfig.STAGING, "true");
             _bvConfiguration.addProperty(BVClientConfig.TESTING, "false");
+            _bvConfiguration.addProperty(BVClientConfig.CLOUD_KEY, "spotlight-five-311f5a3337b8d5e0d817adb7af279b0a");
             _bvUIContent = new BVManagedUIContent(_bvConfiguration);
 
             BVParameters bvParameters = new BVParameters();

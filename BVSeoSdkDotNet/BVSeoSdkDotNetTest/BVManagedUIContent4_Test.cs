@@ -269,8 +269,8 @@ namespace BVSEOSDKTest
         {
             BVConfiguration bvConfig = new BVSdkConfiguration();
             bvConfig.addProperty(BVClientConfig.SSL_ENABLED, "true");
-            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-126b543c32d9079f120a575ece25bad6");
-            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "9344ia");
+            bvConfig.addProperty(BVClientConfig.CLOUD_KEY, "myshco-69cb945801532dcfb57ad2b0d2471b68");
+            bvConfig.addProperty(BVClientConfig.BV_ROOT_FOLDER, "Main_Site-en_US");
             bvConfig.addProperty(BVClientConfig.EXECUTION_TIMEOUT, "6000");
             bvConfig.addProperty(BVClientConfig.STAGING, "true");
             BVUIContent uiContent = new BVManagedUIContent(bvConfig);
@@ -283,7 +283,7 @@ namespace BVSEOSDKTest
             bvParameters.PageURI = "http://localhost:8080/sample/xyz.jsp";
 
             String theUIContent = uiContent.getContent(bvParameters);
-            Assert.AreEqual<Boolean>(theUIContent.Contains("BVRRSourceID"), true, "there should be BvRRSourceID in the content");
+            Assert.AreEqual<Boolean>(theUIContent.Contains("bvseo-reviewsSection"), true, "there should be bvseo-reviewsSection in the content");
         }
 
         [TestMethod]

@@ -20,11 +20,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.IO;
 using System.Reflection;
+using BVSeoSdkDotNet.Model;
 using BVSeoSdkDotNet.BVException;
 using log4net;
 
@@ -35,10 +37,19 @@ namespace BVSeoSdkDotNet.Util
     /// 
     /// @author Mohan Krupanandan
     /// </summary>
-    public sealed class BVUtilty
+    public sealed class BVUtility
     {
         private static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private static Regex BV_PATTERN = null;
+        private static readonly IList<String> bvQueryParameters = new ReadOnlyCollection<string>(
+            new List<String> {
+                "bvrrp",
+                "bvsyp",
+                "bvqap",
+                "bvpage"
+            }
+        );
+        private const String ESCAPED_FRAGMENT = "_escaped_fragment_";
 
         /// <summary>
         /// Gets the Page Number from the Page URI QueryString 
@@ -50,7 +61,8 @@ namespace BVSeoSdkDotNet.Util
             if (queryString != null && queryString.Length > 0) 
             {
                 NameValueCollection parameters = HttpUtility.ParseQueryString(queryString, Encoding.UTF8);
-                for(int i=0; i < parameters.Count; i++ ) 
+
+                for (int i = 0; i < parameters.Count; i++)
                 {
                     if (parameters.Keys[i] != null && (parameters.Keys[i].Equals("bvrrp") || parameters.Keys[i].Equals("bvqap")))
                     {
@@ -107,8 +119,32 @@ namespace BVSeoSdkDotNet.Util
                 _logger.Error(BVMessageUtil.getMessage("ERR0027"),ex);
                 throw new BVSdkException("ERR0027");
             }
-
             return _uri.Query;
+        }
+
+        /// <summary>
+        /// Get the Fragment String from the URI
+        /// </summary>
+        /// <param name="uri">URI as String</param>
+        /// <returns>Fragment String</returns>
+        public static String getFragmentString(String uri)
+        {
+            if (String.IsNullOrEmpty(uri))
+            {
+                return "";
+            }
+
+            Uri _uri = null;
+            try
+            {
+                _uri = new Uri(uri);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(BVMessageUtil.getMessage("ERR0027"), ex);
+                throw new BVSdkException("ERR0027");
+            }
+            return _uri.Fragment;
         }
      
         /// <summary>
@@ -158,6 +194,48 @@ namespace BVSeoSdkDotNet.Util
             }
         }
 
+        public static void replacePageURIFromContent(StringBuilder content, String baseUri)
+        {
+            String toAppendToBaseUri = "";
+            // baseUri has hashbang or a non _escaped_fragment_ url
+            if
+            (
+                baseUri.Contains(BVConstant.FRAGMENT_MARKER) ||
+                !baseUri.Contains(BVConstant.ESCAPED_FRAGMENT_KEY)
+            )
+            {
+                // If baseUri ends with #! or ? then no need to append anything
+                // Rest of cases, we need to append & when ? is available else ?
+                if
+                (
+                    !baseUri.EndsWith(BVConstant.FRAGMENT_MARKER) &&
+                    !baseUri.EndsWith("?")
+                )
+                {
+                    toAppendToBaseUri = (baseUri.Contains("?") ? "&" : "?");
+                }
+            }
+            // base uri is an _escaped_fragment_ url
+            else
+            {
+                // if baseUri ends with _escaped_fragment_ no need to append anything
+                // Rest of cases, we need to append %26 when ? is available else ?
+                if (!baseUri.EndsWith(BVConstant.ESCAPED_FRAGMENT_KEY))
+                {
+                    String escapedFragmentValue = Regex.Split(
+                        baseUri,
+                        BVConstant.ESCAPED_FRAGMENT_KEY
+                    )[1];
+                    toAppendToBaseUri = (escapedFragmentValue.Contains("?") ? BVConstant.ESCAPED_FRAGMENT_MULTIVALUE_SEPERATOR : "?");
+                }
+            }
+
+            BVUtility.replaceString(
+                content,
+                BVConstant.INCLUDE_PAGE_URI, baseUri + toAppendToBaseUri
+            );
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -169,52 +247,63 @@ namespace BVSeoSdkDotNet.Util
             sb.Replace(toReplace, replacement);
         }
 
-
         /// <summary>
-        /// Removes the Bazaar Voice Query sring values from the Urls Query string and returns the modified Url
+        /// Removes the BV parameter values from the Url and returns the modified Url
         /// </summary>
-        /// <param name="queryUrl">Query URL as String</param>
+        /// <param name="baseUrl">URL as String</param>
         /// <returns>URL as String</returns>
-        public static String removeBVQuery(String queryUrl) 
+        public static String removeBVParameters(String url) 
         {
-            Uri uri;
-            try 
+            String baseUrl = url;
+            if (baseUrl.Contains("bvstate="))
             {
-                uri = new Uri(queryUrl);
-            } 
-            catch (Exception e) 
-            {
-                return queryUrl;
+                // This handles case where there are more parameters after bvstate
+                String regexStr = BVConstant.BVSTATE_REGEX_WITH_TRAILING_SEPERATOR;
+                baseUrl = Regex.Replace(baseUrl, regexStr, "");
+
+                // Handle usecase where bvstate is the last parameter
+                if (baseUrl.EndsWith("?") | baseUrl.EndsWith("&"))
+                {
+                    baseUrl = baseUrl.Substring(0, baseUrl.Length - 1);
+                }
+                // Handle usecase where bvstate is the last parameter in _escaped_fragment_
+                if (baseUrl.EndsWith(BVConstant.ESCAPED_FRAGMENT_MULTIVALUE_SEPERATOR))
+                {
+                    baseUrl = baseUrl.Substring(0, baseUrl.Length - 3);
+                }
             }
 
-            try 
+            if (hasBVQueryParameters(baseUrl))
             {
-                String newQuery = null;
-                if (uri.Query != null && uri.Query.Length > 0) 
+                Uri uri;
+                try
                 {
-                    NameValueCollection newParameters = new NameValueCollection();
-                    NameValueCollection parameters = HttpUtility.ParseQueryString(uri.Query, Encoding.UTF8);
-                    ArrayList  bvParameters = new ArrayList ();
-                    bvParameters.Add("bvrrp");
-                    bvParameters.Add("bvsyp");
-                    bvParameters.Add("bvqap");
-                    bvParameters.Add("bvpage");
-                    foreach(KeyValuePair<string,string> parameter in parameters) 
+                    uri = new Uri(baseUrl);
+                    String newQuery = null;
+                    if (uri.Query != null && uri.Query.Length > 0)
                     {
-                        if (!bvParameters.Contains(parameter.Key)) {
-                            newParameters.Add(parameter.Key, parameter.Value);
+                        NameValueCollection newParameters = new NameValueCollection();
+                        NameValueCollection parameters = HttpUtility.ParseQueryString(uri.Query, Encoding.UTF8);
+
+                        foreach (string key in parameters.AllKeys)
+                        {
+                            if (!bvQueryParameters.Contains(key))
+                            {
+                                newParameters.Add(key, parameters[key]);
+                            }
                         }
+                        newQuery = newParameters.Count > 0 ? ConstructQueryString(newParameters, "&") : null;
                     }
-                    newQuery = newParameters.Count > 0 ? ConstructQueryString(newParameters): null;
+                    UriBuilder uriBuilder = new UriBuilder(uri.Scheme, uri.Host, uri.Port, uri.AbsolutePath);
+                    uriBuilder.Query = newQuery;
+                    return uriBuilder.Uri.ToString();
                 }
-                UriBuilder uriBuilder = new UriBuilder(uri.Scheme, uri.Host,uri.Port,uri.AbsolutePath);
-                uriBuilder.Query = newQuery;
-                return uriBuilder.Uri.ToString();
-            } 
-            catch (Exception e) 
-            {
-                return queryUrl;
+                // swallow exceptions
+                catch (Exception e) {
+                    _logger.Info(e.Message, e);
+                }
             }
+            return baseUrl;
         }
 
         /// <summary>
@@ -222,15 +311,28 @@ namespace BVSeoSdkDotNet.Util
         /// Consider this method to be the opposite of "System.Web.HttpUtility.ParseQueryString"
         /// </summary>
         /// <param name="parameters">NameValueCollection</param>
+        /// <param name="joinString">String</param>
         /// <returns>String</returns>
-        public static string ConstructQueryString(NameValueCollection parameters)
+        public static string ConstructQueryString(
+            NameValueCollection parameters,
+            String joinString
+        )
         {
             List<string> items = new List<string>();
 
             foreach (String name in parameters)
-                items.Add(String.Concat(name, "=", System.Web.HttpUtility.UrlEncode(parameters[name])));
+            {
+                if (name != null && name.Length > 0)
+                {
+                    items.Add(String.Concat(name, "=", System.Web.HttpUtility.UrlEncode(parameters[name])));
+                }
+                else
+                {
+                    items.Add(System.Web.HttpUtility.UrlEncode(parameters[name]));
+                }
+            }
 
-            return String.Join("&", items.ToArray());
+            return String.Join(joinString, items.ToArray());
         }
 
         /// <summary>
@@ -248,6 +350,39 @@ namespace BVSeoSdkDotNet.Util
 
             Match m = BV_PATTERN.Match(content);
             return m.Success;
+        }
+
+        /// <summary>
+        /// Checks bvParameters to see whether we need to reveal debug information.
+        /// </summary>
+        /// <param name="bvParameters"></param>
+        /// <returns>true when we have to reveal debug information, false otherwise</returns>
+        public static Boolean isRevealDebugEnabled(BVParameters bvParameters)
+        {   
+            Regex regex = new Regex(BVConstant.BVSTATE_REVEAL_DEBUG_REGEX);
+            return
+            (
+                bvParameters != null && 
+                bvParameters.PageURI != null &&
+                (
+                    // check for presence of bvreveal=debug
+                    bvParameters.PageURI.Contains(BVConstant.BVREVEAL_DEBUG) ||
+                    // check for reveal:debug in bvstate
+                    regex.Match(bvParameters.PageURI).Success
+                )
+            );
+        }
+
+        private static Boolean hasBVQueryParameters(String queryUrl)
+        {
+            foreach (String bvParameter in bvQueryParameters)
+            {
+                if (queryUrl.Contains(bvParameter))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

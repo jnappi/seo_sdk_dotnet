@@ -59,6 +59,7 @@
     <Compile Include="BVSdkMessageUtilTest.cs" />
     <Compile Include="BVSeoSdkURLBuilderTest.cs" />
     <Compile Include="BVUIContentServiceProviderTest.cs" />
+    <Compile Include="BVUtilityTest.cs" />
     <Compile Include="BVValidatorTest.cs" />
     <Compile Include="BVGetSpotlights.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

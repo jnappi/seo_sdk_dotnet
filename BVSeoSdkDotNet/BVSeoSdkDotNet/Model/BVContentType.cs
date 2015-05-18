@@ -124,6 +124,11 @@ namespace BVSeoSdkDotNet.Model
         public String getIntegrationScriptProperty() {
             return this._bvContentType + "Script";
         }
+
+        public String getContentType()
+        {
+            return this._bvContentType;
+        }
         
         public static String ctFromKeyWord(String ctxKeyWord) {
     	    if (ctxKeyWord.Equals("re", StringComparison.OrdinalIgnoreCase)) 
@@ -166,6 +171,24 @@ namespace BVSeoSdkDotNet.Model
                 return SPOTLIGHTS;
             }
     	    return null;
+        }
+
+        public static String ctFromBVStateKeyword(String ctxKeyword)
+        {
+            switch (ctxKeyword)
+            {
+                case "r":
+                    return REVIEWS;
+                case "q":
+                    return QUESTIONS;
+                case "s":
+                    return STORIES;
+                case "sp":
+                    return SPOTLIGHTS;
+                case "u":
+                    return UNIVERSAL;
+            }
+            return null;
         }
 
     }

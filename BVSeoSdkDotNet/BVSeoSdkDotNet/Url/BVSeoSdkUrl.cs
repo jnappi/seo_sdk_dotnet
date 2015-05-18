@@ -36,6 +36,12 @@ namespace BVSeoSdkDotNet.Url
         Uri seoContentUri();
 
         /// <summary>
+        /// Retrieves the fragment string portion from the URL.
+        /// </summary>
+        /// <returns>Returns the Fragment String</returns>
+        String fragmentString();
+
+        /// <summary>
         /// Retrieves the query string portion from the URL.
         /// </summary>
         /// <returns>Returns the Query String</returns>

@@ -15,8 +15,8 @@ namespace BVSEOSDKTest
     [TestClass]
     public class BvProxyTest
     {
-        private const string CloudKey = "myshco-126b543c32d9079f120a575ece25bad6";
-        private const string BvRootFolder = "9344ia";
+        private const string CloudKey = "myshco-69cb945801532dcfb57ad2b0d2471b68";
+        private const string BvRootFolder = "Main_Site-en_US";
         private const string Id = "5000001";
 
         private static BVConfiguration GetCommonConfig()
@@ -46,7 +46,7 @@ namespace BVSEOSDKTest
             var bvParameters = GetCommonParams();
             var theUiContent = uiContent.getContent(bvParameters);
 
-            Assert.AreEqual(theUiContent.Contains("BVRRSourceID"), true, "there should be BvRRSourceID in the content");
+            Assert.AreEqual(theUiContent.Contains("bvseo-reviewsSection"), true, "there should be bvseo-reviewsSection in the content");
             Assert.AreEqual(theUiContent.Contains("bvseo-msg: Connect to localhost:12345 timed out"), false,
                 "there should not be connection a timed out message.");
         }
@@ -62,8 +62,8 @@ namespace BVSEOSDKTest
             var bvParameters = GetCommonParams();
             var theUiContent = uiContent.getContent(bvParameters);
 
-            Assert.AreEqual(theUiContent.Contains("BVRRSourceID"), false, "there should not be BvRRSourceID in the content");
-            Assert.AreEqual(theUiContent.Contains(" The resource to the URL or file is currently unavailable"), true);
+            Assert.AreEqual(theUiContent.Contains("bvseo-reviewsSection"), false, "there should not be bvseo-reviewsSection in the content");
+            Assert.AreEqual(theUiContent.Contains("bvseo-msg: Execution timed out"), true);
         }
 
         [TestMethod]
@@ -83,7 +83,7 @@ namespace BVSEOSDKTest
             var theUiContent = uiContent.getContent(bvParameters);
 
             result.AsyncWaitHandle.WaitOne();
-            Assert.AreEqual(theUiContent.Contains("BVRRSourceID"), true, "there should be BvRRSourceID in the content");
+            Assert.AreEqual(theUiContent.Contains("bvseo-reviewsSection"), true, "there should be bvseo-reviewsSection in the content");
             Assert.AreEqual(theUiContent.Contains("bvseo-msg: Connect to localhost:12345 timed out"), false,
                 "there should not be connection a timed out message.");
         }
