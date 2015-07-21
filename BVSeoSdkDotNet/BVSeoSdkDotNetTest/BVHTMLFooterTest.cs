@@ -175,9 +175,10 @@ namespace BVSEOSDKTest
             bvConfiguration.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "false");
 
             BVParameters bvParameters = new BVParameters();
-            bvParameters.PageURI = "http://localhost:8080/Sample/Example-1.jsp?bvstate=ct:r/reveal:debug";
+            bvParameters.PageURI = "http://localhost:8080/Sample/Example-1.jsp?bvstate=ct:r/id:id2/reveal:debug";
             bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
             bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
+            bvParameters.SubjectId = "id1";
 
             BVSeoSdkUrl _bvSeoSdkUrl = new BVSeoSdkURLBuilder(bvConfiguration, bvParameters);
             BVFooter bvFooter = new BVHTMLFooter(bvConfiguration, bvParameters);
@@ -188,19 +189,22 @@ namespace BVSEOSDKTest
             Assert.AreEqual<Boolean>(displayFooter.Contains("REVIEWS"), true, "the content string should match.");
             Assert.AreEqual<Boolean>(displayFooter.Contains("PRODUCT"), true, "the content string should match.");
             Assert.AreEqual<Boolean>(displayFooter.Contains("<li data-bvseo=\"contentURL\">http://seo.bazaarvoice.com"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("<li data-bvseo=\"subjectId\">id2"), true, "the subjectId should match.");
 
             /** When loading from files it should not display URL. **/
             bvConfiguration = new BVSdkConfiguration();
             bvConfiguration.addProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY, "true");
 
             bvParameters = new BVParameters();
-            bvParameters.PageURI = "http://localhost:8080/Sample/Example-1.jsp?bvstate=ct:r/reveal:debug";
+            bvParameters.PageURI = "http://localhost:8080/Sample/Example-1.jsp?bvstate=ct:r/id:id2/reveal:debug";
             bvParameters.SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
             bvParameters.ContentType = new BVContentType(BVContentType.REVIEWS);
+            bvParameters.SubjectId = "id1";
 
             _bvSeoSdkUrl = new BVSeoSdkURLBuilder(bvConfiguration, bvParameters);
             bvFooter = new BVHTMLFooter(bvConfiguration, bvParameters);
             bvFooter.setBvSeoSdkUrl(_bvSeoSdkUrl);
+            String contentUri = _bvSeoSdkUrl.seoContentUri().ToString();
 
             displayFooter = bvFooter.displayFooter("getContent");
             Console.WriteLine(displayFooter);
@@ -208,6 +212,7 @@ namespace BVSEOSDKTest
             Assert.AreEqual<Boolean>(displayFooter.Contains("REVIEWS"), true, "the content string should match.");
             Assert.AreEqual<Boolean>(displayFooter.Contains("PRODUCT"), true, "the content string should match.");
             Assert.AreEqual<Boolean>(displayFooter.Contains("<li data-bvseo=\"contentURL\">http://seo.bazaarvoice.com"), false, "there should not be any url pattern.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("<li data-bvseo=\"subjectId\">id2"), true, "the subjectId should match.");
         }
     }
 }

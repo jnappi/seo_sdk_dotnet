@@ -400,6 +400,7 @@ namespace BVSeoSdkDotNet.Url
                 }
             }
             subjectId = (String.IsNullOrEmpty(subjectId)) ? bvParameters.SubjectId : subjectId;
+            bvParameters.SubjectId = subjectId;
 
             if (!IsValidPageNumber(pageNumber))
             {
