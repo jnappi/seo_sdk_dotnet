@@ -47,6 +47,7 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BVGetSellerRatings.cs" />
     <Compile Include="BVHTMLFooterTest.cs" />
     <Compile Include="BVManagedUIContentAggregateReviewTest.cs" />
     <Compile Include="BVManagedUiContent_ExecutionTimeoutTest.cs" />

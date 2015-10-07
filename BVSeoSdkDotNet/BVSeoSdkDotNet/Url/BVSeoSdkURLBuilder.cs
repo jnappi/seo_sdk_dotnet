@@ -206,32 +206,58 @@ namespace BVSeoSdkDotNet.Url
             Boolean isTesting = Boolean.Parse(bvConfiguration.getProperty(BVClientConfig.TESTING));
             Boolean isHttpsEnabled = Boolean.Parse(bvConfiguration.getProperty(BVClientConfig.SSL_ENABLED));
             String s3Hostname=null;
+            String pathPrefix=null;
 
-            if (isTesting)
+            if (
+                bvParameters.SubjectType.getCS2013Text().Equals(
+                    BVSubjectType.SELLER,
+                    StringComparison.OrdinalIgnoreCase
+                )
+                &&
+                bvParameters.ContentType.getContentType().Equals(
+                    BVContentType.REVIEWS,
+                    StringComparison.OrdinalIgnoreCase
+                )
+            )
             {
-                if (isStaging)
+                s3Hostname = BVConstant.SELLER_RATINGS_S3_HOSTNAME;
+                pathPrefix = "/";
+                if (isTesting)
                 {
-                    s3Hostname = bvConfiguration.getProperty(BVCoreConfig.TESTING_STAGING_S3_HOSTNAME);
+                    pathPrefix += isStaging ?
+                        BVConstant.ENVIRONMENT_TESTING_STAGING
+                        :
+                        BVConstant.ENVIRONMENT_TESTING;
                 }
                 else
                 {
-                    s3Hostname = bvConfiguration.getProperty(BVCoreConfig.TESTING_PRODUCTION_S3_HOSTNAME);
+                    pathPrefix += isStaging ?
+                        BVConstant.ENVIRONMENT_STAGING
+                        :
+                        BVConstant.ENVIRONMENT_PROD;
                 }
             }
             else
             {
-                if (isStaging)
+                pathPrefix = "";
+                if (isTesting)
                 {
-                    s3Hostname = bvConfiguration.getProperty(BVCoreConfig.STAGING_S3_HOSTNAME);
+                    s3Hostname = isStaging ?
+                        bvConfiguration.getProperty(BVCoreConfig.TESTING_STAGING_S3_HOSTNAME)
+                        :
+                        bvConfiguration.getProperty(BVCoreConfig.TESTING_PRODUCTION_S3_HOSTNAME);
                 }
                 else
                 {
-                    s3Hostname = bvConfiguration.getProperty(BVCoreConfig.PRODUCTION_S3_HOSTNAME);
+                    s3Hostname = isStaging ?
+                        bvConfiguration.getProperty(BVCoreConfig.STAGING_S3_HOSTNAME)
+                        :
+                        bvConfiguration.getProperty(BVCoreConfig.PRODUCTION_S3_HOSTNAME);
                 }
             }
             
             String cloudKey = bvConfiguration.getProperty(BVClientConfig.CLOUD_KEY);
-            String urlPath = "/" + cloudKey + "/" + path;
+            String urlPath = pathPrefix + "/" + cloudKey + "/" + path;
             UriBuilder builder = new UriBuilder();
             builder.Scheme = isHttpsEnabled ? "https" : "http";
             if (s3Hostname.Contains(":"))

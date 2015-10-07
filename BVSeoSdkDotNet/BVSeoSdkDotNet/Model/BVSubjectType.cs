@@ -49,6 +49,11 @@ namespace BVSeoSdkDotNet.Model
         /// </summary>
         public const string DETAIL = "d";
 
+        /// <summary>
+        /// SELLER
+        /// </summary>
+        public const string SELLER = "s";
+
         private String cs2013Text;
     
         public BVSubjectType(String cs2013Text) {
@@ -74,6 +79,11 @@ namespace BVSeoSdkDotNet.Model
             if (this.cs2013Text.Equals("d", StringComparison.OrdinalIgnoreCase))
             {
                 return "detail";
+            }
+
+            if (this.cs2013Text.Equals("s", StringComparison.OrdinalIgnoreCase))
+            {
+                return "seller";
             }
 
             return null;
@@ -102,7 +112,12 @@ namespace BVSeoSdkDotNet.Model
             if (subjectType.Equals("d", StringComparison.OrdinalIgnoreCase))
             {
     		    return DETAIL;
-    	    }
+            }
+
+            if (subjectType.Equals("s", StringComparison.OrdinalIgnoreCase))
+            {
+                return SELLER;
+            }
         	
     	    return null;
         }

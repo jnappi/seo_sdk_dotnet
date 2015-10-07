@@ -102,6 +102,30 @@ namespace BVSEOSDKTest
             Assert.AreEqual<Boolean>(displayFooter.Contains("REVIEWS"), true, "the content string should match.");
             Assert.AreEqual<Boolean>(displayFooter.Contains("PRODUCT"), true, "the content string should match.");
             Assert.AreEqual<Boolean>(displayFooter.Contains("<li data-bvseo=\"loadSEOFilesLocally\">true</li>"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("<li data-bvseo=\"productionS3Hostname\">seo.bazaarvoice.com</li>"), true, "seo.bazaarvoice.com should be present.");
+        }
+
+        [TestMethod]
+        public void TestDisplayFooter_Debug_Seller()
+        {
+            BVConfiguration bvConfiguration = new BVSdkConfiguration();
+
+            BVParameters bvParameters = new BVParameters();
+            bvParameters.PageURI = "http://localhost:8080/Sample/Example-1.jsp?bvreveal=debug";
+            bvParameters.SubjectType = new BVSubjectType(BVSubjectType.SELLER);
+            bvParameters.SubjectId = "seller";
+
+            BVSeoSdkUrl _bvSeoSdkUrl = new BVSeoSdkURLBuilder(bvConfiguration, bvParameters);
+            BVFooter bvFooter = new BVHTMLFooter(bvConfiguration, bvParameters);
+            bvFooter.setBvSeoSdkUrl(_bvSeoSdkUrl);
+
+            String displayFooter = bvFooter.displayFooter("getContent");
+            Console.WriteLine(displayFooter);
+            Assert.AreEqual<Boolean>(displayFooter.Contains("CLOUD"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("REVIEWS"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("SELLER"), true, "the content string should match.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("<li data-bvseo=\"productionS3Hostname\">seo.bazaarvoice.com</li>"), false, "seo.bazaarvoice.com should not be present.");
+            Assert.AreEqual<Boolean>(displayFooter.Contains("<li data-bvseo=\"stagingS3Hostname\">seo-stg.bazaarvoice.com</li>"), false, "seo-stg.bazaarvoice.com should not be present.");
         }
 
         [TestMethod]

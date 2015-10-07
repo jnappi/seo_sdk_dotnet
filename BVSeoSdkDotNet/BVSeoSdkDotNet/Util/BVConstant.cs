@@ -47,6 +47,12 @@ namespace BVSeoSdkDotNet.Util
 	    public const String PRODUCTION_S3_HOSTNAME = "seo.bazaarvoice.com";
         public const String TESTING_STAGING_S3_HOSTNAME = "seo-qa-stg.bazaarvoice.com";
         public const String TESTING_PRODUCTION_S3_HOSTNAME = "seo-qa.bazaarvoice.com";
+        public const String SELLER_RATINGS_S3_HOSTNAME = "srd.bazaarvoice.com";
+        public const String SELLER_RATINGS_DEFAULT_SUBJECT_ID = "seller";
+        public const String ENVIRONMENT_PROD = "prod";
+        public const String ENVIRONMENT_STAGING = "stg";
+        public const String ENVIRONMENT_TESTING = "qa";
+        public const String ENVIRONMENT_TESTING_STAGING = "qa-stg";
 	    public const String EXECUTION_TIMEOUT = "500";
         public const String EXECUTION_TIMEOUT_BOT = "2000";
 	    public const String CRAWLER_AGENT_PATTERN = "msnbot|google|teoma|bingbot|yandexbot|yahoo";

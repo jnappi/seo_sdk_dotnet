@@ -55,6 +55,7 @@
   <ItemGroup>
     <Content Include="ExampleGetContent.aspx" />
     <Content Include="ExampleGetMultipleContent.aspx" />
+    <Content Include="ExampleGetSellerRatings.aspx" />
     <Content Include="ExampleGetSpotlights.aspx" />
     <Content Include="ExampleMyscho.aspx" />
     <Content Include="Default.aspx" />
@@ -74,6 +75,13 @@
     </Compile>
     <Compile Include="ExampleGetMultipleContent.aspx.designer.cs">
       <DependentUpon>ExampleGetMultipleContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleGetSellerRatings.aspx.cs">
+      <DependentUpon>ExampleGetSellerRatings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExampleGetSellerRatings.aspx.designer.cs">
+      <DependentUpon>ExampleGetSellerRatings.aspx</DependentUpon>
     </Compile>
     <Compile Include="ExampleGetSpotlights.aspx.cs">
       <DependentUpon>ExampleGetSpotlights.aspx</DependentUpon>

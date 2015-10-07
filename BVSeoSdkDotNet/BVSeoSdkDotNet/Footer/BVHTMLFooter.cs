@@ -90,9 +90,19 @@ namespace BVSeoSdkDotNet.Footer
                     Hashtable revealMap = null;
                     revealMap = new Hashtable();
 
-                    foreach (string configName in BVCoreConfig.values())
+                    if (
+                        _bvParameters != null
+                        &&
+                        !_bvParameters.SubjectType.getCS2013Text().Equals(
+                            BVSubjectType.SELLER,
+                            StringComparison.OrdinalIgnoreCase
+                        )
+                    )
                     {
-                        revealMap.Add(configName, _bvConfiguration.getProperty(configName));
+                        foreach (string configName in BVCoreConfig.values())
+                        {
+                            revealMap.Add(configName, _bvConfiguration.getProperty(configName));
+                        }
                     }
 
                     foreach (string configName in BVClientConfig.values())
