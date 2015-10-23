@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.1.0
+
+* Added support for seller ratings.
+* Fix - Debug logging has been turned off. 
+
 ## 2.3.0.0
 
 * Added support for bvstate parameter.
