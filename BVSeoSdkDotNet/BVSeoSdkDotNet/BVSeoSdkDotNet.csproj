@@ -38,7 +38,7 @@
   <ItemGroup>
     <Reference Include="Commons, Version=1.0.5325.26748, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL" />
-    <Reference Include="NVelocity, Version=1.0.5325.26749, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="NVelocity, Version=1.1.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
