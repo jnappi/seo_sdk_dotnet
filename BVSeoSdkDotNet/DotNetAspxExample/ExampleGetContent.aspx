@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ExampleGetContent.aspx.cs" Inherits="DotNetAspxExample.ExampleGetContent" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ExampleGetContent.aspx.cs" Inherits="DotNetAspxExample.ExampleGetContent" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
