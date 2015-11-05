@@ -30,6 +30,16 @@
         <include>NVelocity.dll</include>
       </includes>
     </fileSet>
+    <!--
+    config.location should be set while invoking maven via -D options.
+    -->
+    <fileSet>
+      <directory>${config.location}</directory>
+      <outputDirectory>\</outputDirectory>
+      <includes>
+        <include>BVLog4Net.config</include>
+      </includes>
+    </fileSet>
   </fileSets>
 
 </assembly>
