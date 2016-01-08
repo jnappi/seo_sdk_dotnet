@@ -37,13 +37,13 @@ namespace BVSeoSdkDotNet.Content
     /// </summary>
     public class BVUIContentServiceProvider : BVUIContentService
     {
-        private static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        private BVConfiguration _bvConfiguration;
+        private static readonly ILog Logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly BVConfiguration _bvConfiguration;
         private BVParameters _bvParameters;
-        private StringBuilder _message;
-        private StringBuilder _uiContent;
+        private readonly StringBuilder _message;
+        private readonly StringBuilder _uiContent;
         private BVSeoSdkUrl _bvSeoSdkUrl;
-        private Boolean sdkEnabled;
+        private bool _sdkEnabled;
 
         /// <summary>
         /// Default Constructor to set the BVConfiguration values
@@ -57,26 +57,56 @@ namespace BVSeoSdkDotNet.Content
             _uiContent = new StringBuilder();
         }
 
-        private void getBvContent(StringBuilder sb, Uri seoContentUrl, String baseUri)
+        private void GetBvContent(StringBuilder sb, Uri seoContentUrl, String baseUri)
         {
-            if (isContentFromFile())
+            if (IsContentFromFile)
             {
-                sb.Append(loadContentFromFile(seoContentUrl));
+                sb.Append(LoadContentFromFile(seoContentUrl));
             }
             else
             {
-                sb.Append(loadContentFromHttp(seoContentUrl));
+                sb.Append(LoadContentFromHttp(seoContentUrl));
             }
             BVUtility.replacePageURIFromContent(sb, baseUri);
         }
 
-        private Boolean isContentFromFile()
+        private bool IsContentFromFile
         {
-            Boolean loadFromFile = Boolean.Parse(_bvConfiguration.getProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY));
-            return loadFromFile;
+            get
+            {
+                return bool.Parse(_bvConfiguration.getProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY));
+            }
         }
 
-        private String loadContentFromHttp(Uri path) 
+        private Version _assemblyVersion;
+        /// <summary>
+        /// The version of the <see cref="Assembly"/> in which this class is specified.
+        /// </summary>
+        private Version AssemblyVersion
+        {
+            get
+            {
+                if (_assemblyVersion == null)
+                {
+                    var assembly = Assembly.GetAssembly(GetType());
+                    _assemblyVersion = assembly.GetName().Version;
+                }
+                return _assemblyVersion;
+            }
+        }
+
+        /// <summary>
+        /// <see cref="HttpRequestHeader.UserAgent"/> value to use when making requests.
+        /// </summary>
+        private string UserAgentRequestHeader
+        {
+            get
+            {
+                return String.Format("bv_dotnet_sdk/{0};{1}", AssemblyVersion.ToString(3), _bvParameters.UserAgent);
+            }
+        }
+
+        private String LoadContentFromHttp(Uri path) 
         {
             int connectionTimeout = int.Parse(_bvConfiguration.getProperty(BVClientConfig.CONNECT_TIMEOUT));
             int socketTimeout = int.Parse(_bvConfiguration.getProperty(BVClientConfig.SOCKET_TIMEOUT));
@@ -92,7 +122,7 @@ namespace BVSeoSdkDotNet.Content
             }
             catch(Exception e)
             {
-                _logger.Error(BVMessageUtil.getMessage("ERR0024"), e);
+                Logger.Error(BVMessageUtil.getMessage("ERR0024"), e);
                 encoding = Encoding.UTF8;
             }
 
@@ -101,6 +131,7 @@ namespace BVSeoSdkDotNet.Content
                 HttpWebRequest httpRequest = (HttpWebRequest)WebRequest.Create(path);
                 httpRequest.Timeout = connectionTimeout;
                 httpRequest.ReadWriteTimeout = socketTimeout;
+                httpRequest.UserAgent = UserAgentRequestHeader;
 
                 if (!String.IsNullOrEmpty(proxyHost) && !proxyHost.Equals("none", StringComparison.InvariantCultureIgnoreCase))
                 {
@@ -122,29 +153,29 @@ namespace BVSeoSdkDotNet.Content
             }
             catch (ProtocolViolationException e)
             {
-                _logger.Error(BVMessageUtil.getMessage("ERR0012"), e);
+                Logger.Error(BVMessageUtil.getMessage("ERR0012"), e);
                 throw new BVSdkException("ERR0012");
             }
             catch (IOException e)
             {
-                _logger.Error(BVMessageUtil.getMessage("ERR0019"), e);
+                Logger.Error(BVMessageUtil.getMessage("ERR0019"), e);
                 throw new BVSdkException("ERR0019");
             }
             catch (WebException e)
             {
-                _logger.Error(BVMessageUtil.getMessage("ERR0012"), e);
+                Logger.Error(BVMessageUtil.getMessage("ERR0012"), e);
                 throw new BVSdkException("ERR0012");
             }
             catch (Exception e)
             {
-                _logger.Error(e.Message, e);
+                Logger.Error(e.Message, e);
                 throw new BVSdkException(e.Message);
             }
 
             bool isValidContent = BVUtility.validateBVContent(content);
             if (!isValidContent)
             {
-                _logger.Error(BVMessageUtil.getMessage("ERR0025"));
+                Logger.Error(BVMessageUtil.getMessage("ERR0025"));
                 throw new BVSdkException("ERR0025");
             }
 
@@ -152,7 +183,7 @@ namespace BVSeoSdkDotNet.Content
             return content;
         }
 
-        private String loadContentFromFile(Uri path)
+        private String LoadContentFromFile(Uri path)
         {
             String content = null;
             Encoding encoding = Encoding.UTF8;
@@ -164,7 +195,7 @@ namespace BVSeoSdkDotNet.Content
             }
             catch (Exception e)
             {
-                _logger.Error(BVMessageUtil.getMessage("ERR0024"), e);
+                Logger.Error(BVMessageUtil.getMessage("ERR0024"), e);
                 encoding = Encoding.UTF8;
             }
 
@@ -176,30 +207,30 @@ namespace BVSeoSdkDotNet.Content
                 }
                 else
                 {
-                    _logger.Error(BVMessageUtil.getMessage("ERR0012"));
+                    Logger.Error(BVMessageUtil.getMessage("ERR0012"));
                     throw new BVSdkException("ERR0012");
                 }
             }
             catch (IOException e)
             {
-                _logger.Error(BVMessageUtil.getMessage("ERR0012"), e);
+                Logger.Error(BVMessageUtil.getMessage("ERR0012"), e);
                 throw new BVSdkException("ERR0012");
             }
             catch (BVSdkException e)
             {
-                _logger.Error(e.getMessage(), e);
+                Logger.Error(e.getMessage(), e);
                 throw e;
             }
             catch (Exception e)
             {
-                _logger.Error(e.Message, e);
+                Logger.Error(e.Message, e);
                 throw new BVSdkException(e.Message);
             }
 
             return content;
         }
 
-        private void includeIntegrationCode() 
+        private void IncludeIntegrationCode() 
         {
             String includeScriptStr = _bvConfiguration.getProperty(BVClientConfig.INCLUDE_DISPLAY_INTEGRATION_CODE);
             Boolean includeIntegrationScript = Boolean.Parse(includeScriptStr);
@@ -250,25 +281,25 @@ namespace BVSeoSdkDotNet.Content
         /// <returns>A Boolean value, true if sdk is enabled and false if it is not enabled</returns>
         public Boolean isSdkEnabled()
         {
-            sdkEnabled = Boolean.Parse(_bvConfiguration.getProperty(BVClientConfig.SEO_SDK_ENABLED));
-            sdkEnabled = sdkEnabled || BVUtility.isRevealDebugEnabled(_bvParameters);
-            return sdkEnabled;
+            _sdkEnabled = Boolean.Parse(_bvConfiguration.getProperty(BVClientConfig.SEO_SDK_ENABLED));
+            _sdkEnabled = _sdkEnabled || BVUtility.isRevealDebugEnabled(_bvParameters);
+            return _sdkEnabled;
         }
 
-        private void call() 
+        private void Call() 
         {
             try 
             {
                 //includes integration script if one is enabled.
-                includeIntegrationCode();
+                IncludeIntegrationCode();
 
                 Uri seoContentUrl = _bvSeoSdkUrl.seoContentUri();
                 String correctedBaseUri = _bvSeoSdkUrl.correctedBaseUri();
-                getBvContent(_uiContent, seoContentUrl, correctedBaseUri);
+                GetBvContent(_uiContent, seoContentUrl, correctedBaseUri);
             } 
             catch (BVSdkException e) 
             {
-                _logger.Error(e.getMessage(), e);
+                Logger.Error(e.getMessage(), e);
                 _message.Append(e.getMessage());
             }
         }
@@ -287,7 +318,7 @@ namespace BVSeoSdkDotNet.Content
         }
 
         /// <summary>
-        /// Executes the server side call or the file level call within a specified execution timeout.
+        /// Executes the server side call or the file level Call within a specified execution timeout.
         /// when reload is set true then it gives from the cache that was already executed in the previous call.
         /// </summary>
         /// <param name="reload">A Boolean value to determine whether to reload from cache</param>
@@ -329,30 +360,30 @@ namespace BVSeoSdkDotNet.Content
 
                 if (executionTimeout > 0)
                 {
-                    fCallFinished = RunWithTimeout(call, TimeSpan.FromMilliseconds(executionTimeout));
+                    fCallFinished = RunWithTimeout(Call, TimeSpan.FromMilliseconds(executionTimeout));
                 }
 
                 if (!fCallFinished) _message.Append(String.Format(BVMessageUtil.getMessage("ERR0018"), new Object[] { executionTimeout }));
             }
             catch (ThreadInterruptedException e)
             {
-                _logger.Error(e.Message, e);
+                Logger.Error(e.Message, e);
                 _message.Append(e.Message);
             }
             catch (ExecutionEngineException e)
             {
-                _logger.Error(e.Message, e);
+                Logger.Error(e.Message, e);
                 _message.Append(e.Message);
             }
             catch (TimeoutException e)
             {
                 String errorCode = userAgentFitsCrawlerPattern ? "ERR0026" : "ERR0018";
-                _logger.Error(String.Format(BVMessageUtil.getMessage(errorCode), new Object[] { executionTimeout }), e);
+                Logger.Error(String.Format(BVMessageUtil.getMessage(errorCode), new Object[] { executionTimeout }), e);
                 _message.Append(String.Format(BVMessageUtil.getMessage(errorCode), new Object[] { executionTimeout }));
             }
             catch (Exception e)
             {
-                _logger.Error(e.Message, e);
+                Logger.Error(e.Message, e);
                 throw new BVSdkException(e.Message);
             }
 
