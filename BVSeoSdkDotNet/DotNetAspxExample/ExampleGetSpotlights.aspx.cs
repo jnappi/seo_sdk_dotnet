@@ -73,7 +73,6 @@ namespace DotNetAspxExample
                         ? Request.Url.ToString().Substring(0, Request.Url.ToString().IndexOf("?"))
                         : Request.Url.ToString(),
                 PageURI = Request.Url.ToString(),
-                UserAgent = Request.UserAgent,
                 ContentType = new BVContentType(BVContentType.SPOTLIGHTS),
                 SubjectType = new BVSubjectType(BVSubjectType.CATEGORY),
                 SubjectId = subjectId

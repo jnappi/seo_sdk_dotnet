@@ -55,6 +55,10 @@
     <Compile Include="Content\BVUIContent.cs" />
     <Compile Include="Content\BVUIContentServiceProvider.cs" />
     <Compile Include="BVException\BVSdkException.cs" />
+    <Compile Include="Content\Loaders\EncodingParser.cs" />
+    <Compile Include="Content\Loaders\FileContentLoader.cs" />
+    <Compile Include="Content\Loaders\HttpContentLoader.cs" />
+    <Compile Include="Content\Loaders\IContentLoader.cs" />
     <Compile Include="Footer\BVFooter.cs" />
     <Compile Include="Footer\BVHTMLFooter.cs" />
     <Compile Include="Model\BVContentType.cs" />

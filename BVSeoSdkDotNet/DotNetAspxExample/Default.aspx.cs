@@ -24,7 +24,6 @@ namespace DotNetAspxExample
 
             var bvParameters = new BVParameters
             {
-                UserAgent = "google",
                 BaseURI = Request.Url.AbsoluteUri,
                 PageURI = Request.Url.AbsoluteUri + "?bvpage=ctre/id50524/stp"
             };

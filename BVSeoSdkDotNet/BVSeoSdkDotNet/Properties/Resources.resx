@@ -223,4 +223,10 @@
   <data name="ERR0026" xml:space="preserve">
     <value>Execution timed out for search bot, exceeded {0}ms;</value>
   </data>
+  <data name="MSG0006" xml:space="preserve">
+    <value>HttpContext.Current could not be read; Caller may be from executing outside of the HttpRequest thread.</value>
+  </data>
+  <data name="WRN0001" xml:space="preserve">
+    <value>Caller did not provide a UserAgent to BVParameters and a UserAgent could not be read from the HttpContext.</value>
+  </data>
 </root>

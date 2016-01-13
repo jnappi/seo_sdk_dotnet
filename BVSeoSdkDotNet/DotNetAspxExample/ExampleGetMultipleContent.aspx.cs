@@ -251,7 +251,6 @@ namespace DotNetAspxExample
             {
                 BaseURI = currentUrl,
                 PageURI = currentUrl,
-                UserAgent = Request.UserAgent,
                 ContentType = new BVContentType(contentType),
                 SubjectType = new BVSubjectType(subjectType),
                 SubjectId = subjectId

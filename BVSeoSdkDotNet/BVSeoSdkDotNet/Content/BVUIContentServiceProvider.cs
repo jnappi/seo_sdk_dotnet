@@ -16,37 +16,42 @@
  * ===========================================================================
  * 
  */
+
 using System;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.IO;
 using System.Net;
-using System.Threading;
 using System.Reflection;
-using BVSeoSdkDotNet.Model;
-using BVSeoSdkDotNet.Config;
-using BVSeoSdkDotNet.Util;
-using BVSeoSdkDotNet.Url;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
+using System.Web;
 using BVSeoSdkDotNet.BVException;
+using BVSeoSdkDotNet.Config;
+using BVSeoSdkDotNet.Content.Loaders;
+using BVSeoSdkDotNet.Model;
+using BVSeoSdkDotNet.Url;
+using BVSeoSdkDotNet.Util;
 using log4net;
 
 namespace BVSeoSdkDotNet.Content
 {
     /// <summary>
-    /// Implementation class for BVUIContentService
+    ///     Implementation class for BVUIContentService
     /// </summary>
     public class BVUIContentServiceProvider : BVUIContentService
     {
-        private static readonly ILog Logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        protected static readonly ILog Logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private readonly BVConfiguration _bvConfiguration;
-        private BVParameters _bvParameters;
         private readonly StringBuilder _message;
         private readonly StringBuilder _uiContent;
+
+        private Version _assemblyVersion;
+        private BVParameters _bvParameters;
         private BVSeoSdkUrl _bvSeoSdkUrl;
         private bool _sdkEnabled;
 
         /// <summary>
-        /// Default Constructor to set the BVConfiguration values
+        ///     Default Constructor to set the BVConfiguration values
         /// </summary>
         /// <param name="bvConfiguration"></param>
         public BVUIContentServiceProvider(BVConfiguration bvConfiguration)
@@ -57,30 +62,23 @@ namespace BVSeoSdkDotNet.Content
             _uiContent = new StringBuilder();
         }
 
-        private void GetBvContent(StringBuilder sb, Uri seoContentUrl, String baseUri)
-        {
-            if (IsContentFromFile)
-            {
-                sb.Append(LoadContentFromFile(seoContentUrl));
-            }
-            else
-            {
-                sb.Append(LoadContentFromHttp(seoContentUrl));
-            }
-            BVUtility.replacePageURIFromContent(sb, baseUri);
-        }
-
         private bool IsContentFromFile
         {
-            get
-            {
-                return bool.Parse(_bvConfiguration.getProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY));
-            }
+            get { return bool.Parse(_bvConfiguration.getProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY)); }
         }
 
-        private Version _assemblyVersion;
+        private Uri SeoContentUrl
+        {
+            get { return _bvSeoSdkUrl.seoContentUri(); }
+        }
+
+        private string CorrectedBaseUri
+        {
+            get { return _bvSeoSdkUrl.correctedBaseUri(); }
+        }
+
         /// <summary>
-        /// The version of the <see cref="Assembly"/> in which this class is specified.
+        ///     The version of the <see cref="Assembly" /> in which this class is specified.
         /// </summary>
         private Version AssemblyVersion
         {
@@ -96,168 +94,55 @@ namespace BVSeoSdkDotNet.Content
         }
 
         /// <summary>
-        /// <see cref="HttpRequestHeader.UserAgent"/> value to use when making requests.
+        ///     <see cref="HttpRequestHeader.UserAgent" /> value to use when making requests.
         /// </summary>
-        private string UserAgentRequestHeader
+        private string UserAgent
         {
             get
             {
-                return String.Format("bv_dotnet_sdk/{0};{1}", AssemblyVersion.ToString(3), _bvParameters.UserAgent);
+                var userAgent = ParameterUserAgent ?? DefaultUserAgent;
+                if (string.IsNullOrEmpty(userAgent))
+                {
+                    Logger.Warn(BVMessageUtil.getMessage("WRN0001"));
+                }
+                return string.Format("{0};CLR/{1};bv_dotnet_sdk/{2};{3}", Environment.OSVersion, Environment.Version, AssemblyVersion.ToString(3), userAgent);
             }
         }
 
-        private String LoadContentFromHttp(Uri path) 
+        private string ParameterUserAgent
         {
-            int connectionTimeout = int.Parse(_bvConfiguration.getProperty(BVClientConfig.CONNECT_TIMEOUT));
-            int socketTimeout = int.Parse(_bvConfiguration.getProperty(BVClientConfig.SOCKET_TIMEOUT));
-            int proxyPort = int.Parse(_bvConfiguration.getProperty(BVClientConfig.PROXY_PORT));
-            String proxyHost = _bvConfiguration.getProperty(BVClientConfig.PROXY_HOST);
-            String content = null;
-            Encoding encoding = Encoding.UTF8;
-
-            try
-            {
-                String charsetConfig = _bvConfiguration.getProperty(BVClientConfig.CHARSET);
-                encoding = String.IsNullOrEmpty(charsetConfig) ? Encoding.UTF8 : Encoding.GetEncoding(charsetConfig);
+            get {
+                return !string.IsNullOrEmpty(_bvParameters.UserAgent) ? _bvParameters.UserAgent : null;
             }
-            catch(Exception e)
-            {
-                Logger.Error(BVMessageUtil.getMessage("ERR0024"), e);
-                encoding = Encoding.UTF8;
-            }
-
-            try
-            {
-                HttpWebRequest httpRequest = (HttpWebRequest)WebRequest.Create(path);
-                httpRequest.Timeout = connectionTimeout;
-                httpRequest.ReadWriteTimeout = socketTimeout;
-                httpRequest.UserAgent = UserAgentRequestHeader;
-
-                if (!String.IsNullOrEmpty(proxyHost) && !proxyHost.Equals("none", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    WebProxy proxy = new WebProxy(proxyHost, proxyPort);
-                    httpRequest.Proxy = proxy;
-                }
-
-                HttpWebResponse webResponse = (HttpWebResponse)httpRequest.GetResponse();
-                Stream responseStream = webResponse.GetResponseStream();
-
-                using (StreamReader reader = new StreamReader(responseStream,encoding))
-                {
-                    content = reader.ReadToEnd();
-                }
-
-                responseStream.Close();
-                webResponse.Close();
-
-            }
-            catch (ProtocolViolationException e)
-            {
-                Logger.Error(BVMessageUtil.getMessage("ERR0012"), e);
-                throw new BVSdkException("ERR0012");
-            }
-            catch (IOException e)
-            {
-                Logger.Error(BVMessageUtil.getMessage("ERR0019"), e);
-                throw new BVSdkException("ERR0019");
-            }
-            catch (WebException e)
-            {
-                Logger.Error(BVMessageUtil.getMessage("ERR0012"), e);
-                throw new BVSdkException("ERR0012");
-            }
-            catch (Exception e)
-            {
-                Logger.Error(e.Message, e);
-                throw new BVSdkException(e.Message);
-            }
-
-            bool isValidContent = BVUtility.validateBVContent(content);
-            if (!isValidContent)
-            {
-                Logger.Error(BVMessageUtil.getMessage("ERR0025"));
-                throw new BVSdkException("ERR0025");
-            }
-
-
-            return content;
         }
 
-        private String LoadContentFromFile(Uri path)
+        private string DefaultUserAgent
         {
-            String content = null;
-            Encoding encoding = Encoding.UTF8;
-
-            try
+            get
             {
-                String charsetConfig = _bvConfiguration.getProperty(BVClientConfig.CHARSET);
-                encoding = String.IsNullOrEmpty(charsetConfig) ? Encoding.UTF8 : Encoding.GetEncoding(charsetConfig);
-            }
-            catch (Exception e)
-            {
-                Logger.Error(BVMessageUtil.getMessage("ERR0024"), e);
-                encoding = Encoding.UTF8;
-            }
-
-            try
-            {
-                if (File.Exists(path.AbsolutePath))
+                if (HttpContext.Current != null)
                 {
-                    content = File.ReadAllText(path.AbsolutePath, encoding);
+                    return HttpContext.Current.Request.UserAgent;
                 }
                 else
                 {
-                    Logger.Error(BVMessageUtil.getMessage("ERR0012"));
-                    throw new BVSdkException("ERR0012");
+                    Logger.Debug(BVMessageUtil.getMessage("MSG0006"));
+                    return null;
                 }
             }
-            catch (IOException e)
-            {
-                Logger.Error(BVMessageUtil.getMessage("ERR0012"), e);
-                throw new BVSdkException("ERR0012");
-            }
-            catch (BVSdkException e)
-            {
-                Logger.Error(e.getMessage(), e);
-                throw e;
-            }
-            catch (Exception e)
-            {
-                Logger.Error(e.Message, e);
-                throw new BVSdkException(e.Message);
-            }
-
-            return content;
-        }
-
-        private void IncludeIntegrationCode() 
-        {
-            String includeScriptStr = _bvConfiguration.getProperty(BVClientConfig.INCLUDE_DISPLAY_INTEGRATION_CODE);
-            Boolean includeIntegrationScript = Boolean.Parse(includeScriptStr);
-
-            if (!includeIntegrationScript) 
-            {
-                return;
-            }
-
-            Object[] parameters = {_bvParameters.SubjectType.uriValue(), _bvParameters.SubjectId};
-            String integrationScriptValue = _bvConfiguration.getProperty(_bvParameters.ContentType.getIntegrationScriptProperty());
-            String integrationScript = String.Format(integrationScriptValue, parameters);
-
-            _uiContent.Append(integrationScript);
         }
 
         /// <summary>
-        /// Gets a boolean value whether to Show UserAgent SEO Content
+        ///     Gets a boolean value whether to Show UserAgent SEO Content
         /// </summary>
         /// <returns>A boolean value</returns>
-        public Boolean showUserAgentSEOContent()
+        public bool showUserAgentSEOContent()
         {
             return true;
         }
 
         /// <summary>
-        /// Sets the BV Parameters for retreiving the SEO content
+        ///     Sets the BV Parameters for retreiving the SEO content
         /// </summary>
         /// <param name="bvParameters">Parameters that decide the SEO Content</param>
         public void setBVParameters(BVParameters bvParameters)
@@ -266,7 +151,7 @@ namespace BVSeoSdkDotNet.Content
         }
 
         /// <summary>
-        /// Set the URL for the SEO SDK.
+        ///     Set the URL for the SEO SDK.
         /// </summary>
         /// <param name="bvSeoSdkUrl"></param>
         public void setBVSeoSdkUrl(BVSeoSdkUrl bvSeoSdkUrl)
@@ -275,95 +160,71 @@ namespace BVSeoSdkDotNet.Content
         }
 
         /// <summary>
-        /// Implementation to check if sdk is enabled/disabled.
-        /// The settings are based on the configurations from BVConfiguration and BVParameters.
+        ///     Implementation to check if sdk is enabled/disabled.
+        ///     The settings are based on the configurations from BVConfiguration and BVParameters.
         /// </summary>
         /// <returns>A Boolean value, true if sdk is enabled and false if it is not enabled</returns>
-        public Boolean isSdkEnabled()
+        public bool isSdkEnabled()
         {
-            _sdkEnabled = Boolean.Parse(_bvConfiguration.getProperty(BVClientConfig.SEO_SDK_ENABLED));
+            _sdkEnabled = bool.Parse(_bvConfiguration.getProperty(BVClientConfig.SEO_SDK_ENABLED));
             _sdkEnabled = _sdkEnabled || BVUtility.isRevealDebugEnabled(_bvParameters);
             return _sdkEnabled;
         }
 
-        private void Call() 
-        {
-            try 
-            {
-                //includes integration script if one is enabled.
-                IncludeIntegrationCode();
-
-                Uri seoContentUrl = _bvSeoSdkUrl.seoContentUri();
-                String correctedBaseUri = _bvSeoSdkUrl.correctedBaseUri();
-                GetBvContent(_uiContent, seoContentUrl, correctedBaseUri);
-            } 
-            catch (BVSdkException e) 
-            {
-                Logger.Error(e.getMessage(), e);
-                _message.Append(e.getMessage());
-            }
-        }
-
-        private bool RunWithTimeout(ThreadStart threadStart, TimeSpan timeout)
-        {
-            Thread workerThread = new Thread(threadStart);
-
-            workerThread.Start();
-
-            bool finished = workerThread.Join(timeout);
-            if (!finished)
-                workerThread.Abort();
-
-            return finished;
-        }
-
         /// <summary>
-        /// Executes the server side call or the file level Call within a specified execution timeout.
-        /// when reload is set true then it gives from the cache that was already executed in the previous call.
+        ///     Executes the server side call or the file level Call within a specified execution timeout.
+        ///     when reload is set true then it gives from the cache that was already executed in the previous call.
         /// </summary>
         /// <param name="reload">A Boolean value to determine whether to reload from cache</param>
         /// <returns>A StringBuilder object representing the Content</returns>
-        public StringBuilder executeCall(Boolean reload) 
+        public StringBuilder executeCall(bool reload)
         {
-            if (reload) 
+            if (reload)
             {
                 return new StringBuilder(_uiContent.ToString());
             }
 
-            Boolean userAgentFitsCrawlerPattern = false;
-            String crawlerAgentPattern = _bvConfiguration.getProperty(BVClientConfig.CRAWLER_AGENT_PATTERN);
-            if (!String.IsNullOrEmpty(crawlerAgentPattern) && _bvParameters != null && !String.IsNullOrEmpty(_bvParameters.UserAgent))
+            var isWebCrawler = false;
+            var crawlerAgentPattern = _bvConfiguration.getProperty(BVClientConfig.CRAWLER_AGENT_PATTERN);
+            var userAgent = UserAgent;
+            if (!string.IsNullOrEmpty(crawlerAgentPattern) && _bvParameters != null &&
+                !string.IsNullOrEmpty(userAgent))
             {
                 crawlerAgentPattern = ".*(" + crawlerAgentPattern + ").*";
-                Regex pattern = new Regex(crawlerAgentPattern, RegexOptions.IgnoreCase);
-                userAgentFitsCrawlerPattern = pattern.IsMatch(_bvParameters.UserAgent);
+                var pattern = new Regex(crawlerAgentPattern, RegexOptions.IgnoreCase);
+                isWebCrawler = pattern.IsMatch(userAgent);
             }
 
-            long executionTimeout = userAgentFitsCrawlerPattern ? long.Parse(_bvConfiguration.getProperty(BVClientConfig.EXECUTION_TIMEOUT_BOT)) :
-                long.Parse(_bvConfiguration.getProperty(BVClientConfig.EXECUTION_TIMEOUT));
+            var executionTimeout = isWebCrawler
+                ? long.Parse(_bvConfiguration.getProperty(BVClientConfig.EXECUTION_TIMEOUT_BOT))
+                : long.Parse(_bvConfiguration.getProperty(BVClientConfig.EXECUTION_TIMEOUT));
 
-            if (!userAgentFitsCrawlerPattern && executionTimeout == 0)
+            if (!isWebCrawler && executionTimeout <= 0)
             {
-                _message.Append(BVMessageUtil.getMessage("MSG0004")); 
+                _message.Append(BVMessageUtil.getMessage("MSG0004"));
                 return new StringBuilder();
             }
-            
-            if (userAgentFitsCrawlerPattern && executionTimeout < 100) 
+
+            if (isWebCrawler && executionTimeout < 100)
             {
-        	    executionTimeout = 100;
+                executionTimeout = 100;
                 _message.Append(BVMessageUtil.getMessage("MSG0005"));
             }
 
             try
             {
-                Boolean fCallFinished = false;
+                var fCallFinished = false;
 
                 if (executionTimeout > 0)
                 {
-                    fCallFinished = RunWithTimeout(Call, TimeSpan.FromMilliseconds(executionTimeout));
+                    var contentLoader = IsContentFromFile
+                        ? new FileContentLoader(_bvConfiguration)
+                        : (IContentLoader) new HttpContentLoader(_bvConfiguration, UserAgent); 
+                    fCallFinished = RunWithTimeout(Call, TimeSpan.FromMilliseconds(executionTimeout), contentLoader);
                 }
 
-                if (!fCallFinished) _message.Append(String.Format(BVMessageUtil.getMessage("ERR0018"), new Object[] { executionTimeout }));
+                if (!fCallFinished)
+                    _message.Append(string.Format(BVMessageUtil.getMessage("ERR0018"), executionTimeout));
             }
             catch (ThreadInterruptedException e)
             {
@@ -377,9 +238,9 @@ namespace BVSeoSdkDotNet.Content
             }
             catch (TimeoutException e)
             {
-                String errorCode = userAgentFitsCrawlerPattern ? "ERR0026" : "ERR0018";
-                Logger.Error(String.Format(BVMessageUtil.getMessage(errorCode), new Object[] { executionTimeout }), e);
-                _message.Append(String.Format(BVMessageUtil.getMessage(errorCode), new Object[] { executionTimeout }));
+                var errorCode = isWebCrawler ? "ERR0026" : "ERR0018";
+                Logger.Error(string.Format(BVMessageUtil.getMessage(errorCode), new object[] {executionTimeout}), e);
+                _message.Append(string.Format(BVMessageUtil.getMessage(errorCode), new object[] {executionTimeout}));
             }
             catch (Exception e)
             {
@@ -391,12 +252,81 @@ namespace BVSeoSdkDotNet.Content
         }
 
         /// <summary>
-        /// Gets the messages if there are any after executeCall is invoked or if it is still in the cache.
+        ///     Gets the messages if there are any after executeCall is invoked or if it is still in the cache.
         /// </summary>
         /// <returns>A StringBuilder object containing the messages if any</returns>
         public StringBuilder getMessage()
         {
             return _message;
+        }
+
+        private void GetBvContent(IContentLoader contentLoader)
+        {
+            if (IncludeIntegrationCode)
+            {
+                AppendIntegrationCode();
+            }
+            _uiContent.Append(contentLoader.LoadContent(SeoContentUrl));
+            BVUtility.replacePageURIFromContent(_uiContent, CorrectedBaseUri);
+        }
+
+        private void AppendIntegrationCode()
+        {
+            object[] parameters = {_bvParameters.SubjectType.uriValue(), _bvParameters.SubjectId};
+            var integrationScriptValue =
+                _bvConfiguration.getProperty(_bvParameters.ContentType.getIntegrationScriptProperty());
+            var integrationScript = string.Format(integrationScriptValue, parameters);
+
+            _uiContent.Append(integrationScript);
+        }
+
+        private bool IncludeIntegrationCode
+        {
+            get { return bool.Parse(_bvConfiguration.getProperty(BVClientConfig.INCLUDE_DISPLAY_INTEGRATION_CODE)); }
+        }
+
+        /// <summary>
+        /// Check arguments and call in to <see cref="GetBvContent(IContentLoader)"/>
+        /// </summary>
+        /// <param name="param"><see cref="IContentLoader"/></param>
+        /// <exception cref="ArgumentException">Throws iff param is not an IContentLoader</exception>
+        /// <remarks>Used as an <see cref="ParameterizedThreadStart"/> in <see cref="executeCall"/> for <see cref="RunWithTimeout"/></remarks>
+        private void Call(object param)
+        {
+            try
+            {
+                var contentLoader = param as IContentLoader;
+                if (contentLoader == null)
+                {
+                    throw new ArgumentException("Expected IContentLoader", nameof(param));
+                }
+                GetBvContent(contentLoader);
+            }
+            catch (BVSdkException e)
+            {
+                Logger.Error(e.getMessage(), e);
+                _message.Append(e.getMessage());
+                throw;
+            }
+            catch (ArgumentException e)
+            {
+                Logger.Error(e.Message, e);
+                _message.Append(e.Message);
+                throw;
+            }
+        }
+
+        private bool RunWithTimeout(ParameterizedThreadStart threadStart, TimeSpan timeout, object parameter)
+        {
+            var workerThread = new Thread(threadStart);
+
+            workerThread.Start(parameter);
+            //TODO: Potentially does not respect the timeout if this thread yields to the new thread before the call to Join(timeout);
+            var finished = workerThread.Join(timeout);
+            if (!finished)
+                workerThread.Abort();
+
+            return finished;
         }
     }
 }
