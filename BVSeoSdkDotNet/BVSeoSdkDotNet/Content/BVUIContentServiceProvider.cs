@@ -18,7 +18,6 @@
  */
 
 using System;
-using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Text;
@@ -45,7 +44,11 @@ namespace BVSeoSdkDotNet.Content
         private readonly StringBuilder _message;
         private readonly StringBuilder _uiContent;
 
+        /// <summary>
+        ///     Backing field for <see cref="get_AssemblyVersion" />
+        /// </summary>
         private Version _assemblyVersion;
+
         private BVParameters _bvParameters;
         private BVSeoSdkUrl _bvSeoSdkUrl;
         private bool _sdkEnabled;
@@ -62,16 +65,26 @@ namespace BVSeoSdkDotNet.Content
             _uiContent = new StringBuilder();
         }
 
+        /// <summary>
+        ///     Returns true if this <see cref="BVUIContentServiceProvider" /> is configured to
+        ///     <see cref="BVClientConfig.LOAD_SEO_FILES_LOCALLY">load content locally.</see>
+        /// </summary>
         private bool IsContentFromFile
         {
             get { return bool.Parse(_bvConfiguration.getProperty(BVClientConfig.LOAD_SEO_FILES_LOCALLY)); }
         }
 
+        /// <summary>
+        ///     Shorthand to get the Seo Content Uri from <see cref="_bvSeoSdkUrl" />.
+        /// </summary>
         private Uri SeoContentUrl
         {
             get { return _bvSeoSdkUrl.seoContentUri(); }
         }
 
+        /// <summary>
+        ///     Shorthand to get the Corrected Base Uri from <see cref="_bvSeoSdkUrl" />
+        /// </summary>
         private string CorrectedBaseUri
         {
             get { return _bvSeoSdkUrl.correctedBaseUri(); }
@@ -105,17 +118,24 @@ namespace BVSeoSdkDotNet.Content
                 {
                     Logger.Warn(BVMessageUtil.getMessage("WRN0001"));
                 }
-                return string.Format("{0};CLR/{1};bv_dotnet_sdk/{2};{3}", Environment.OSVersion, Environment.Version, AssemblyVersion.ToString(3), userAgent);
+                return string.Format("{0};CLR/{1};bv_dotnet_sdk/{2};{3}", Environment.OSVersion, Environment.Version,
+                    AssemblyVersion.ToString(3), userAgent);
             }
         }
 
+        /// <summary>
+        ///     The UserAgent as specified by <see cref="_bvParameters" /> or <c>null</c>.
+        /// </summary>
         private string ParameterUserAgent
         {
-            get {
-                return !string.IsNullOrEmpty(_bvParameters.UserAgent) ? _bvParameters.UserAgent : null;
-            }
+            get { return !string.IsNullOrEmpty(_bvParameters.UserAgent) ? _bvParameters.UserAgent : null; }
         }
 
+        /// <summary>
+        ///     The UserAgent as specified by the current <see cref="HttpRequest" /> or <c>null</c> if there is no
+        ///     <see cref="HttpContext.Current">current context</see>
+        ///     or if the context cannot be accessed from this <see cref="Thread" />.
+        /// </summary>
         private string DefaultUserAgent
         {
             get
@@ -124,12 +144,19 @@ namespace BVSeoSdkDotNet.Content
                 {
                     return HttpContext.Current.Request.UserAgent;
                 }
-                else
-                {
-                    Logger.Debug(BVMessageUtil.getMessage("MSG0006"));
-                    return null;
-                }
+                Logger.Debug(BVMessageUtil.getMessage("MSG0006"));
+                return null;
             }
+        }
+
+        /// <summary>
+        ///     Returns true iff the
+        ///     <see cref="BVClientConfig.INCLUDE_DISPLAY_INTEGRATION_CODE">integration code should be included</see> in the
+        ///     content provided.
+        /// </summary>
+        private bool IncludeIntegrationCode
+        {
+            get { return bool.Parse(_bvConfiguration.getProperty(BVClientConfig.INCLUDE_DISPLAY_INTEGRATION_CODE)); }
         }
 
         /// <summary>
@@ -184,6 +211,12 @@ namespace BVSeoSdkDotNet.Content
                 return new StringBuilder(_uiContent.ToString());
             }
 
+            /**
+             * StringBuilder depends on Length to reference the position of the next character;
+             * We can effectively clear the StringBuilder by resetting it's length to '0'.
+             */
+            _uiContent.Length = 0;
+
             var isWebCrawler = false;
             var crawlerAgentPattern = _bvConfiguration.getProperty(BVClientConfig.CRAWLER_AGENT_PATTERN);
             var userAgent = UserAgent;
@@ -219,7 +252,7 @@ namespace BVSeoSdkDotNet.Content
                 {
                     var contentLoader = IsContentFromFile
                         ? new FileContentLoader(_bvConfiguration)
-                        : (IContentLoader) new HttpContentLoader(_bvConfiguration, UserAgent); 
+                        : (IContentLoader) new HttpContentLoader(_bvConfiguration, UserAgent);
                     fCallFinished = RunWithTimeout(Call, TimeSpan.FromMilliseconds(executionTimeout), contentLoader);
                 }
 
@@ -239,8 +272,8 @@ namespace BVSeoSdkDotNet.Content
             catch (TimeoutException e)
             {
                 var errorCode = isWebCrawler ? "ERR0026" : "ERR0018";
-                Logger.Error(string.Format(BVMessageUtil.getMessage(errorCode), new object[] {executionTimeout}), e);
-                _message.Append(string.Format(BVMessageUtil.getMessage(errorCode), new object[] {executionTimeout}));
+                Logger.Error(string.Format(BVMessageUtil.getMessage(errorCode), executionTimeout), e);
+                _message.AppendFormat(BVMessageUtil.getMessage(errorCode), executionTimeout);
             }
             catch (Exception e)
             {
@@ -260,37 +293,43 @@ namespace BVSeoSdkDotNet.Content
             return _message;
         }
 
-        private void GetBvContent(IContentLoader contentLoader)
+        /// <summary>
+        ///     Append all content to _uiContent, including Integration Code iff it should be included.
+        /// </summary>
+        /// <param name="contentLoader"></param>
+        private void AppendContent(IContentLoader contentLoader)
         {
             if (IncludeIntegrationCode)
             {
-                AppendIntegrationCode();
+                _uiContent.Append(GetIntegrationCode());
             }
             _uiContent.Append(contentLoader.LoadContent(SeoContentUrl));
             BVUtility.replacePageURIFromContent(_uiContent, CorrectedBaseUri);
         }
 
-        private void AppendIntegrationCode()
+        /// <summary>
+        ///     Get the Integration Code from <see cref="_bvParameters" />.
+        /// </summary>
+        /// <returns></returns>
+        private string GetIntegrationCode()
         {
             object[] parameters = {_bvParameters.SubjectType.uriValue(), _bvParameters.SubjectId};
             var integrationScriptValue =
                 _bvConfiguration.getProperty(_bvParameters.ContentType.getIntegrationScriptProperty());
-            var integrationScript = string.Format(integrationScriptValue, parameters);
-
-            _uiContent.Append(integrationScript);
-        }
-
-        private bool IncludeIntegrationCode
-        {
-            get { return bool.Parse(_bvConfiguration.getProperty(BVClientConfig.INCLUDE_DISPLAY_INTEGRATION_CODE)); }
+            return string.Format(integrationScriptValue, parameters);
         }
 
         /// <summary>
-        /// Check arguments and call in to <see cref="GetBvContent(IContentLoader)"/>
+        ///     Check arguments and call in to <see cref="AppendContent" />.
         /// </summary>
-        /// <param name="param"><see cref="IContentLoader"/></param>
-        /// <exception cref="ArgumentException">Throws iff param is not an IContentLoader</exception>
-        /// <remarks>Used as an <see cref="ParameterizedThreadStart"/> in <see cref="executeCall"/> for <see cref="RunWithTimeout"/></remarks>
+        /// <param name="param">
+        ///     Expected to be an <see cref="IContentLoader" />
+        /// </param>
+        /// <exception cref="ArgumentException">Throws if param is not an IContentLoader</exception>
+        /// <remarks>
+        ///     Used as an <see cref="ParameterizedThreadStart" /> in <see cref="executeCall" /> for
+        ///     <see cref="RunWithTimeout" />
+        /// </remarks>
         private void Call(object param)
         {
             try
@@ -298,9 +337,9 @@ namespace BVSeoSdkDotNet.Content
                 var contentLoader = param as IContentLoader;
                 if (contentLoader == null)
                 {
-                    throw new ArgumentException("Expected IContentLoader", nameof(param));
+                    throw new ArgumentException(@"Expected IContentLoader", nameof(param));
                 }
-                GetBvContent(contentLoader);
+                AppendContent(contentLoader);
             }
             catch (BVSdkException e)
             {
@@ -316,6 +355,19 @@ namespace BVSeoSdkDotNet.Content
             }
         }
 
+        /// <summary>
+        ///     Start a new <see cref="Thread" /> using <paramref name="threadStart" />. If <paramref name="threadStart" /> does
+        ///     not complete, the new thread will be aborted.
+        /// </summary>
+        /// <remarks>
+        ///     If the thread is aborted, no guarantees can be made about the state of the data used by
+        ///     <paramref name="threadStart" />.
+        ///     This method executes synchronously; It will not return until the new thread has been completed or aborted.
+        /// </remarks>
+        /// <param name="threadStart">Entrypoint for the new thread</param>
+        /// <param name="timeout">Maximum time to wait for the new thread to finish</param>
+        /// <param name="parameter">This <see cref="object" /> will be pased to <paramref name="threadStart" /></param>
+        /// <returns>True iff <paramref name="threadStart" /> completed successfully.</returns>
         private bool RunWithTimeout(ParameterizedThreadStart threadStart, TimeSpan timeout, object parameter)
         {
             var workerThread = new Thread(threadStart);
