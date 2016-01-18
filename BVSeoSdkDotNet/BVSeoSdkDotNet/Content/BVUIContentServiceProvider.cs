@@ -163,6 +163,7 @@ namespace BVSeoSdkDotNet.Content
         ///     Gets a boolean value whether to Show UserAgent SEO Content
         /// </summary>
         /// <returns>A boolean value</returns>
+        [Obsolete("Should always return true.")]
         public bool showUserAgentSEOContent()
         {
             return true;
