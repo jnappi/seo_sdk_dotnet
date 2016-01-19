@@ -113,7 +113,7 @@ namespace BVSeoSdkDotNet.Content
         {
             get
             {
-                var userAgent = ParameterUserAgent ?? DefaultUserAgent;
+                var userAgent = RequestUserAgent ?? ParameterUserAgent;
                 if (string.IsNullOrEmpty(userAgent))
                 {
                     Logger.Warn(BVMessageUtil.getMessage("WRN0001"));
@@ -123,7 +123,7 @@ namespace BVSeoSdkDotNet.Content
             }
         }
 
-        /// <summary>
+        /// <summary>s
         ///     The UserAgent as specified by <see cref="_bvParameters" /> or <c>null</c>.
         /// </summary>
         private string ParameterUserAgent
@@ -136,7 +136,7 @@ namespace BVSeoSdkDotNet.Content
         ///     <see cref="HttpContext.Current">current context</see>
         ///     or if the context cannot be accessed from this <see cref="Thread" />.
         /// </summary>
-        private string DefaultUserAgent
+        private string RequestUserAgent
         {
             get
             {

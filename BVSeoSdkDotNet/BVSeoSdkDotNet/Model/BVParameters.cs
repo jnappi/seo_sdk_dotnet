@@ -16,101 +16,63 @@
  * ===========================================================================
  * 
  */
-using System;
-using System.Collections.Generic;
-using System.Text;
+
+using BVSeoSdkDotNet.Content;
 
 namespace BVSeoSdkDotNet.Model
 {
     /// <summary>
-    /// Model for holding the Bazaarvoice content specific query parameters.
-    /// 
-    /// @author Mohan Krupanandan
+    ///     Model for holding the Bazaarvoice content specific query parameters.
+    ///     @author Mohan Krupanandan
     /// </summary>
     public class BVParameters
     {
-        private String _userAgent;
-        private String _baseURI;
-        private String _pageURI;
-        private String _subjectId;
-        private BVContentType _contentType;
-        private BVSubjectType _subjectType;
-        private BVContentSubType _contentSubType;
-        private String _pageNumber;
-
-        /// <summary>
-        /// Value of the UserAgent that needs to be included
-        /// </summary>
-        public String UserAgent
-        {
-            get { return _userAgent; }
-            set { _userAgent = value; }
-        }
-
-        /// <summary>
-        /// Value of the BaseURI of the initiating URL
-        /// </summary>
-        public String BaseURI
-        {
-            get { return _baseURI; }
-            set { _baseURI = value; }
-        }
-
-        /// <summary>
-        /// Value of the PageURI of the initiating URL
-        /// </summary>
-        public String PageURI
-        {
-            get { return _pageURI; }
-            set { _pageURI = value; }
-        }
-
-        /// <summary>
-        /// Value of SubjectId of the SEO content
-        /// </summary>
-        public String SubjectId
-        {
-            get { return _subjectId; }
-            set { _subjectId = value; }
-        }
-
-        /// <summary>
-        /// BV Content type of the SEO Content to be retrieved
-        /// </summary>
-        public BVContentType ContentType
-        {
-            get { return _contentType; }
-            set { _contentType = value; }
-        }
-
-        /// <summary>
-        /// BV Subject type of the SEO Content to be retrieved
-        /// </summary>
-        public BVSubjectType SubjectType
-        {
-            get { return _subjectType; }
-            set { _subjectType = value; }
-        }
-
-        /// <summary>
-        /// BV Content Sub type of the SEO Content to be retrieved
-        /// </summary>
-        public BVContentSubType ContentSubType
-        {
-            get { return _contentSubType; }
-            set { _contentSubType = value; }
-        }
-
-        public String PageNumber
-        {
-            get { return _pageNumber; }
-            set { _pageNumber = value;  }
-        }
-
         public BVParameters()
         {
             ContentType = new BVContentType(BVContentType.REVIEWS);
             SubjectType = new BVSubjectType(BVSubjectType.PRODUCT);
         }
+
+        /// <summary>
+        ///     Default value of the UserAgent to use in requests for content.
+        /// </summary>
+        /// <remarks>
+        ///     Should be set if the call to <see cref="BVManagedUIContent.getContent" />,
+        ///     <see cref="BVManagedUIContent.getReviews" />, or <see cref="BVManagedUIContent.getAggregateRating" /> will not be
+        ///     made on the request thread.
+        /// </remarks>
+        public string UserAgent { get; set; }
+
+        /// <summary>
+        ///     Value of the BaseURI of the initiating URL
+        /// </summary>
+        public string BaseURI { get; set; }
+
+        /// <summary>
+        ///     Value of the PageURI of the initiating URL
+        /// </summary>
+        public string PageURI { get; set; }
+
+        /// <summary>
+        ///     Value of SubjectId of the SEO content
+        /// </summary>
+        public string SubjectId { get; set; }
+
+        /// <summary>
+        ///     BV Content type of the SEO Content to be retrieved
+        /// </summary>
+        public BVContentType ContentType { get; set; }
+
+        /// <summary>
+        ///     BV Subject type of the SEO Content to be retrieved
+        /// </summary>
+        public BVSubjectType SubjectType { get; set; }
+
+        /// <summary>
+        ///     BV Content Sub type of the SEO Content to be retrieved
+        /// </summary>
+        public BVContentSubType ContentSubType { get; set; }
+
+        public string PageNumber { get; set; }
     }
 }
