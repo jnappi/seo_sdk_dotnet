@@ -54,11 +54,6 @@ namespace BVSeoSdkDotNet.Content.Loaders
                     Logger.Error(BVMessageUtil.getMessage("ERR0012"), e);
                     throw new BVSdkException("ERR0012");
                 }
-                catch (BVSdkException e)
-                {
-                    Logger.Error(e.getMessage(), e);
-                    throw;
-                }
                 catch (Exception e)
                 {
                     Logger.Error(e.Message, e);

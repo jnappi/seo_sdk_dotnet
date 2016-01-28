@@ -342,18 +342,17 @@ namespace BVSeoSdkDotNet.Content
                 }
                 AppendContent(contentLoader);
             }
-            catch (BVSdkException e)
-            {
-                Logger.Error(e.getMessage(), e);
-                _message.Append(e.getMessage());
-                throw;
-            }
             catch (ArgumentException e)
             {
                 Logger.Error(e.Message, e);
                 _message.Append(e.Message);
-                throw;
             }
+            catch (BVSdkException e)
+            {
+                Logger.Error(e.getMessage(), e);
+                _message.Append(e.getMessage());
+            }
+            
         }
 
         /// <summary>
