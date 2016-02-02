@@ -116,9 +116,8 @@ namespace BVSeoSdkDotNet.Content
                 var userAgent = RequestUserAgent ?? ParameterUserAgent;
                 if (string.IsNullOrEmpty(userAgent))
                 {
-                    Logger.Warn(BVMessageUtil.getMessage("WRN0001"));
-                }
-                return string.Format("{0};CLR/{1};bv_dotnet_sdk/{2};{3}", Environment.OSVersion, Environment.Version,
+                    Logger.Warn(BVMessageUtil.getMessage("WRN0001"));}
+                return string.Format("CLR/{0};bv_dotnet_sdk/{1};{2}", Environment.Version,
                     AssemblyVersion.ToString(3), userAgent);
             }
         }
