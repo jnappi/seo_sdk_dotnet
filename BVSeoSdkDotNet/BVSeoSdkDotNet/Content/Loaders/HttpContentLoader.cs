@@ -105,6 +105,7 @@ namespace BVSeoSdkDotNet.Content.Loaders
             try
             {
                 var httpRequest = (HttpWebRequest) WebRequest.Create(uri);
+                httpRequest.AutomaticDecompression = DecompressionMethods.GZip;
                 httpRequest.Timeout = ConnectionTimeout;
                 httpRequest.ReadWriteTimeout = SocketTimeout;
                 httpRequest.UserAgent = UserAgent;
