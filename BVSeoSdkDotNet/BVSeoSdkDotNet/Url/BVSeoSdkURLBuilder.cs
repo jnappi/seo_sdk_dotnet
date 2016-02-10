@@ -369,11 +369,16 @@ namespace BVSeoSdkDotNet.Url
                         }
                         else if (token.StartsWith("ct"))
                         {
-                            contentType = new BVContentType(
-                                BVContentType.ctFromBVStateKeyword(
-                                    extractValue(token)
-                                )
+                            String ctFromKeyword = BVContentType.ctFromBVStateKeyword(
+                               extractValue(token)
                             );
+                            // Ignore invalid contentTypes
+                            if (ctFromKeyword != null)
+                            {
+                                contentType = new BVContentType(
+                                    ctFromKeyword
+                                );
+                            }
                         }
                         else if (token.StartsWith("st"))
                         {
@@ -396,6 +401,7 @@ namespace BVSeoSdkDotNet.Url
                 // Ignore bvstate if contentType doesn't match bvParameters contentType
                 (
                     bvParameters.ContentType != null &&
+                    // contentType is created only if we have a valid contentType
                     !contentType.getContentType().Equals(
                         bvParameters.ContentType.getContentType(),
                         StringComparison.OrdinalIgnoreCase

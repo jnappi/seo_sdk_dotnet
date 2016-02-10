@@ -599,6 +599,85 @@ namespace BVSEOSDKTest
             Assert.AreEqual<string>(actualSeoContentUri, expectedSeoContentUri, "actual and expected seo content uri should be same");
 
             /*
+             * Invalid contentType in bvstate ignores all bvstate parameter values. 
+             * Testcase: Ignore bvstate values on invalid content type value in bvstate
+             */
+
+            bvParam.BaseURI = "http://localhost:8080/Sample/Example-1.jsp?a=b&bvstate=pg:3/ct:jj/st:p/id:domains";
+            bvParam.PageURI = "http://localhost:8080/Sample/Example-1.jsp?a=b&bvstate=pg:3/ct:jj/st:p/id:domains";
+            bvParam.PageNumber = "2";
+            bvParam.SubjectId = "ssl-certificates";
+
+            bvSeoSdkUrl = new BVSeoSdkURLBuilder(bvConfiguration, bvParam);
+
+            expectedBaseUri = "http://localhost:8080/Sample/Example-1.jsp?a=b";
+            expectedQueryString = "?a=b&bvstate=pg:3/ct:jj/st:p/id:domains";
+            expectedFragmentString = "";
+            expectedSeoContentUri = "http://seo.bazaarvoice.com/myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca/6574-en_us/reviews/product/2/ssl-certificates.htm";
+
+            actualBaseUri = bvSeoSdkUrl.correctedBaseUri();
+            actualQueryString = bvSeoSdkUrl.queryString();
+            actualFragmentString = bvSeoSdkUrl.fragmentString();
+            actualSeoContentUri = bvSeoSdkUrl.seoContentUri().ToString();
+
+            Assert.AreEqual<string>(actualBaseUri, expectedBaseUri, "actual and expected base uri should be same");
+            Assert.AreEqual<string>(actualQueryString, expectedQueryString, "actual and expected query string should be same");
+            Assert.AreEqual<string>(actualFragmentString, expectedFragmentString, "actual and expected fragment string should be same");
+            Assert.AreEqual<string>(actualSeoContentUri, expectedSeoContentUri, "actual and expected seo content uri should be same");
+
+            /*
+             * Invalid subjectType in bvstate should still try to retrieve an invalid url
+             * Testcase: Invalid subjectType value in bvstate
+             */
+            bvParam.BaseURI = "http://localhost:8080/Sample/Example-1.jsp?a=b&bvstate=pg:3/ct:r/st:jj/id:domains";
+            bvParam.PageURI = "http://localhost:8080/Sample/Example-1.jsp?a=b&bvstate=pg:3/ct:r/st:jj/id:domains";
+            bvParam.PageNumber = "2";
+            bvParam.SubjectId = "ssl-certificates";
+
+            bvSeoSdkUrl = new BVSeoSdkURLBuilder(bvConfiguration, bvParam);
+
+            expectedBaseUri = "http://localhost:8080/Sample/Example-1.jsp?a=b";
+            expectedQueryString = "?a=b&bvstate=pg:3/ct:r/st:jj/id:domains";
+            expectedFragmentString = "";
+            expectedSeoContentUri = "http://seo.bazaarvoice.com/myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca/6574-en_us/reviews//3/domains.htm";
+
+            actualBaseUri = bvSeoSdkUrl.correctedBaseUri();
+            actualQueryString = bvSeoSdkUrl.queryString();
+            actualFragmentString = bvSeoSdkUrl.fragmentString();
+            actualSeoContentUri = bvSeoSdkUrl.seoContentUri().ToString();
+
+            Assert.AreEqual<string>(actualBaseUri, expectedBaseUri, "actual and expected base uri should be same");
+            Assert.AreEqual<string>(actualQueryString, expectedQueryString, "actual and expected query string should be same");
+            Assert.AreEqual<string>(actualFragmentString, expectedFragmentString, "actual and expected fragment string should be same");
+            Assert.AreEqual<string>(actualSeoContentUri, expectedSeoContentUri, "actual and expected seo content uri should be same");
+
+            /*
+             * Invalid pagenumber in bvstate should default it to page 1
+             * Testcase: Invalid pagenumber should default page to 1
+             */
+            bvParam.BaseURI = "http://localhost:8080/Sample/Example-1.jsp?a=b&bvstate=pg:jj/ct:r/st:p/id:domains";
+            bvParam.PageURI = "http://localhost:8080/Sample/Example-1.jsp?a=b&bvstate=pg:jj/ct:r/st:p/id:domains";
+            bvParam.PageNumber = "2";
+            bvParam.SubjectId = "ssl-certificates";
+
+            bvSeoSdkUrl = new BVSeoSdkURLBuilder(bvConfiguration, bvParam);
+
+            expectedBaseUri = "http://localhost:8080/Sample/Example-1.jsp?a=b";
+            expectedQueryString = "?a=b&bvstate=pg:jj/ct:r/st:p/id:domains";
+            expectedFragmentString = "";
+            expectedSeoContentUri = "http://seo.bazaarvoice.com/myshco-359c29d8a8cbe3822bc0d7c58cb9f9ca/6574-en_us/reviews/product/1/domains.htm";
+
+            actualBaseUri = bvSeoSdkUrl.correctedBaseUri();
+            actualQueryString = bvSeoSdkUrl.queryString();
+            actualFragmentString = bvSeoSdkUrl.fragmentString();
+            actualSeoContentUri = bvSeoSdkUrl.seoContentUri().ToString();
+
+            Assert.AreEqual<string>(actualBaseUri, expectedBaseUri, "actual and expected base uri should be same");
+            Assert.AreEqual<string>(actualQueryString, expectedQueryString, "actual and expected query string should be same");
+            Assert.AreEqual<string>(actualFragmentString, expectedFragmentString, "actual and expected fragment string should be same");
+            Assert.AreEqual<string>(actualSeoContentUri, expectedSeoContentUri, "actual and expected seo content uri should be same");
+
+            /*
              * base uri and page uri has bvstate hashbang
              * Testcase: Set contentUri based on bvstate hashbang.
              */

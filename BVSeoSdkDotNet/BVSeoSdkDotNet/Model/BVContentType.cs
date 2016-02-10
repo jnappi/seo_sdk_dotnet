@@ -73,6 +73,10 @@ namespace BVSeoSdkDotNet.Model
 
         public BVContentType(String bvContentType)
         {
+            if (bvContentType == null)
+            {
+                throw new ArgumentNullException("bvContentType");
+            }
             this._bvContentType = bvContentType;
         }
 
