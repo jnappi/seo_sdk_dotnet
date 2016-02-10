@@ -1,13 +1,15 @@
 # Changelog
+## 3.1.2
+* Fix NullReferenceException with bvstate parameter
 
 ## 3.1.1
 * Upgrade Nvelocity version. This change requires DotNet Framework 3.5
-* Include BVLog4Net.config in the release 
+* Include BVLog4Net.config in the release
 
 ## 3.1.0
 
 * Added support for seller ratings.
-* Fix - Debug logging has been turned off. 
+* Fix - Debug logging has been turned off.
 
 ## 2.3.0.0
 
