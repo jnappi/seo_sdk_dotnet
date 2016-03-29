@@ -1,9 +1,11 @@
 # Changelog
-## 3.1.2
-* Fix NullReferenceException with bvstate parameter
+
+## 3.2.0
+* Pass-through of User Agent to gather statistics.
+* Support gzip compression from CloudFront
 
 ## 3.1.2
-* Pass-through of User Agent to gather statistics.
+* Fix NullReferenceException with bvstate parameter
 
 ## 3.1.1
 * Upgrade Nvelocity version. This change requires DotNet Framework 3.5
