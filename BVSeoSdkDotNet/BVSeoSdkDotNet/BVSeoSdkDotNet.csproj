@@ -37,8 +37,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Commons, Version=1.0.5325.26748, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Binaries\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="NVelocity, Version=1.1.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -94,7 +96,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Binaries\Commons.dll" />
     <Content Include="Binaries\log4net.dll" />
     <Content Include="Binaries\NVelocity.dll" />
     <EmbeddedResource Include="footer.txt" />

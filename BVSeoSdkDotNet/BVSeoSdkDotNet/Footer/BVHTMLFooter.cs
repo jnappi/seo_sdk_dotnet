@@ -18,10 +18,7 @@
  */
 using System;
 using System.Collections;
-using System.Collections.Specialized;
 using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.IO;
 using System.Reflection;
 using BVSeoSdkDotNet.Model;
@@ -29,11 +26,12 @@ using BVSeoSdkDotNet.Config;
 using BVSeoSdkDotNet.Util;
 using BVSeoSdkDotNet.Url;
 using NVelocity.App;
-using NVelocity.Context;
 using NVelocity;
 using BVSeoSdkDotNet.Properties;
 using BVSeoSdkDotNet.BVException;
+using Commons.Collections;
 using log4net;
+using NVelocity.Runtime;
 
 namespace BVSeoSdkDotNet.Footer
 {
@@ -46,8 +44,7 @@ namespace BVSeoSdkDotNet.Footer
     public class BVHTMLFooter : BVFooter
     {
         private static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        private static String FOOTER_FILE = "footer.txt"; 
-		private BVConfiguration _bvConfiguration;
+        private BVConfiguration _bvConfiguration;
 	    private BVParameters _bvParameters;
         private BVSeoSdkUrl _bvSeoSdkUrl;
 
@@ -68,7 +65,9 @@ namespace BVSeoSdkDotNet.Footer
             _bvParameters = bvParameters;
 
             _velocityEngine = new VelocityEngine();
-            _velocityEngine.Init();
+            var props = new ExtendedProperties();
+            props.SetProperty(RuntimeConstants.VM_LIBRARY,"");
+            _velocityEngine.Init(props);
 
             messageList = new List<String>();
         }
